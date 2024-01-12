@@ -8,9 +8,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link rel="icon" href="assets/icon.png">
-		<title>Portfolio de Liuddy</title>
+		<title>Portfolio de Lomé Bordes</title>
     </head>
     <body>
         <header>
-            <h1>Portfolio de Liuddy</h1>
+            <h1>Portfolio de Lomé Bordes</h1>
         </header>
