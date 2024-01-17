@@ -8,7 +8,7 @@
                 <p>Compétence 1 : Réalisation d'application</p>
                 <ul>
                     <li>Maîtriser différents types de programmation (itératif, récursif, programmation orientée objet)</li>
-                    <li>Maîtriser différents langages de programmation (C, Java, Python, PL/SQL, HTML, CSS, PHP, JavaScript, Assembleur)</li>
+                    <li>Maîtriser différents langages de programmation (C, Java, Python, PL/SQL, HTML, CSS, PHP, JavaScript)</li>
                     <li>Réaliser un programme pour résoudre un problème donné</li>
                     <li>Choisir une structure de données adaptée</li>
                     <li>Écrire un code lisible et correct</li>

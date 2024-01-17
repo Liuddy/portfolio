@@ -1,6 +1,7 @@
 body {
 	background: rgb(5, 30, 45);
 	color: white;
+	font-family: sans-serif;
 }
 
 header, footer {
@@ -37,7 +38,7 @@ div:not(#grid) {
 	background: rgb(5, 25, 35);
 	border: 0.2em solid lightgrey;
 	border-radius: 0.5em;
-	box-shadow: 0.7em;
+	box-shadow: 1em 1em 1em black;
 	margin: 1.5em;
 	padding: 1em;
 }
