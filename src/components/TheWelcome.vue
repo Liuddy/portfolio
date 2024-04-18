@@ -1,17 +1,19 @@
 <script setup>
-import WelcomeItem from './WelcomeItem.vue'
-import DocumentationIcon from './icons/IconDocumentation.vue'
-import ToolingIcon from './icons/IconTooling.vue'
-import EcosystemIcon from './icons/IconEcosystem.vue'
-import CommunityIcon from './icons/IconCommunity.vue'
-import SupportIcon from './icons/IconSupport.vue'
+  import WelcomeItem from '@/components/WelcomeItem.vue'
+  import DocumentationIcon from '@/components/icons/IconDocumentation.vue'
+  import ToolingIcon from '@/components/icons/IconTooling.vue'
+  import EcosystemIcon from '@/components/icons/IconEcosystem.vue'
+  import CommunityIcon from '@/components/icons/IconCommunity.vue'
+  import SupportIcon from '@/components/icons/IconSupport.vue'
 </script>
+
 
 <template>
   <WelcomeItem>
     <template #icon>
-      <DocumentationIcon />
+      <DocumentationIcon/>
     </template>
+
     <template #heading>Documentation</template>
 
     Vue’s
@@ -23,20 +25,20 @@ import SupportIcon from './icons/IconSupport.vue'
     <template #icon>
       <ToolingIcon />
     </template>
+
     <template #heading>Tooling</template>
 
     This project is served and bundled with
-    <a href="https://vitejs.dev/guide/features.html" target="_blank" rel="noopener">Vite</a>. The
-    recommended IDE setup is
+    <a href="https://vitejs.dev/guide/features.html" target="_blank" rel="noopener">Vite</a>.
+    The recommended IDE setup is
     <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VSCode</a> +
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank" rel="noopener">Volar</a>. If
-    you need to test your components and web pages, check out
+    <a href="https://github.com/johnsoncodehk/volar" target="_blank" rel="noopener">Volar</a>.
+    If you need to test your components and web pages, check out
     <a href="https://www.cypress.io/" target="_blank" rel="noopener">Cypress</a> and
-    <a href="https://on.cypress.io/component" target="_blank" rel="noopener"
-      >Cypress Component Testing</a
-    >.
+    <a href="https://on.cypress.io/component" target="_blank" rel="noopener">Cypress Component
+    Testing</a>.
 
-    <br />
+    <br/>
 
     More instructions are available in <code>README.md</code>.
   </WelcomeItem>
@@ -45,6 +47,7 @@ import SupportIcon from './icons/IconSupport.vue'
     <template #icon>
       <EcosystemIcon />
     </template>
+
     <template #heading>Ecosystem</template>
 
     Get official tools and libraries for your project:
@@ -61,6 +64,7 @@ import SupportIcon from './icons/IconSupport.vue'
     <template #icon>
       <CommunityIcon />
     </template>
+
     <template #heading>Community</template>
 
     Got stuck? Ask your question on
@@ -79,6 +83,7 @@ import SupportIcon from './icons/IconSupport.vue'
     <template #icon>
       <SupportIcon />
     </template>
+
     <template #heading>Support Vue</template>
 
     As an independent project, Vue relies on community backing for its sustainability. You can help
