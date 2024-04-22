@@ -22,6 +22,12 @@ const router = createRouter({
     },
 
     {
+      path: '/about',
+      name: 'about',
+      component: () => import('@/views/AboutView.vue')
+    },
+
+    {
       path: '/list',
       name: 'list',
       component: ListView
@@ -36,7 +42,7 @@ const router = createRouter({
         {
           path: '',
           name: 'project',
-          redirect: {name: 'description'}
+          redirect: { name: 'description' }
         },
 
         {

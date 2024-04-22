@@ -1,5 +1,5 @@
 <script setup>
-  import { RouterLink, RouterView } from 'vue-router'
+  import { RouterView } from 'vue-router'
   import TheHeader from '@/components/TheHeader.vue'
   import TheFooter from '@/components/TheFooter.vue'
 </script>
@@ -18,6 +18,8 @@
 
 <style scoped>
 
-
+  main {
+    flex: 1;
+  }
 
 </style>

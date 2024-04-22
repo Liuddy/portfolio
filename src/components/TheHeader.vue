@@ -6,9 +6,10 @@
 <template>
   <header>
     <nav>
-      <RouterLink to="{ name: 'home' }">Accueil</RouterLink>
-      <RouterLink to="{ name: 'list' }">Projets</RouterLink>
-      <RouterLink to="{ name: 'contact' }">Contact</RouterLink>
+      <RouterLink :to="{ name: 'home' }">Accueil</RouterLink>
+      <RouterLink :to="{ name: 'list' }">Projets</RouterLink>
+      <RouterLink :to="{ name: 'contact' }">Contact</RouterLink>
+      <RouterLink :to="{ name: 'about' }">À propos</RouterLink>
     </nav>
   </header>
 </template>
@@ -17,21 +18,24 @@
 <style scoped>
 
   header {
+    display: flex;
+    flex-direction: row;
     line-height: 1.5;
+    margin-bottom: 2rem;
     max-height: 100vh;
+    place-items: center;
   }
 
   nav {
-    width: 100%;
-    font-size: 12px;
+    font-size: 1rem;
     text-align: center;
-    margin-top: 2rem;
+    width: 100%;
   }
 
   nav a {
+    border-left: 1px solid var(--color-border);
     display: inline-block;
     padding: 0 1rem;
-    border-left: 1px solid var(--color-border);
 
     &:first-of-type {
       border: 0;
@@ -44,25 +48,6 @@
     &:hover {
       background-color: transparent;
     }
-  }
-
-  @media (min-width: 1024px) {
-
-    header {
-      display: flex;
-      place-items: center;
-      padding-right: calc(var(--section-gap) / 2);
-    }
-
-    nav {
-      text-align: left;
-      margin-left: -1rem;
-      font-size: 1rem;
-
-      padding: 1rem 0;
-      margin-top: 1rem;
-    }
-
   }
 
 </style>
