@@ -79,8 +79,8 @@ body {
   font-size: 15px;
   line-height: 1.6;
   min-height: 100vh;
+  min-width: 100vw;
   place-items: center;
-  text-align: justify;
   text-rendering: optimizeLegibility;
   transition:
     color 0.5s,

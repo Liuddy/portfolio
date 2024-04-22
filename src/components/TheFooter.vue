@@ -10,7 +10,9 @@
   footer {
     display: flex;
     flex-direction: row;
+    line-height: 1.4;
     margin-top: 2rem;
+    place-items: center;
   }
 
 </style>

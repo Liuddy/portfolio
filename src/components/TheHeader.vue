@@ -22,7 +22,6 @@
     flex-direction: row;
     line-height: 1.5;
     margin-bottom: 2rem;
-    max-height: 100vh;
     place-items: center;
   }
 

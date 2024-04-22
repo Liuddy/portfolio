@@ -6,7 +6,7 @@
 
 
 <template>
-  <TheHeader/>
+  <TheHeader v-if="$route.name !== 'home'"/>
 
   <main>
     <RouterView/>
@@ -20,6 +20,7 @@
 
   main {
     flex: 1;
+    min-width: 100%;
   }
 
 </style>
