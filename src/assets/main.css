@@ -16,7 +16,7 @@ p {
 }
 
 a {
-  color: hsla(160, 100%, 37%, 1);
+  color: var(--color-link);
   padding: 3px;
   text-decoration: none;
   transition: 0.4s;
@@ -25,7 +25,8 @@ a {
 @media (hover: hover) {
 
   a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+    color: var(--color-text);
+    background-color: var(--color-link);
   }
 
 }

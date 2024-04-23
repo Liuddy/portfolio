@@ -6,7 +6,7 @@
 
 
 <template>
-  <TheHeader v-if="$route.name !== 'home'"/>
+  <TheHeader/>
 
   <main>
     <RouterView/>

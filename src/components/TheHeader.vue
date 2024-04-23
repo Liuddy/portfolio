@@ -1,11 +1,16 @@
 <script setup>
   import { RouterLink } from 'vue-router'
+  import { storeToRefs } from 'pinia'
+  import { useStore } from '@/stores/PreferenceStore.js'
+
+  const store = useStore()
+  store.$switch() // TODO: changer à l'aide d'un bouton réactif
 </script>
 
 
 <template>
   <header>
-    <nav>
+    <nav v-if="$route.name !== 'home'">
       <RouterLink :to="{ name: 'home' }">Accueil</RouterLink>
       <RouterLink :to="{ name: 'list' }">Projets</RouterLink>
       <RouterLink :to="{ name: 'contact' }">Contact</RouterLink>
@@ -32,7 +37,7 @@
   }
 
   nav a {
-    border-left: 1px solid var(--color-border);
+    border-left: 1px solid var(--color-background);
     display: inline-block;
     padding: 0 1rem;
 
