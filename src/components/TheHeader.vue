@@ -28,29 +28,29 @@
     line-height: 1.5;
     margin-bottom: 2rem;
     place-items: center;
-  }
 
-  nav {
-    font-size: 1rem;
-    text-align: center;
-    width: 100%;
-  }
+    & nav {
+      font-size: 1rem;
+      text-align: center;
+      width: 100%;
 
-  nav a {
-    border-left: 1px solid var(--color-background);
-    display: inline-block;
-    padding: 0 1rem;
+      & a {
+        border-left: 1px solid var(--color-background);
+        display: inline-block;
+        padding: 0 1rem;
 
-    &:first-of-type {
-      border: 0;
-    }
-  }
+        &:first-of-type {
+          border: 0;
+        }
+      }
 
-  nav a.router-link-exact-active {
-    color: var(--color-text);
+      & a.router-link-exact-active {
+        color: var(--color-text);
 
-    &:hover {
-      background-color: transparent;
+        &:hover {
+          background-color: transparent;
+        }
+      }
     }
   }
 

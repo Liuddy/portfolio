@@ -7,6 +7,9 @@
   const store = useStore()
   const { preferredTheme } = storeToRefs(store)
 
+  const body = document.getElementsByTagName('body')[0]
+  body.id = 'home'
+
   const listHover = ref(false)
   const contactHover = ref(false)
   const aboutHover = ref(false)
@@ -69,6 +72,15 @@
 </template>
 
 
+<style>
+  
+  body#home {
+    overflow: hidden;
+  }
+
+</style>
+
+
 <style scoped>
   
   div#logoBox {
@@ -81,11 +93,11 @@
       opacity: 0;
 
       &:first-child {
-        animation: fadeUp 1.5s ease-in-out 0.5s both;
+        animation: fadeUp 2.25s ease-in-out 0.25s both;
       }
 
       &:nth-child(2) {
-        animation: fadeUp 1.5s ease-in-out 1.5s both;
+        animation: fadeUp 2.5s ease-in-out 0.75s both;
       }
     }
   }
@@ -105,11 +117,11 @@
       width: 150px;
 
       &:first-child {
-        animation: slideUp 1s ease-in-out 3s backwards;
+        animation: slideUp 1s ease-in-out 1.75s backwards;
       }
 
       &:nth-child(2) {
-        animation: slideUp 1s ease-in-out 3.5s backwards;
+        animation: slideUp 1s ease-in-out 2.25s backwards;
 
         & div {
           background-color: var(--color-elt-orange);
@@ -117,7 +129,7 @@
       }
 
       &:last-child {
-        animation: slideUp 1s ease-in-out 4s backwards;
+        animation: slideUp 1s ease-in-out 2.75s backwards;
       }
 
       &:hover {
@@ -128,7 +140,7 @@
     & div {
       background-color: var(--color-elt-blue);
       border-radius: 50%;
-      box-shadow: inset 0 0 45px rgba(255, 255, 255, 0.1), 0 12px 20px -10px rgba(0, 0, 0, 0.5);
+      box-shadow: inset 0 0 45px rgba(255, 255, 255, 0.1), 0 12px 20px -10px rgba(0, 0, 0, 1);
       display: flex;
       height: 150px;
       text-align: center;
@@ -146,10 +158,16 @@
     }
   }
 
+
+  /* Title animation */
   @keyframes fadeUp {
 
     from {
       margin-top: 40%;
+      opacity: 0;
+    }
+
+    25% {
       opacity: 0;
     }
 
@@ -168,6 +186,7 @@
 
   }
 
+  /* Buttons animation */
   @keyframes slideUp {
 
     from {
@@ -188,6 +207,7 @@
 
   }
 
+
   @media (hover: hover) {
 
     div#buttonBox div {
@@ -198,6 +218,7 @@
       }
     }
 
+    /* Button animation on hover out */
     @keyframes turnOut {
 
       from {
@@ -210,6 +231,7 @@
 
     }
 
+    /* Button animation on hover in */
     @keyframes turnIn {
 
       from {
