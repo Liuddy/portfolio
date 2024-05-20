@@ -22,15 +22,11 @@
 }
 
 /* Website colors based on user preferences (dark) */
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
+  --color-background: var(--c-background-dark);
 
-  :root {
-    --color-background: var(--c-background-dark);
-
-    --color-text: var(--c-text-white);
-    --color-link: var(--c-elt-orange);
-  }
-  
+  --color-text: var(--c-text-white);
+  --color-link: var(--c-elt-orange);
 }
 
 

@@ -4,36 +4,18 @@
   import { storeToRefs } from 'pinia'
   import { useStore } from '@/stores/PreferenceStore.js'
 
+  document.getElementsByTagName('body')[0].id = 'home'
+  document.getElementsByTagName('header')[0].className = 'homeFade'
+  document.getElementsByTagName('footer')[0].className = 'homeFade'
+
   const store = useStore()
   const { preferredTheme } = storeToRefs(store)
 
-  const body = document.getElementsByTagName('body')[0]
-  body.id = 'home'
+  const btnHover = ref('none')
 
-  const listHover = ref(false)
-  const contactHover = ref(false)
-  const aboutHover = ref(false)
-
-  function asyncChange(component, hover) {
+  function asyncChange(component) {
     setTimeout(() => {
-
-      switch(component) {
-        case 'list':
-          listHover.value = hover
-          break
-
-        case 'contact':
-          contactHover.value = hover
-          break
-
-        case 'about':
-          aboutHover.value = hover
-          break
-
-        default:
-          break
-      }
-
+      btnHover.value = component
     }, 250)
   }
 </script>
@@ -48,23 +30,23 @@
   <div id="buttonBox">
 
     <RouterLink :to="{ name: 'list' }">
-      <div @mouseover="asyncChange('list', true)" @mouseleave="asyncChange('list', false)">
-        <p v-if="!listHover">Projets</p>
-        <p class="desc" v-if="listHover">BLALBLALAL</p>
+      <div @mouseover="asyncChange('list')" @mouseleave="asyncChange('none')">
+        <p v-if="btnHover != 'list'">Projets</p>
+        <p class="desc" v-if="btnHover === 'list'">Une liste de mes projets avec un système de filtre et de recherche.</p>
       </div>
     </RouterLink>
 
     <RouterLink :to="{ name: 'contact' }">
-      <div @mouseover="asyncChange('contact', true)" @mouseleave="asyncChange('contact', false)">
-        <p v-if="!contactHover">Contact</p>
-        <p class="desc" v-if="contactHover">BLALBLALAL</p>
+      <div @mouseover="asyncChange('contact')" @mouseleave="asyncChange('none')">
+        <p v-if="btnHover != 'contact'">Contact</p>
+        <p class="desc" v-if="btnHover === 'contact'">Un formulaire pour prendre contact avec moi via mail.</p>
       </div>
     </RouterLink>
 
     <RouterLink :to="{ name: 'about' }">
-      <div @mouseover="asyncChange('about', true)" @mouseleave="asyncChange('about', false)">
-        <p v-if="!aboutHover">À propos</p>
-        <p class="desc" v-if="aboutHover">BLALBLALAL</p>
+      <div @mouseover="asyncChange('about')" @mouseleave="asyncChange('none')">
+        <p v-if="btnHover != 'about'">À propos</p>
+        <p class="desc" v-if="btnHover === 'about'">Un peu plus d'informations sur ce site web et moi-même.</p>
       </div>
     </RouterLink>
 
@@ -76,6 +58,23 @@
   
   body#home {
     overflow: hidden;
+
+    & .homeFade {
+      animation: fadeIn 1s 4s both;
+      opacity: 0;
+    }
+  }
+
+  @keyframes fadeIn {
+
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+
   }
 
 </style>
@@ -99,7 +98,9 @@
       &:nth-child(2) {
         animation: fadeUp 2.5s ease-in-out 0.75s both;
       }
+
     }
+
   }
 
   div#buttonBox {
@@ -126,6 +127,7 @@
         & div {
           background-color: var(--color-elt-orange);
         }
+
       }
 
       &:last-child {
@@ -135,29 +137,33 @@
       &:hover {
         background-color: transparent;
       }
-    }
 
-    & div {
-      background-color: var(--color-elt-blue);
-      border-radius: 50%;
-      box-shadow: inset 0 0 45px rgba(255, 255, 255, 0.1), 0 12px 20px -10px rgba(0, 0, 0, 1);
-      display: flex;
-      height: 150px;
-      text-align: center;
-      width: 150px;
-    }
+      & div {
+        background-color: var(--color-elt-blue);
+        border-radius: 50%;
+        box-shadow: inset 0 0 45px rgba(255, 255, 255, 0.1), 0 12px 20px -10px rgba(0, 0, 0, 1);
+        display: flex;
+        height: 150px;
+        width: 150px;
 
-    & p {
-      margin: auto;
-      padding-bottom: 0.1rem;
-      padding-right: 0.1rem;
+        & p {
+          font-weight: bold;
+          margin: auto;
+          padding: 9px;
+          text-align: center;
 
-      &.desc {
-        transform: rotateY(180deg);
+          &.desc {
+            font-weight: normal;
+            transform: rotateY(180deg);
+          }
+
+        }
+
       }
-    }
-  }
 
+    }
+
+  }
 
   /* Title animation */
   @keyframes fadeUp {
@@ -207,7 +213,6 @@
 
   }
 
-
   @media (hover: hover) {
 
     div#buttonBox div {
@@ -216,6 +221,7 @@
       &:hover {
         animation: turnIn 0.6s ease-in-out forwards;
       }
+
     }
 
     /* Button animation on hover out */
