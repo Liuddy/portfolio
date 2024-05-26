@@ -49,12 +49,12 @@
       width: 100%;
 
       & a {
-        border-left: 1px solid var(--color-background);
         display: inline-block;
+        margin-left: 1px;
         padding: 0 1rem;
 
         &:first-of-type {
-          border: 0;
+          margin-left: 0;
         }
 
         &.router-link-exact-active {

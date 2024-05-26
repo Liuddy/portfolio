@@ -1,5 +1,4 @@
 <script setup>
-  import { ref } from 'vue'
   import { RouterLink } from 'vue-router'
   import { storeToRefs } from 'pinia'
   import { useStore } from '@/stores/PreferenceStore.js'
@@ -8,16 +7,7 @@
   document.getElementsByTagName('header')[0].className = 'homeFade'
   document.getElementsByTagName('footer')[0].className = 'homeFade'
 
-  const store = useStore()
-  const { preferredTheme } = storeToRefs(store)
-
-  const btnHover = ref('none')
-
-  function asyncChange(component) {
-    setTimeout(() => {
-      btnHover.value = component
-    }, 250)
-  }
+  const { preferredTheme } = storeToRefs(useStore())
 </script>
 
 
@@ -30,23 +20,20 @@
   <div id="buttonBox">
 
     <RouterLink :to="{ name: 'list' }">
-      <div @mouseover="asyncChange('list')" @mouseleave="asyncChange('none')">
-        <p v-if="btnHover != 'list'">Projets</p>
-        <p class="desc" v-if="btnHover === 'list'">Une liste de mes projets avec un système de filtre et de recherche.</p>
+      <div>
+        <p>PROJETS</p>
       </div>
     </RouterLink>
 
     <RouterLink :to="{ name: 'contact' }">
-      <div @mouseover="asyncChange('contact')" @mouseleave="asyncChange('none')">
-        <p v-if="btnHover != 'contact'">Contact</p>
-        <p class="desc" v-if="btnHover === 'contact'">Un formulaire pour prendre contact avec moi via mail.</p>
+      <div>
+        <p>CONTACT</p>
       </div>
     </RouterLink>
 
     <RouterLink :to="{ name: 'about' }">
-      <div @mouseover="asyncChange('about')" @mouseleave="asyncChange('none')">
-        <p v-if="btnHover != 'about'">À propos</p>
-        <p class="desc" v-if="btnHover === 'about'">Un peu plus d'informations sur ce site web et moi-même.</p>
+      <div>
+        <p>À PROPOS</p>
       </div>
     </RouterLink>
 
@@ -147,16 +134,11 @@
         width: 150px;
 
         & p {
+          font-size: 1.1rem;
           font-weight: bold;
           margin: auto;
           padding: 9px;
           text-align: center;
-
-          &.desc {
-            font-weight: normal;
-            transform: rotateY(180deg);
-          }
-
         }
 
       }
@@ -199,16 +181,28 @@
       margin-top: 100%;
     }
 
-    98% {
-      margin-top: -1%;
+    89% {
+      transform: scale(1);
     }
 
-    99% {
+    90% {
+      margin-top: -1%;
+      transform: scale(1.05, 0.95);
+    }
+
+    93% {
+      margin-top: -1%;
+      transform: scale(1.1, 0.9);
+    }
+
+    97% {
       margin-top: 1%;
+      transform: scale(0.95, 1.05);
     }
 
     to {
       margin-top: 0%;
+      transform: scale(1);
     }
 
   }
@@ -220,6 +214,10 @@
 
       &:hover {
         animation: turnIn 0.6s ease-in-out forwards;
+
+        & p {
+          animation: turnIn 0.6s ease-in-out forwards;
+        }
       }
 
     }
