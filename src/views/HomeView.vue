@@ -128,7 +128,7 @@
       & div {
         background-color: var(--color-elt-blue);
         border-radius: 50%;
-        box-shadow: inset 0 0 45px rgba(255, 255, 255, 0.1), 0 12px 20px -10px rgba(0, 0, 0, 1);
+        box-shadow: inset 0 0 45px rgba(255, 255, 255, 0.1), 0 12px 20px -10px black;
         display: flex;
         height: 150px;
         width: 150px;

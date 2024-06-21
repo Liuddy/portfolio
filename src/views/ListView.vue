@@ -41,23 +41,29 @@
       align-self: center;
       border: 2px solid var(--color-link);
       border-radius: 30px;
-      box-shadow: 0 12px 20px -10px rgba(0, 0, 0, 1);
+      box-shadow: 0 12px 20px -10px black;
       color: var(--color-text);
       display: grid;
-      grid-template-columns: 45% 55%;
-      height: 220px;
+      grid-template-columns: 40% 60%;
+      height: 200px;
       margin: auto;
       padding: 0.5rem;
       width: 490px;
 
       &:hover {
         transform: scale(1.1);
+
+        & img {
+          background-color: rgba(255, 255, 255, 0.9);
+        }
+
       }
 
       & > img {
         border-radius: 20px;
-        height: 200px;
-        width: 200px;
+        height: 180px;
+        object-fit: contain;
+        width: 180px;
       }
 
       & div.contentBox {

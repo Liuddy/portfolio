@@ -8,5 +8,5 @@
 
 <template>
 	<h1>{{project.name}}</h1>
-	<div>{{project.content}}</div>
+	<div v-html="project.content"></div>
 </template>
