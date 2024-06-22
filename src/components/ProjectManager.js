@@ -23,7 +23,7 @@ projectObject.technologies = ['vuejs', 'vite']
 projectObject.description = `Site web me faisant office de portfolio, que vous consultez
 							actuellement. Il répertorie tous mes projets et fourni quelques
 							informations sur moi.`
-projectObject.illustration = 'portfolio_illu.png'
+projectObject.illustration = 'portfolio_illu'
 projectObject.content = `
 	<p>Étant dans le domaine de la programmation et appréciant le développement web,
 	lorsque je me suis lancé dans la réalisation de mon portfolio, je me suis immédiatement
@@ -45,7 +45,7 @@ projectObject.technologies = ['java', 'php']
 projectObject.description = `Jeu vidéo de course réalisé en équipe lors d'une SAÉ.
 							Nous avons conçu le moteur de jeu en Java, ainsi qu'un
 							site web mettant en avant le projet.`
-projectObject.illustration = '12cm3_illu.png'
+projectObject.illustration = '12cm3_illu'
 projectObject.content = `
 	<p style="font-weight: bold;">[Projet en cours de construction...]</p>
 `
@@ -57,7 +57,7 @@ projectObject.technologies = ['javascript', 'python']
 projectObject.description = `Application web open source ayant fait l'objet du stage
 							validant ma seconde année de formation. Elle est utilisée
 							pour le suivi pédagogique en université.`
-projectObject.illustration = 'tomuss_illu.png'
+projectObject.illustration = 'tomuss_illu'
 projectObject.content = `
 	<p style="font-weight: bold;">[Projet en cours de construction...]</p>
 `

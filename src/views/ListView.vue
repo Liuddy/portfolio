@@ -4,6 +4,37 @@
   document.getElementsByTagName('body')[0].id = ''
   document.getElementsByTagName('header')[0].className = ''
   document.getElementsByTagName('footer')[0].className = ''
+
+  const imagesPath = []
+  import portfolio_illu from '@/assets/images/portfolio_illu.png'
+  imagesPath.push(portfolio_illu)
+  import cm_illu from '@/assets/images/12cm3_illu.png'
+  imagesPath.push(cm_illu)
+  import tomuss_illu from '@/assets/images/tomuss_illu.png'
+  imagesPath.push(tomuss_illu)
+
+  const iconsPath = []
+  import java from '@/assets/icons/java.png'
+  iconsPath.push(java)
+  import javascript from '@/assets/icons/javascript.png'
+  iconsPath.push(javascript)
+  import php from '@/assets/icons/php.png'
+  iconsPath.push(php)
+  import python from '@/assets/icons/python.png'
+  iconsPath.push(python)
+  import vite from '@/assets/icons/vite.png'
+  iconsPath.push(vite)
+  import vuejs from '@/assets/icons/vuejs.png'
+  iconsPath.push(vuejs)
+
+  function getImgPath(type, name) {
+    let folder = type === 'icons' ? iconsPath : imagesPath
+    for (let src of folder) {
+      let path = src.split('/')
+      if (path[path.length - 1].split('.')[0].includes(name))
+        return src
+    }
+  }
 </script>
 
 
@@ -11,14 +42,14 @@
   <div id="projectList">
     <RouterLink v-for="project in projectList" :key="project.id"
     :to="{name: 'project', params: {id: project.id}}">
-      <img :src="`/src/assets/images/${project.illustration}`"
+      <img :src="getImgPath('images', project.illustration)"
       :alt="`Image d'illustration du projet ${project.name}`">
       <div class="contentBox">
         <p class="name">{{project.name}}</p>
         <p class="date">{{project.date}}</p>
         <div class="technologies">
           <img v-for="techIcon in project.technologies"
-          :src="`/src/assets/icons/${techIcon}.png`"
+          :src="getImgPath('icons', techIcon)"
           :alt="`Logo de ${techIcon}`">
         </div>
         <p class="description">{{project.description}}</p>

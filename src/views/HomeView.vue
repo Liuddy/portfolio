@@ -3,18 +3,30 @@
   import { storeToRefs } from 'pinia'
   import { useStore } from '@/stores/PreferenceStore.js'
 
+  import dark1 from '@/assets/logo/dark1.png'
+  import dark2 from '@/assets/logo/dark2.png'
+  import light1 from '@/assets/logo/light1.png'
+  import light2 from '@/assets/logo/light2.png'
+
   document.getElementsByTagName('body')[0].id = 'home'
   document.getElementsByTagName('header')[0].className = 'homeFade'
   document.getElementsByTagName('footer')[0].className = 'homeFade'
 
   const { preferredTheme } = storeToRefs(useStore())
+
+  function getLogoPath() {
+    if (preferredTheme.value === 'dark')
+      return [dark1, dark2]
+    else
+      return [light1, light2]
+  }
 </script>
 
 
 <template>
   <div id="logoBox">
-    <img :src="`/src/assets/images/logo_${preferredTheme}_1.png`" :alt="`Partie 1 du logo version ${preferredTheme}`">
-    <img :src="`/src/assets/images/logo_${preferredTheme}_2.png`" :alt="`Partie 2 du logo version ${preferredTheme}`">
+    <img :src="getLogoPath()[0]" :alt="`Partie 1 du logo version ${preferredTheme}`">
+    <img :src="getLogoPath()[1]" :alt="`Partie 2 du logo version ${preferredTheme}`">
   </div>
 
   <div id="buttonBox">
