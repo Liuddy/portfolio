@@ -60,6 +60,7 @@ projectObject.description = `Application web open source ayant fait l'objet du s
 projectObject.illustration = 'tomuss_illu'
 projectObject.content = `
 	<p style="font-weight: bold;">[Projet en cours de construction...]</p>
+	<p>Dans le cadre de ma deuxième année de formation en BUT Informatique.</p>
 `
 projectList.push(projectObject)
 
