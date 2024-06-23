@@ -15,10 +15,7 @@
   const { preferredTheme } = storeToRefs(useStore())
 
   function getLogoPath() {
-    if (preferredTheme.value === 'dark')
-      return [dark1, dark2]
-    else
-      return [light1, light2]
+    return preferredTheme.value === 'dark' ? [dark1, dark2] : [light1, light2]
   }
 </script>
 
@@ -31,7 +28,7 @@
 
   <div id="buttonBox">
 
-    <RouterLink :to="{ name: 'list' }">
+    <RouterLink :to="{ name: 'project' }">
       <div>
         <p>PROJETS</p>
       </div>
@@ -66,13 +63,9 @@
 
   @keyframes fadeIn {
 
-    from {
-      opacity: 0;
-    }
+    from { opacity: 0; }
 
-    to {
-      opacity: 1;
-    }
+    to { opacity: 1; }
 
   }
 
@@ -88,15 +81,12 @@
     place-items: center;
 
     & img {
+      object-fit: contain;
       opacity: 0;
 
-      &:first-child {
-        animation: fadeUp 2.25s ease-in-out 0.25s both;
-      }
+      &:first-child { animation: fadeUp 2.25s ease-in-out 0.25s both; }
 
-      &:nth-child(2) {
-        animation: fadeUp 2.5s ease-in-out 0.75s both;
-      }
+      &:nth-child(2) { animation: fadeUp 2.25s ease-in-out 0.75s both; }
 
     }
 
@@ -116,26 +106,18 @@
       padding: 0;
       width: 150px;
 
-      &:first-child {
-        animation: slideUp 1s ease-in-out 1.75s backwards;
-      }
+      &:first-child { animation: slideUp 1s ease-in-out 1.75s backwards; }
 
       &:nth-child(2) {
         animation: slideUp 1s ease-in-out 2.25s backwards;
 
-        & div {
-          background-color: var(--color-elt-orange);
-        }
+        & div { background-color: var(--color-elt-orange); }
 
       }
 
-      &:last-child {
-        animation: slideUp 1s ease-in-out 2.75s backwards;
-      }
+      &:last-child { animation: slideUp 1s ease-in-out 2.75s backwards; }
 
-      &:hover {
-        background-color: transparent;
-      }
+      &:hover { background-color: transparent; }
 
       & div {
         background-color: var(--color-elt-blue);
@@ -167,17 +149,11 @@
       opacity: 0;
     }
 
-    25% {
-      opacity: 0;
-    }
+    25% { opacity: 0; }
 
-    50% {
-      margin-top: 0;
-    }
+    50% { margin-top: 0; }
 
-    95% {
-      opacity: 1;
-    }
+    95% { opacity: 1; }
 
     to {
       margin-top: 0;
@@ -189,13 +165,9 @@
   /* Buttons animation */
   @keyframes slideUp {
 
-    from {
-      margin-top: 100%;
-    }
+    from { margin-top: 100%; }
 
-    89% {
-      transform: scale(1);
-    }
+    89% { transform: scale(1); }
 
     90% {
       margin-top: -1%;
@@ -227,9 +199,7 @@
       &:hover {
         animation: turnIn 0.6s ease-in-out forwards;
 
-        & p {
-          animation: turnIn 0.6s ease-in-out forwards;
-        }
+        & p { animation: turnIn 0.6s ease-in-out forwards; }
       }
 
     }
@@ -237,26 +207,18 @@
     /* Button animation on hover out */
     @keyframes turnOut {
 
-      from {
-        transform: rotateY(0);
-      }
+      from { transform: rotateY(0); }
 
-      to {
-        transform: rotateY(360deg);
-      }
+      to { transform: rotateY(360deg); }
 
     }
 
     /* Button animation on hover in */
     @keyframes turnIn {
 
-      from {
-        transform: rotateY(0);
-      }
+      from { transform: rotateY(0); }
 
-      to {
-        transform: rotateY(180deg);
-      }
+      to { transform: rotateY(180deg); }
 
     }
 

@@ -60,6 +60,7 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   min-width: 100vw;
+  overflow-x: hidden;
   place-items: center;
   text-rendering: optimizeLegibility;
   transition:
@@ -82,9 +83,7 @@ div#app {
 }
 
 /* Global style for p elements */
-p {
-  text-align: justify;
-}
+p { text-align: justify; }
 
 /* Global style for a elements */
 a {

@@ -31,14 +31,11 @@ git clone https://github.com/Liuddy/portfolio
 - HomeView.vue: 
 - AboutView.vue: 
 - ContactView.vue: 
-- ListView.vue: 
 - ProjectView.vue: 
-	- DescriptionView.vue: 
-	- IllustrationView.vue: 
 
 - TheHeader.vue: 
 - TheFooter.vue: 
-- ProjectItem.vue: 
+- ProjectManager.js: 
 
 ## Contributing
 Contributions to correct or enhance the project are welcome. Feel free to fork the repository, make changes, and submit pull requests.

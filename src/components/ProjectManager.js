@@ -2,7 +2,8 @@ class Project {
 	static id = 0;
 	name = ''
 	date = ''
-	technologies = []
+	mainTech = []
+	allTech = []
 	description = ''
 	illustration = ''
 	content = ''
@@ -19,13 +20,15 @@ const projectList = []
 // Initiates an object for each of my projects.
 let projectObject = new Project('Portfolio')
 projectObject.date = '05/2024 - 06/2024'
-projectObject.technologies = ['vuejs', 'vite']
+projectObject.mainTech = ['vuejs', 'vite']
+projectObject.allTech = ['html', 'css', 'javascript', 'vuejs', 'vite']
 projectObject.description = `Site web me faisant office de portfolio, que vous consultez
 							actuellement. Il répertorie tous mes projets et fourni quelques
 							informations sur moi.`
 projectObject.illustration = 'portfolio_illu'
 projectObject.content = `
-	<p>Étant dans le domaine de la programmation et appréciant le développement web,
+	<p style="font-weight: bold; margin-bottom: 1rem;">[Projet en cours de construction...]</p>
+	<p style="margin-bottom: 1rem;">Étant dans le domaine de la programmation et appréciant le développement web,
 	lorsque je me suis lancé dans la réalisation de mon portfolio, je me suis immédiatement
 	tourné vers la conception d'un site web. Cette solution permet dans un premier temps
 	de mettre en œuvre et de montrer mes compétences en web, mais aussi de pouvoir partager
@@ -35,13 +38,13 @@ projectObject.content = `
 	ses compétences, je savais déjà que je n'aurai besoin que d'un langage agissant côté
 	client, en l'occurence JavaScript. Ce projet aurait tout aussi bien pu être réalisé
 	en HTML et CSS, mais je souhaitais ajouter un peu d'intéractivité avec le site.</p>
-	<p style="font-weight: bold;">[Projet en cours de construction...]</p>
 `
 projectList.push(projectObject)
 
 projectObject = new Project('12cm³')
 projectObject.date = '10/2023 - 02/2024'
-projectObject.technologies = ['java', 'php']
+projectObject.mainTech = ['java', 'sql', 'php']
+projectObject.allTech = ['java', 'sql', 'html', 'css', 'php', 'javascript']
 projectObject.description = `Jeu vidéo de course réalisé en équipe lors d'une SAÉ.
 							Nous avons conçu le moteur de jeu en Java, ainsi qu'un
 							site web mettant en avant le projet.`
@@ -53,13 +56,14 @@ projectList.push(projectObject)
 
 projectObject = new Project('TOMUSS')
 projectObject.date = '05/2024 - 07/2024'
-projectObject.technologies = ['javascript', 'python']
+projectObject.mainTech = ['javascript', 'python']
+projectObject.allTech = ['html', 'css', 'javascript', 'python']
 projectObject.description = `Application web open source ayant fait l'objet du stage
 							validant ma seconde année de formation. Elle est utilisée
 							pour le suivi pédagogique en université.`
 projectObject.illustration = 'tomuss_illu'
 projectObject.content = `
-	<p style="font-weight: bold;">[Projet en cours de construction...]</p>
+	<p style="font-weight: bold; margin-bottom: 1rem;">[Projet en cours de construction...]</p>
 	<p>Dans le cadre de ma deuxième année de formation en BUT Informatique.</p>
 `
 projectList.push(projectObject)

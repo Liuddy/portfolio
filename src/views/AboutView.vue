@@ -2,6 +2,38 @@
   document.getElementsByTagName('body')[0].id = ''
   document.getElementsByTagName('header')[0].className = ''
   document.getElementsByTagName('footer')[0].className = ''
+
+  const iconsPath = []
+  import c from '@/assets/icons/c.png'
+  iconsPath.push(c)
+  import css from '@/assets/icons/css.png'
+  iconsPath.push(css)
+  import html from '@/assets/icons/html.png'
+  iconsPath.push(html)
+  import java from '@/assets/icons/java.png'
+  iconsPath.push(java)
+  import javascript from '@/assets/icons/javascript.png'
+  iconsPath.push(javascript)
+  import php from '@/assets/icons/php.png'
+  iconsPath.push(php)
+  import python from '@/assets/icons/python.png'
+  iconsPath.push(python)
+  import sql from '@/assets/icons/sql.png'
+  iconsPath.push(sql)
+  import symfony from '@/assets/icons/symfony.png'
+  iconsPath.push(symfony)
+  import vite from '@/assets/icons/vite.png'
+  iconsPath.push(vite)
+  import vuejs from '@/assets/icons/vuejs.png'
+  iconsPath.push(vuejs)
+
+  function getIconPath(name) {
+    for (let src of iconsPath) {
+      let path = src.split('/')
+      if (path[path.length - 1].split('.')[0].includes(name))
+        return src
+    }
+  }
 </script>
 
 

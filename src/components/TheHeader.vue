@@ -16,7 +16,7 @@
   <header>
     <nav v-if="$route.name !== 'home'">
       <RouterLink :to="{ name: 'home' }">Accueil</RouterLink>
-      <RouterLink :to="{ name: 'list' }">Projets</RouterLink>
+      <RouterLink :to="{ name: 'project' }">Projets</RouterLink>
       <RouterLink :to="{ name: 'contact' }">Contact</RouterLink>
       <RouterLink :to="{ name: 'about' }">À propos</RouterLink>
     </nav>
@@ -53,16 +53,12 @@
         margin-left: 1px;
         padding: 0 1rem;
 
-        &:first-of-type {
-          margin-left: 0;
-        }
+        &:first-of-type { margin-left: 0; }
 
         &.router-link-exact-active {
           color: var(--color-text);
 
-          &:hover {
-            background-color: transparent;
-          }
+          &:hover { background-color: transparent; }
 
         }
 
@@ -83,20 +79,14 @@
         &:checked + span {
           background-color: var(--color-elt-orange);
 
-          &::before {
-            transform: translateX(18px);
-          }
+          &::before { transform: translateX(18px); }
 
           & i {
             transform: translateX(17.5px);
 
-            &.fa-sun {
-              visibility: hidden;
-            }
+            &.fa-sun { visibility: hidden; }
 
-            &.fa-moon {
-              visibility: visible;
-            }
+            &.fa-moon { visibility: visible; }
 
           }
 
@@ -135,13 +125,9 @@
           position: absolute;
           transition: transform 0.4s;
 
-          &.fa-sun {
-            visibility: visible;
-          }
+          &.fa-sun { visibility: visible; }
 
-          &.fa-moon {
-            visibility: hidden;
-          }
+          &.fa-moon { visibility: hidden; }
 
         }
         
