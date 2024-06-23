@@ -50,7 +50,9 @@ projectObject.description = `Jeu vidéo de course réalisé en équipe lors d'un
 							site web mettant en avant le projet.`
 projectObject.illustration = '12cm3_illu'
 projectObject.content = `
-	<p style="font-weight: bold;">[Projet en cours de construction...]</p>
+	<p style="font-weight: bold; margin-bottom: 1rem;">[Projet en cours de construction...]</p>
+	<p><a href="https://12cm3.shawiizz.dev/" target="_blank" style="margin-top: 1rem;
+	transition: 0s;">Site web du projet</a></p>
 `
 projectList.push(projectObject)
 
@@ -64,7 +66,17 @@ projectObject.description = `Application web open source ayant fait l'objet du s
 projectObject.illustration = 'tomuss_illu'
 projectObject.content = `
 	<p style="font-weight: bold; margin-bottom: 1rem;">[Projet en cours de construction...]</p>
-	<p>Dans le cadre de ma deuxième année de formation en BUT Informatique.</p>
+	<p style="margin-bottom: 1rem;">Afin de valider ma deuxième année de formation en BUT
+	Informatique, il m'a fallu trouver et effectuer un stage en entreprise dans le milieu de
+	la programmation. J'ai ainsi eu l'opportunité de travailler sur l'application web TOMUSS,
+	au sein même du département informatique de mon université.</p>
+	<p style="margin-bottom: 1rem;">Le sigle TOMUSS signifie « The Online Multi-User Simple
+	Spreadsheet », en français « Le Tableur en Ligne Simple et Multi-Utilisateur ». Il s'agit
+	d'une application web open source développée au sein de l'Université Lyon 1 permettant la
+	consultation et la modification de tableaux de données en simultané par plusieurs utilisateurs.
+	En bref, cette l'application sert au suivi pédagogique des étudiants sur tout le campus.</p>
+	<p><a href="https://perso.univ-lyon1.fr/thierry.excoffier/TOMUSS/home.html" target="_blank"
+	style="margin-top: 1rem; transition: 0s;">Documentation officielle de l'application</a></p>
 `
 projectList.push(projectObject)
 

@@ -102,7 +102,7 @@
       <div id="technologies"></div>
     </div>
   </div>
-  
+
 </template>
 
 
@@ -188,6 +188,7 @@
   }
 
   div#projectDiv {
+    backdrop-filter: blur(1px);
     background-color: rgba(10, 10, 10, 0.4);
     bottom: 0;
     min-height: 100vh;
@@ -252,6 +253,7 @@
       & div#technologies {
         display: flex;
         flex-direction: row;
+        margin-top: 2rem;
       }
 
     }

@@ -105,7 +105,7 @@
   <p>Bienvenue sur mon portfolio en ligne ! Moi, c'est Lomé Bordes, jeune développeur passionné
   de sites web et de jeux vidéo, connaissant aussi un grand intérêt pour la philosophie et
   certaines formes d'art. Actuellement, je suis étudiant à l'IUT Informatique de l'Université
-  Lyon 1, en seconde année.</p>
+  Lyon 1, en deuxième année.</p>
   <p>Le site web que vous consultez présentement (à ce propos, merci beaucoup) a été conçu
   dans le but de présenter chacun de mes projets significatifs et de donner un aperçu de ma
   personne. Les projets retenus ici sont majoritairement informatiques, mais certains projets
