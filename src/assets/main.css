@@ -2,6 +2,8 @@
 :root {
   --c-background-light: #fff9f4;
   --c-background-dark: #121e4b;
+  --c-background-light-darker: #faefe6;
+  --c-background-dark-darker: #0c1330;
 
   --c-elt-orange: #f57d1f;
   --c-elt-blue: #69bcc4;
@@ -13,6 +15,7 @@
 /* Website colors based on user preferences (light) */
 :root {
   --color-background: var(--c-background-light);
+  --color-background-darker: var(--c-background-light-darker);
 
   --color-elt-orange: var(--c-elt-orange);
   --color-elt-blue: var(--c-elt-blue);
@@ -24,6 +27,7 @@
 /* Website colors based on user preferences (dark) */
 [data-theme="dark"] {
   --color-background: var(--c-background-dark);
+  --color-background-darker: var(--c-background-dark-darker);
 
   --color-text: var(--c-text-white);
   --color-link: var(--c-elt-orange);

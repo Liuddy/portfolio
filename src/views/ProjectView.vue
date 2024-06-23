@@ -72,6 +72,7 @@
 
 
 <template>
+
   <div id="projectList">
     <div class="project" v-for="project in projectList" :key="project.id"
     @click="showProjectDiv(project.id)">
@@ -89,6 +90,7 @@
       </div>
     </div>
   </div>
+
   <div id="projectDiv" @click="hideProjectDiv()">
     <div>
       <h1></h1>
@@ -100,6 +102,7 @@
       <div id="technologies"></div>
     </div>
   </div>
+  
 </template>
 
 
