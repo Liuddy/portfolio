@@ -1,0 +1,1 @@
+import{a as e,o as t}from"./index-mt_x4yOp.js";const o={style:{"font-weight":"bold"}},m={__name:"ContactView",setup(a){return document.getElementsByTagName("body")[0].id="",document.getElementsByTagName("header")[0].className="",document.getElementsByTagName("footer")[0].className="",(n,s)=>(t(),e("p",o,"[Page en cours de construction...]"))}};export{m as default};
