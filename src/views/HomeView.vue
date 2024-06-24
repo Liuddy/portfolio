@@ -69,6 +69,14 @@
 
   }
 
+  @media (min-width: 1980px) {
+
+    body#home main {
+      zoom: 1.25;
+    }
+
+  }
+
 </style>
 
 

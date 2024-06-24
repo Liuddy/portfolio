@@ -110,7 +110,7 @@
 
   div#projectList {
     display: grid;
-    grid-gap: 1rem;
+    grid-gap: 1.5rem 2.5rem;
     grid-template-columns: 1fr 1fr;
     margin: 2rem 0;
     place-items: center;
@@ -125,9 +125,11 @@
       grid-template-columns: 40% 60%;
       height: 200px;
       margin: auto;
+      max-width: 600px;
+      min-width: 400px;
       padding: 0.5rem;
       transition: 0.4s;
-      width: 490px;
+      width: fit-content;
 
       &:hover {
         background-color: var(--color-link);
