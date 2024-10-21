@@ -1,21 +1,28 @@
 <script setup>
+  import { onMounted, onUnmounted } from 'vue'
   import { RouterLink } from 'vue-router'
   import { storeToRefs } from 'pinia'
   import { useStore } from '@/stores/PreferenceStore.js'
+  import { getImgPath } from '@/components/FileManager.js'
 
-  import dark1 from '@/assets/logo/dark1.png'
-  import dark2 from '@/assets/logo/dark2.png'
-  import light1 from '@/assets/logo/light1.png'
-  import light2 from '@/assets/logo/light2.png'
+  onMounted(() => {
+    document.getElementsByTagName('body')[0].id = 'home'
+    document.getElementsByTagName('header')[0].classList.add('homeFade')
+    document.getElementsByTagName('footer')[0].classList.add('homeFade')
+  })
 
-  document.getElementsByTagName('body')[0].id = 'home'
-  document.getElementsByTagName('header')[0].className = 'homeFade'
-  document.getElementsByTagName('footer')[0].className = 'homeFade'
+  onUnmounted(() => {
+    document.getElementsByTagName('body')[0].id = ''
+    document.getElementsByTagName('header')[0].classList.remove('homeFade')
+    document.getElementsByTagName('footer')[0].classList.remove('homeFade')
+  })
 
   const { preferredTheme } = storeToRefs(useStore())
 
   function getLogoPath() {
-    return preferredTheme.value === 'dark' ? [dark1, dark2] : [light1, light2]
+    return preferredTheme.value === 'dark'
+      ? [getImgPath('logo', 'dark1'), getImgPath('logo', 'dark2')]
+      : [getImgPath('logo', 'light1'), getImgPath('logo', 'light2')]
   }
 </script>
 
