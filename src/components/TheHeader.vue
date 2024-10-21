@@ -6,7 +6,7 @@
   const store = useStore()
 
   onMounted(() => {
-    if (window.matchMedia('(prefers-color-scheme: dark)'))
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches)
       document.getElementById('switchBtn').click()
   })
 </script>
@@ -24,8 +24,8 @@
     <label>
       <input id="switchBtn" type="checkbox" @change="store.$switchTheme()">
       <span>
-        <i class="fas fa-solid fa-sun"></i>
-        <i class="fas fa-solid fa-moon"></i>
+        <i class="sun">&#9788;</i>
+        <i class="moon">&#9789;</i>
       </span>
     </label>
   </header>
@@ -82,11 +82,12 @@
           &::before { transform: translateX(18px); }
 
           & i {
+            left: 7px;
             transform: translateX(17.5px);
 
-            &.fa-sun { visibility: hidden; }
+            &.sun { visibility: hidden; }
 
-            &.fa-moon { visibility: visible; }
+            &.moon { visibility: visible; }
 
           }
 
@@ -119,15 +120,16 @@
         }
 
         & i {
-          bottom: 3px;
+          bottom: 0px;
           font-size: 14px;
-          left: 3px;
+          font-weight: bold;
+          left: 2.5px;
           position: absolute;
           transition: transform 0.4s;
 
-          &.fa-sun { visibility: visible; }
+          &.sun { visibility: visible; }
 
-          &.fa-moon { visibility: hidden; }
+          &.moon { visibility: hidden; }
 
         }
         
