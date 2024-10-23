@@ -12,7 +12,7 @@
                   + '" alt="Logo de ' + techIcon
                   + '" style="height: 90px; border-radius: 10px; margin: auto; width: 90px;">'
     projectDiv.getElementsByTagName('h1')[0].innerHTML = project.name
-    document.getElementById('date').innerHTML = project.date
+    document.getElementById('date').innerHTML = project.date[0] + ' - ' + project.date[1]
     document.getElementById('illustration').src = projectImg.src
     document.getElementById('illustration').alt = projectImg.alt
     document.getElementById('content').innerHTML = project.content
@@ -33,16 +33,16 @@
     <div class="project" v-for="project in projectList" :key="project.id"
     @click="showProjectDiv(project.id)">
       <img :src="getImgPath('images', project.illustration)"
-      :alt="`Image d'illustration du projet ${project.name}`">
+      :alt="`Image d'illustration du projet ${ project.name }`">
       <div class="contentBox">
-        <p class="name">{{project.name}}</p>
-        <p class="date">{{project.date}}</p>
+        <p class="name">{{ project.name }}</p>
+        <p class="date">{{ project.date[0] + ' - ' + project.date[1] }}</p>
         <div class="technologies">
           <img v-for="techIcon in project.mainTech"
           :src="getImgPath('icons', techIcon)"
-          :alt="`Logo de ${techIcon}`">
+          :alt="`Logo de ${ techIcon }`">
         </div>
-        <p class="description">{{project.description}}</p>
+        <p class="description">{{ project.description }}</p>
       </div>
     </div>
   </div>

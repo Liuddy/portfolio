@@ -24,8 +24,8 @@
     <label>
       <input id="switchBtn" type="checkbox" @change="store.$switchTheme()">
       <span>
-        <i class="sun">&#9788;</i>
-        <i class="moon">&#9789;</i>
+        <p class="sun">&#9788;</p>
+        <p class="moon">&#9789;</p>
       </span>
     </label>
   </header>
@@ -81,9 +81,8 @@
 
           &::before { transform: translateX(18px); }
 
-          & i {
-            left: 7px;
-            transform: translateX(17.5px);
+          & p {
+            transform: translateX(23px);
 
             &.sun { visibility: hidden; }
 
@@ -119,13 +118,13 @@
           width: 16px;
         }
 
-        & i {
-          bottom: 0px;
+        & p {
+          bottom: -0.4px;
           font-size: 14px;
           font-weight: bold;
           left: 2.5px;
           position: absolute;
-          transition: transform 0.4s;
+          transition: transform 0.35s;
 
           &.sun { visibility: visible; }
 

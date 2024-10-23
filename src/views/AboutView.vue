@@ -24,9 +24,9 @@
   je sais avoir acquis durant ces deux dernières.</p>
   <div id="skillFlex">
     <div v-for="skillList in skillTab">
-      <p @click="switchClassList()">{{skillList[0]}}</p>
+      <p @click="switchClassList()">{{ skillList[0] }}</p>
       <ul class="collapsed">
-        <li v-for="skill in skillList.slice(1)">{{skill}}</li>
+        <li v-for="skill in skillList.slice(1)">{{ skill }}</li>
       </ul>
     </div>
   </div>

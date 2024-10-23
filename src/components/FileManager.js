@@ -47,23 +47,19 @@ iconsPath.push(vuejs)
 const filesPath = []
 import cv_pdf from '@/assets/files/cv_bordes_lome.pdf'
 filesPath.push(cv_pdf)
+import twelve_cm_cube from '@/assets/files/12cm3_notice.pdf'
+filesPath.push(twelve_cm_cube)
 
 function getImgPath(type, name) {
   let folder = ''
-  switch (type) {
-    case 'logo':
+  if(type === 'logo')
       folder = logoPath
-      break
-    case 'images':
+  else if (type === 'images')
       folder = imagesPath
-      break
-    case 'icons':
+  else if (type === 'icons')
       folder = iconsPath
-      break
-    case 'files':
+  else if (type ===  'files')
       folder = filesPath
-      break
-  }
   for (let src of folder) {
     let path = src.split('/')
     if (path[path.length - 1].split('.')[0].includes(name))

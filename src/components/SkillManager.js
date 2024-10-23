@@ -1,60 +1,67 @@
 const skillTab = []
-let skillList = ['Compétence 1 : Réalisation d\'application',
-                'Maîtriser différents types de programmation (itératif, récursif, programmation orientée objet)',
-                'Maîtriser différents langages de programmation (C, Java, Python, PL/SQL, HTML, CSS, PHP, JavaScript)',
-                'Réaliser un programme pour résoudre un problème donné',
-                'Choisir une structure de données adaptée',
-                'Écrire un code lisible et correct',
-                'Réaliser des phases de tests',
-                'Utiliser et créer des API']
+let skillList = ['Réaliser une application',
+  'Maîtriser différents types de programmation',
+  'Maîtriser différents langages de programmation',
+  'Appréhender les différents niveaux de langage',
+  'Réaliser un programme pour résoudre un problème',
+  'Choisir une structure de données adaptée']
 skillTab.push(skillList)
 
-skillList = ['Compétence 2 : Optimiser des applications informatiques',
-            'Analyser un problème',
-            'Utiliser des outils mathématiques dans l\'informatique',
-            'Appréhender les différents niveaux de langage',
-            'Utiliser des techniques algorithmiques adaptées',
-            'Comprendre les enjeux et l\'impact d\'un algorithme',
-            'Anticiper les résultats d\'un algorithme',
-            'Optimiser des algorithmes']
+skillList = ['Optimiser une application',
+  'Utiliser des techniques algorithmiques adaptées',
+  'Comprendre les enjeux et l\'impact d\'un algorithme',
+  'Respecter les contraintes de performance, de coût et d\'éfficacité',
+  'Anticiper les résultats d\'un algorithme',
+  'Optimiser un algorithme']
 skillTab.push(skillList)
 
-skillList = ['Compétence 3 : Administrer des systèmes informatiques communicants complexes',
-            'Maîtriser l\'architecture des systèmes',
-            'Installer et configurer un système d\'exploitation et des outils de programmation',
-            'Concevoir des applications communicantes par réseau',
-            'Appliquer les obligations légales, normes et bonnes pratiques',
-            'Mettre en œuvre les corrections et solutions adaptées',
-            'Respecter les contraintes de performances, de coûts et d\'éfficacité',
-            'Assurer la pérennité du code',
-            'Rédiger des documentations']
+skillList = ['Maintenir une application',
+  'Écrire un code lisible et correct',
+  'Réaliser des phases de tests',
+  'Mettre en œuvre les corrections et solutions adaptées',
+  'Rédiger une documentation',
+  'Appliquer les obligations légales, normes et bonnes pratiques']
 skillTab.push(skillList)
 
-skillList = ['Compétence 4 : Gérer des données de l\'information',
-            'Concevoir efficacement des MCD pour faire des bases de données sécurisées et optimisées',
-            'Mettre à jour des bases de données à travers des requêtes ou un API',
-            'Visualiser des données de manière efficace à l\'aide de la programmation']
+skillList = ['Administrer un système communicant',
+  'Maîtriser l\'architecture des systèmes',
+  'Installer et configurer un système d\'exploitation',
+  'Concevoir une application communicante par réseau',
+  'Utiliser et créer une API']
 skillTab.push(skillList)
 
-skillList = ['Compétence 5 : Conduire un projet',
-            'Identifier les besoins du client / de l\'utilisateur',
-            'Planifier et élaborer des processus à mettre en œuvre',
-            'Gérer une équipe et contrôler le travail afin de suivre la planification',
-            'Communiquer de manière efficace avec les acteurs du projet',
-            'Évaluer les performances de l\'équipe']
+skillList = ['Gérer des données',
+  'Concevoir une base de données sécurisée et optimisée',
+  'Mettre à jour une base de données à travers des requêtes ou un API',
+  'Visualiser des données de manière efficace à l\'aide de la programmation']
 skillTab.push(skillList)
 
-skillList = ['Compétence 6 : Travailler dans une équipe informatique',
-            'Communiquer avec les membres de son équipe',
-            'Manager une équpe informatique',
-            'Connaître et appliquer les différentes méthodes de développement',
-            'Utiliser des systèmes de gestion de code source pour organiser son travail',
-            'Faire une veille technologique pour être toujours informé sur l\'actualité dans l\'informatique']
+skillList = ['Concevoir une idée',
+  'Imaginer et mettre en place un concept',
+  'Créer un prototype',
+  'Adapter une idée en fonction des retours',
+  'Concevoir une interface utilisateur ergonomique',
+  'Améliorer l\'expérience utilisateur']
+skillTab.push(skillList)
+
+skillList = ['Conduire un projet',
+  'Identifier les besoins du client / de l\'utilisateur',
+  'Planifier et élaborer des processus à mettre en œuvre',
+  'Gérer une équipe et contrôler le travail afin de suivre la planification',
+  'Évaluer les performances de l\'équipe']
+skillTab.push(skillList)
+
+skillList = ['Travailler dans une équipe',
+  'Communiquer avec les membres de son équipe',
+  'Connaître et appliquer les différentes méthodes de développement',
+  'Utiliser un système de gestion de code source',
+  'Réaliser une veille technologique']
 skillTab.push(skillList)
 
 function switchClassList() {
   let list = event.target.parentNode.getElementsByTagName('ul')[0]
-  list.className = list.className === 'collapsed' ? 'extended' : 'collapsed'
+  list.classList.toggle('collapsed')
+  list.classList.toggle('extended')
 }
 
 export { skillTab, switchClassList }

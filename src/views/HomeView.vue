@@ -29,8 +29,8 @@
 
 <template>
   <div id="logoBox">
-    <img :src="getLogoPath()[0]" :alt="`Partie 1 du logo version ${preferredTheme}`">
-    <img :src="getLogoPath()[1]" :alt="`Partie 2 du logo version ${preferredTheme}`">
+    <img :src="getLogoPath()[0]" :alt="`Partie 1 du logo version ${ preferredTheme }`">
+    <img :src="getLogoPath()[1]" :alt="`Partie 2 du logo version ${ preferredTheme }`">
   </div>
 
   <div id="buttonBox">
