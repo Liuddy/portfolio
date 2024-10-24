@@ -1,1 +1,0 @@
-import{_ as e,c as t,o}from"./index-Dc2-9k54.js";const c={},n={style:{"font-weight":"bold"}};function s(r,_){return o(),t("p",n,"[Page en cours de construction...]")}const f=e(c,[["render",s]]);export{f as default};
