@@ -1,5 +1,6 @@
 <script setup>
   import { getImgPath } from '@/components/FileManager.js'
+  import { skillTab } from '@/components/SkillManager.js'
 
   const props = defineProps(['project'])
 
@@ -17,27 +18,48 @@
 
   <div id="projectDiv" @click.self="$emit('hideProjectDiv')">
     <div>
-      <h1>{{ props.project.name }}</h1>
-      <p id="date">{{ props.project.date[0] + ' - ' + props.project.date[1] }}</p>
       <div>
-        <img id="illustration"
-        :src="getImgPath('images', props.project.illustration)"
-        :alt="`Image d'illustration du projet ${ props.project.name }`">
+        <div id="details">
+          <img id="illustration"
+          :src="getImgPath('images', props.project.illustration)"
+          :alt="`Image d'illustration du projet ${ props.project.name }`">
+          <div id="type">
+            <p v-for="type in props.project.type">{{ type }}</p>
+          </div>
+          <div id="team">
+            <img :src="getImgPath('icons', props.project.team)"
+            :alt="`Icônographie pour équipe en ${ props.project.team }`">
+            <p>Projet en {{ props.project.team }}</p>
+          </div>
+          <div id="environment">
+            <img :src="getImgPath('icons', props.project.environment)"
+            :alt="`Icônographie pour équipe en ${ props.project.environment }`">
+            <p>Cadre {{ props.project.environment }}</p>
+          </div>
+          <div id="skills">
+            <ul>
+              <li v-for="skill in props.project.skills">&#9733; {{ skillTab[skill][0] }}</li>
+            </ul>
+          </div>
+        </div>
         <div id="content">
+          <h1>{{ props.project.name }}</h1>
+          <p id="date">{{ props.project.date[0] + ' - ' + props.project.date[1] }}</p>
           <p v-for="paragraph in props.project.content">
             {{ paragraph }}
           </p>
-          <a v-for="link in props.project.links"
-          :href="parseLink(link[0])" target="_blank">
-            {{ link[1] }}
-          </a>
+          <div id="links">
+            <a v-for="link in props.project.links"
+            :href="parseLink(link[0])" target="_blank">
+              {{ link[1] }}
+            </a>
+          </div>
         </div>
       </div>
       <div id="technologies">
         <img v-for="techIcon in props.project.allTech"
         :src="getImgPath('icons', techIcon)"
-        :alt="`Logo de ${ techIcon }`"
-        style="height: 90px; border-radius: 10px; margin: auto; width: 90px;">
+        :alt="`Logo de ${ techIcon }`">
       </div>
     </div>
   </div>
@@ -76,45 +98,117 @@
       overflow-x: hidden;
       overflow-y: auto;
       padding: 1rem;
-
-      & h1 {
-        font-size: 2.2rem;
-        font-weight: bold;
-        text-align: center;
-      }
-
-      & p#date {
-        font-size: 1.2rem;
-        font-weight: lighter;
-        margin-bottom: 1rem;
-        text-align: center;
-      }
+      scrollbar-width: none;
 
       & div {
+        display: grid;
         flex: 1;
+        grid-template-columns: 26% 74%;
 
-        & img#illustration {
-          border-radius: 20px;
-          float: left;
-          height: 280px;
-          margin-right: 1.1rem;
-          object-fit: contain;
-          width: 280px;
+        & div#details {
+          display: flex;
+          flex-direction: column;
+          margin-top: 1rem;
+
+          & img#illustration {
+            border-radius: 20px;
+            float: left;
+            height: 290px;
+            margin: auto;
+            object-fit: contain;
+            width: 290px;
+          }
+
+          & div#type {
+            display: inline-flex;
+            flex-grow: 0;
+            margin-top: 1.5rem;
+
+            & p {
+              background-color: var(--color-background-transparent);
+              border: 1px dashed var(--color-border);
+              border-radius: 8px;
+              font-size: 1rem;
+              height: 1.5rem;
+              line-height: 1.3rem;
+              margin: auto;
+              padding: 0 0.3rem;
+              text-align: center;
+              white-space: nowrap;
+            }
+
+          }
+
+          & div#team, div#environment {
+            margin-left: 1rem;
+            margin-top: 1rem;
+
+            & img {
+              height: 55px;
+              margin: auto;
+              width: 55px;
+            }
+
+            & p {
+              font-size: 1rem;
+              margin-bottom: auto;
+              margin-left: 1rem;
+              margin-top: auto;
+            }
+
+          }
+
+          & div#skills ul {
+            font-size: 0.95rem;
+            margin-top: 1.5rem;
+            line-height: 1.5;
+            list-style: none;
+            padding-left: 1rem;
+            white-space: nowrap;
+          }
+
         }
 
         & div#content {
+          display: flex;
+          flex-direction: column;
           font-size: 1.1rem;
           line-height: 1.5;
 
-          & p {
-            margin-bottom: 1rem;
-
-            &:first-child { margin-top: 1rem; }
+          & h1 {
+            font-size: 2.2rem;
+            font-weight: bold;
+            text-align: center;
           }
 
-          & a {
-            margin: 0.5rem;
-            padding: 0.5rem;
+          & p#date {
+            font-size: 1.2rem;
+            font-weight: lighter;
+            margin-bottom: 1.5rem;
+            text-align: center;
+          }
+
+          & p {
+            margin-bottom: 1rem;
+            margin-left: 1rem;
+            padding: 0 2rem;
+
+            &:first-child { margin-top: 1rem; }
+
+          }
+
+          & div#links {
+            display: flex;
+            font-size: 1.1rem;
+            grid-column: span 2;
+            line-height: 1.5;
+            padding: 0 2rem;
+
+            & a {
+              margin: auto;
+              padding: 0.4rem 0.7rem;
+            }
+
           }
 
         }
@@ -125,10 +219,20 @@
         display: flex;
         flex-direction: row;
         margin-top: 2rem;
+
+        & img {
+          height: 90px;
+          border-radius: 10px;
+          margin: auto;
+          width: 90px;
+        }
+
       }
 
     }
 
   }
+
+  html[data-theme="dark"] div#details div img { filter: invert(1); }
 
 </style>

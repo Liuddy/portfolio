@@ -90,6 +90,7 @@
       grid-gap: 1rem;
       grid-template-columns: 1fr 1fr;
       padding: 1rem 3rem;
+      transition: background-color 0.5s;
     }
 
     & div:last-child ul {

@@ -4,9 +4,12 @@
   --c-background-dark: #121e4b;
   --c-background-light-darker: #faefe6;
   --c-background-dark-darker: #0c1330;
+  --c-background-light-transparent: #faefe699;
+  --c-background-dark-transparent: #0c133099;
 
   --c-elt-orange: #f57d1f;
   --c-elt-blue: #69bcc4;
+  --c-elt-grey-transparent: #d8d8d799;
 
   --c-text-black: #000000;
   --c-text-white: #ffffff;
@@ -16,18 +19,21 @@
 :root {
   --color-background: var(--c-background-light);
   --color-background-darker: var(--c-background-light-darker);
+  --color-background-transparent: var(--c-background-light-transparent);
 
   --color-elt-orange: var(--c-elt-orange);
   --color-elt-blue: var(--c-elt-blue);
 
   --color-text: var(--c-text-black);
   --color-link: var(--c-elt-blue);
+  --color-border: var(--c-elt-grey-transparent);
 }
 
 /* Website colors based on user preferences (dark) */
 [data-theme="dark"] {
   --color-background: var(--c-background-dark);
   --color-background-darker: var(--c-background-dark-darker);
+  --color-background-transparent: var(--c-background-dark-transparent);
 
   --color-text: var(--c-text-white);
   --color-link: var(--c-elt-orange);

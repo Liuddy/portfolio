@@ -49,8 +49,8 @@ projectObject.links.push(['https://github.com/Liuddy/portfolio', 'Dépôt GitHub
 projectObject.mainTech = ['vuejs', 'vite']
 projectObject.allTech = ['html', 'css', 'javascript', 'vuejs', 'vite']
 projectObject.skills = [0, 1, 5]
-projectObject.team = 'Solo'
-projectObject.environment = 'Personnel'
+projectObject.team = 'solo'
+projectObject.environment = 'personnel'
 projectList.push(projectObject)
 
 projectObject = new Project('12cm³')
@@ -84,8 +84,8 @@ projectObject.links.push(['https://12cm3.shawiizz.dev/', 'Site web'],
 projectObject.mainTech = ['java', 'sql', 'php']
 projectObject.allTech = ['java', 'sql', 'html', 'css', 'php', 'javascript']
 projectObject.skills = [0, 1, 2, 3, 4, 5, 6, 7]
-projectObject.team = 'Équipe'
-projectObject.environment = 'Académique'
+projectObject.team = 'groupe'
+projectObject.environment = 'universitaire'
 projectList.push(projectObject)
 
 projectObject = new Project('TOMUSS')
@@ -120,8 +120,8 @@ projectObject.links.push(['https://perso.univ-lyon1.fr/thierry.excoffier/TOMUSS/
 projectObject.mainTech = ['javascript', 'python']
 projectObject.allTech = ['html', 'css', 'javascript', 'python']
 projectObject.skills = [0, 1, 2, 7]
-projectObject.team = 'Équipe'
-projectObject.environment = 'Académique'
+projectObject.team = 'groupe'
+projectObject.environment = 'universitaire'
 projectList.push(projectObject)
 
 export { projectList }

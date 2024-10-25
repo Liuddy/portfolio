@@ -25,6 +25,11 @@
       :alt="`Image d'illustration du projet ${ project.name }`">
       <div class="contentBox">
         <p class="name">{{ project.name }}</p>
+        <div class="type">
+          <p v-for="type in project.type">{{ type }}</p>
+        </div>
+        <img class="team" :src="getImgPath('icons', project.team)"
+        :alt="`Icônographie pour équipe en ${ project.team }`">
         <p class="date">{{ project.date[0] + ' - ' + project.date[1] }}</p>
         <div class="technologies">
           <img v-for="techIcon in project.mainTech"
@@ -58,7 +63,7 @@
       box-shadow: 0 12px 20px -10px black;
       color: var(--color-text);
       display: grid;
-      grid-template-columns: 40% 60%;
+      grid-template-columns: 35% 65%;
       height: 200px;
       margin: auto;
       max-width: 600px;
@@ -71,7 +76,7 @@
         background-color: var(--color-link);
         transform: scale(1.1);
 
-        & img { background-color: rgba(255, 255, 255, 0.9); }
+        & div.technologies img { background-color: rgba(255, 255, 255, 0.9); }
 
       }
 
@@ -84,7 +89,7 @@
 
       & div.contentBox {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 5;
         grid-template-rows: 20% 17% 63%;
         place-items: left;
 
@@ -94,14 +99,47 @@
           grid-column: span 2;
         }
 
+        & div.type {
+          display: inline-flex;
+          grid-column: span 2;
+          margin-top: 0.5rem;
+
+          & p {
+            background-color: var(--color-background-transparent);
+            border: 1px dashed var(--color-border);
+            border-radius: 7px;
+            font-size: 0.9rem;
+            height: 1.3rem;
+            line-height: 1.2rem;
+            margin-right: 0.2rem;
+            padding: 0 0.2rem;
+            text-align: center;
+            transition: background-color 0.5s;
+            white-space: nowrap;
+          }
+
+        }
+
+        & img.team {
+          height: 25px;
+          margin-left: auto;
+          margin-right: 3px;
+          margin-top: 0.3rem;
+          transition: filter 0.5s;
+          width: 25px;
+        }
+
         & p.date {
           font-size: 0.9rem;
           font-weight: lighter;
+          grid-column: span 2;
+          white-space: nowrap;
         }
 
         & div.technologies {
           display: flex;
           flex-direction: row;
+          grid-column: span 3;
           margin-left: auto;
 
           & img {
@@ -116,7 +154,7 @@
         }
 
         & p.description {
-          grid-column: span 2;
+          grid-column: span 5;
           margin-top: 8px;
         }
       }
@@ -124,6 +162,8 @@
     }
 
   }
+
+  html[data-theme="dark"] img.team { filter: invert(1); }
 
   @media (max-width: 1280px) {
 

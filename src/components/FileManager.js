@@ -43,6 +43,18 @@ import vite from '@/assets/icons/vite.png'
 iconsPath.push(vite)
 import vuejs from '@/assets/icons/vuejs.png'
 iconsPath.push(vuejs)
+import solo from '@/assets/icons/solo.png'
+iconsPath.push(solo)
+import duo from '@/assets/icons/duo.png'
+iconsPath.push(duo)
+import groupe from '@/assets/icons/groupe.png'
+iconsPath.push(groupe)
+import personnel from '@/assets/icons/personnel.png'
+iconsPath.push(personnel)
+import universitaire from '@/assets/icons/universitaire.png'
+iconsPath.push(universitaire)
+import professionnel from '@/assets/icons/professionnel.png'
+iconsPath.push(professionnel)
 
 const filesPath = []
 import cv_pdf from '@/assets/files/cv_bordes_lome.pdf'

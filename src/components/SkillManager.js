@@ -23,7 +23,7 @@ skillList = ['Maintenir une application',
   'Appliquer les obligations légales, normes et bonnes pratiques']
 skillTab.push(skillList)
 
-skillList = ['Administrer un système communicant',
+skillList = ['Administrer un système',
   'Maîtriser l\'architecture des systèmes',
   'Installer et configurer un système d\'exploitation',
   'Concevoir une application communicante par réseau',
@@ -51,7 +51,7 @@ skillList = ['Conduire un projet',
   'Évaluer les performances de l\'équipe']
 skillTab.push(skillList)
 
-skillList = ['Travailler dans une équipe',
+skillList = ['Travailler en équipe',
   'Communiquer avec les membres de son équipe',
   'Connaître et appliquer les différentes méthodes de développement',
   'Utiliser un système de gestion de code source',
