@@ -46,8 +46,8 @@ projectObject.content = [
 	des technologies à utiliser aux choix de design et d'ergonomie.`
 ]
 projectObject.links.push(['https://github.com/Liuddy/portfolio', 'Dépôt GitHub'])
-projectObject.mainTech = ['vuejs', 'vite']
-projectObject.allTech = ['html', 'css', 'javascript', 'vuejs', 'vite']
+projectObject.mainTech = ['VueJS', 'Vite']
+projectObject.allTech = ['HTML', 'CSS', 'JavaScript', 'VueJS', 'Vite']
 projectObject.skills = [0, 1, 5]
 projectObject.team = 'solo'
 projectObject.environment = 'personnel'
@@ -81,8 +81,8 @@ projectObject.content = [
 projectObject.links.push(['https://12cm3.shawiizz.dev/', 'Site web'],
 	['https://12cm3.shawiizz.dev/gameBinaries/12cm3-ver-1.0.6.exe', 'Télécharger le jeu'],
 	['getImgPath(\'files\', \'12cm3\')', 'Notice d\'utilisation'])
-projectObject.mainTech = ['java', 'sql', 'php']
-projectObject.allTech = ['java', 'sql', 'html', 'css', 'php', 'javascript']
+projectObject.mainTech = ['Java', 'SQL', 'PHP']
+projectObject.allTech = ['Java', 'SQL', 'HTML', 'CSS', 'PHP', 'JavaScript']
 projectObject.skills = [0, 1, 2, 3, 4, 5, 6, 7]
 projectObject.team = 'groupe'
 projectObject.environment = 'universitaire'
@@ -117,8 +117,8 @@ projectObject.content = [
 ]
 projectObject.links.push(['https://perso.univ-lyon1.fr/thierry.excoffier/TOMUSS/home.html',
 	'Documentation officielle de l\'application'])
-projectObject.mainTech = ['javascript', 'python']
-projectObject.allTech = ['html', 'css', 'javascript', 'python']
+projectObject.mainTech = ['JavaScript', 'Python']
+projectObject.allTech = ['HTML', 'CSS', 'JavaScript', 'Python']
 projectObject.skills = [0, 1, 2, 7]
 projectObject.team = 'groupe'
 projectObject.environment = 'universitaire'

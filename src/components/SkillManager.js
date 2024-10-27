@@ -58,6 +58,19 @@ skillList = ['Travailler en équipe', '3',
   'Réaliser une veille technologique', '2']
 skillTab.push(skillList)
 
+skillList = ['C', '3',
+  'CSS', '3',
+  'HTML', '3',
+  'Java', '4',
+  'JavaScript', '2',
+  'PHP', '2',
+  'Python', '2',
+  'SQL', '2',
+  'Symfony', '2',
+  'Vite', '2',
+  'VueJS', '2']
+skillTab.push(skillList)
+
 function getSkillLevelIcons(skillLvl) {
   let starsIcons = ''
   for (let i = 0; i < parseInt(skillLvl); i++)

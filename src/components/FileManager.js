@@ -17,44 +17,44 @@ import tomuss_illu from '@/assets/images/tomuss_illu.png'
 imagesPath.push(tomuss_illu)
 
 const iconsPath = []
-import cv from '@/assets/icons/cv.png'
-iconsPath.push(cv)
-import linkedin from '@/assets/icons/linkedin.png'
-iconsPath.push(linkedin)
 import c from '@/assets/icons/c.png'
 iconsPath.push(c)
 import css from '@/assets/icons/css.png'
 iconsPath.push(css)
+import cv from '@/assets/icons/cv.png'
+iconsPath.push(cv)
+import duo from '@/assets/icons/duo.png'
+iconsPath.push(duo)
+import groupe from '@/assets/icons/groupe.png'
+iconsPath.push(groupe)
 import html from '@/assets/icons/html.png'
 iconsPath.push(html)
 import java from '@/assets/icons/java.png'
 iconsPath.push(java)
 import javascript from '@/assets/icons/javascript.png'
 iconsPath.push(javascript)
+import linkedin from '@/assets/icons/linkedin.png'
+iconsPath.push(linkedin)
+import personnel from '@/assets/icons/personnel.png'
+iconsPath.push(personnel)
+import professionnel from '@/assets/icons/professionnel.png'
+iconsPath.push(professionnel)
 import php from '@/assets/icons/php.png'
 iconsPath.push(php)
 import python from '@/assets/icons/python.png'
 iconsPath.push(python)
+import solo from '@/assets/icons/solo.png'
+iconsPath.push(solo)
 import sql from '@/assets/icons/sql.png'
 iconsPath.push(sql)
 import symfony from '@/assets/icons/symfony.png'
 iconsPath.push(symfony)
+import universitaire from '@/assets/icons/universitaire.png'
+iconsPath.push(universitaire)
 import vite from '@/assets/icons/vite.png'
 iconsPath.push(vite)
 import vuejs from '@/assets/icons/vuejs.png'
 iconsPath.push(vuejs)
-import solo from '@/assets/icons/solo.png'
-iconsPath.push(solo)
-import duo from '@/assets/icons/duo.png'
-iconsPath.push(duo)
-import groupe from '@/assets/icons/groupe.png'
-iconsPath.push(groupe)
-import personnel from '@/assets/icons/personnel.png'
-iconsPath.push(personnel)
-import universitaire from '@/assets/icons/universitaire.png'
-iconsPath.push(universitaire)
-import professionnel from '@/assets/icons/professionnel.png'
-iconsPath.push(professionnel)
 
 const filesPath = []
 import cv_pdf from '@/assets/files/cv_bordes_lome.pdf'
@@ -74,7 +74,7 @@ function getImgPath(type, name) {
       folder = filesPath
   for (let src of folder) {
     let path = src.split('/')
-    if (path[path.length - 1].split('.')[0].includes(name))
+    if (path[path.length - 1].split('.')[0].includes(name.toLowerCase()))
       return src
   }
 }
