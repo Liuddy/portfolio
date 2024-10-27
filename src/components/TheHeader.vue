@@ -17,7 +17,7 @@
     <nav v-if="$route.name !== 'home'">
       <RouterLink :to="{ name: 'home' }">Accueil</RouterLink>
       <RouterLink :to="{ name: 'project' }">Projets</RouterLink>
-      <RouterLink :to="{ name: 'contact' }">Contact</RouterLink>
+      <RouterLink :to="{ name: 'skill' }">Compétences</RouterLink>
       <RouterLink :to="{ name: 'about' }">À propos</RouterLink>
     </nav>
 

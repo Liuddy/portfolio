@@ -19,26 +19,34 @@
 <template>
 
   <div id="projectList">
+
     <div class="project" v-for="project in projectList" :key="project.id"
     @click="showProjectDiv(project.id)">
       <img :src="getImgPath('images', project.illustration)"
       :alt="`Image d'illustration du projet ${ project.name }`">
+
       <div class="contentBox">
         <p class="name">{{ project.name }}</p>
+
         <div class="type">
           <p v-for="type in project.type">{{ type }}</p>
         </div>
+
         <img class="team" :src="getImgPath('icons', project.team)"
         :alt="`Icônographie pour équipe en ${ project.team }`">
         <p class="date">{{ project.date[0] + ' - ' + project.date[1] }}</p>
+
         <div class="technologies">
           <img v-for="techIcon in project.mainTech"
           :src="getImgPath('icons', techIcon)"
           :alt="`Logo de ${ techIcon }`">
         </div>
+
         <p class="description">{{ project.description }}</p>
       </div>
+
     </div>
+
   </div>
 
   <ProjectCard v-if="openProject" :project="clickedProject"
@@ -51,7 +59,7 @@
 
   div#projectList {
     display: grid;
-    grid-gap: 1.5rem 2.5rem;
+    grid-gap: 2.5rem    ;
     grid-template-columns: 1fr 1fr;
     margin: 2rem 0;
     place-items: center;
@@ -62,8 +70,9 @@
       border-radius: 30px;
       box-shadow: 0 12px 20px -10px black;
       color: var(--color-text);
+      cursor: pointer;
       display: grid;
-      grid-template-columns: 35% 65%;
+      grid-template-columns: 33.5% 66.5%;
       height: 200px;
       margin: auto;
       max-width: 600px;
@@ -74,7 +83,7 @@
 
       &:hover {
         background-color: var(--color-link);
-        transform: scale(1.1);
+        transform: scale(1.12);
 
         & div.technologies img { background-color: rgba(255, 255, 255, 0.9); }
 
@@ -154,6 +163,7 @@
         }
 
         & p.description {
+          font-size: 1rem;
           grid-column: span 5;
           margin-top: 8px;
         }

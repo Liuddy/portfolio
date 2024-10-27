@@ -17,51 +17,66 @@
 <template>
 
   <div id="projectDiv" @click.self="$emit('hideProjectDiv')">
+
     <div>
+
       <div>
+
         <div id="details">
           <img id="illustration"
           :src="getImgPath('images', props.project.illustration)"
           :alt="`Image d'illustration du projet ${ props.project.name }`">
+
           <div id="type">
             <p v-for="type in props.project.type">{{ type }}</p>
           </div>
+
           <div id="team">
             <img :src="getImgPath('icons', props.project.team)"
             :alt="`Icônographie pour équipe en ${ props.project.team }`">
             <p>Projet en {{ props.project.team }}</p>
           </div>
+
           <div id="environment">
             <img :src="getImgPath('icons', props.project.environment)"
             :alt="`Icônographie pour équipe en ${ props.project.environment }`">
             <p>Cadre {{ props.project.environment }}</p>
           </div>
+
           <div id="skills">
             <ul>
               <li v-for="skill in props.project.skills">&#9733; {{ skillTab[skill][0] }}</li>
             </ul>
           </div>
+
         </div>
+
         <div id="content">
           <h1>{{ props.project.name }}</h1>
           <p id="date">{{ props.project.date[0] + ' - ' + props.project.date[1] }}</p>
           <p v-for="paragraph in props.project.content">
             {{ paragraph }}
           </p>
+
           <div id="links">
             <a v-for="link in props.project.links"
             :href="parseLink(link[0])" target="_blank">
               {{ link[1] }}
             </a>
           </div>
+
         </div>
+
       </div>
+
       <div id="technologies">
         <img v-for="techIcon in props.project.allTech"
         :src="getImgPath('icons', techIcon)"
         :alt="`Logo de ${ techIcon }`">
       </div>
+
     </div>
+
   </div>
 
 </template>
@@ -73,6 +88,7 @@
     backdrop-filter: blur(1px);
     background-color: rgba(10, 10, 10, 0.4);
     bottom: 0;
+    cursor: pointer;
     min-height: 100vh;
     min-width: 100vw;
     left: 0;
@@ -89,6 +105,7 @@
       border-radius: 40px;
       box-shadow: 0 18px 30px -10px black;
       color: var(--color-text);
+      cursor: auto;
       display: flex;
       flex-direction: column;
       margin: auto;
@@ -221,10 +238,10 @@
         margin-top: 2rem;
 
         & img {
-          height: 90px;
+          height: 80px;
           border-radius: 10px;
           margin: auto;
-          width: 90px;
+          width: 80px;
         }
 
       }
