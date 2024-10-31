@@ -9,20 +9,22 @@ import light2 from '@/assets/logo/light2.png'
 logoPath.push(light2)
 
 const imagesPath = []
+import lome_photo from '@/assets/images/lome_photo.jpg'
+imagesPath.push(lome_photo)
 import portfolio_illu from '@/assets/images/portfolio_illu.png'
 imagesPath.push(portfolio_illu)
-import cm_illu from '@/assets/images/12cm3_illu.png'
-imagesPath.push(cm_illu)
+import red_panda_icon from '@/assets/images/red_panda_icon.png'
+imagesPath.push(red_panda_icon)
 import tomuss_illu from '@/assets/images/tomuss_illu.png'
 imagesPath.push(tomuss_illu)
+import twelve_cm_cube_illu from '@/assets/images/12cm3_illu.png'
+imagesPath.push(twelve_cm_cube_illu)
 
 const iconsPath = []
 import c from '@/assets/icons/c.png'
 iconsPath.push(c)
 import css from '@/assets/icons/css.png'
 iconsPath.push(css)
-import cv from '@/assets/icons/cv.png'
-iconsPath.push(cv)
 import duo from '@/assets/icons/duo.png'
 iconsPath.push(duo)
 import groupe from '@/assets/icons/groupe.png'
@@ -35,6 +37,8 @@ import javascript from '@/assets/icons/javascript.png'
 iconsPath.push(javascript)
 import linkedin from '@/assets/icons/linkedin.png'
 iconsPath.push(linkedin)
+import mail from '@/assets/icons/mail.png'
+iconsPath.push(mail)
 import personnel from '@/assets/icons/personnel.png'
 iconsPath.push(personnel)
 import professionnel from '@/assets/icons/professionnel.png'
@@ -57,8 +61,6 @@ import vuejs from '@/assets/icons/vuejs.png'
 iconsPath.push(vuejs)
 
 const filesPath = []
-import cv_pdf from '@/assets/files/cv_bordes_lome.pdf'
-filesPath.push(cv_pdf)
 import twelve_cm_cube from '@/assets/files/12cm3_notice.pdf'
 filesPath.push(twelve_cm_cube)
 

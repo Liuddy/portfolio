@@ -1,5 +1,18 @@
 const skillTab = []
-let skillList = ['Réaliser une application', '4',
+let skillList = ['C', '2',
+  'CSS', '4',
+  'HTML', '4',
+  'Java', '4',
+  'JavaScript', '4',
+  'PHP', '3',
+  'Python', '3',
+  'SQL', '3',
+  'Symfony', '2',
+  'Vite', '3',
+  'VueJS', '4']
+skillTab.push(skillList)
+
+skillList = ['Réaliser une application', '4',
   'Maîtriser différents types de programmation', '4',
   'Maîtriser différents langages de programmation', '4',
   'Appréhender les différents niveaux de langage', '3',
@@ -56,19 +69,6 @@ skillList = ['Travailler en équipe', '3',
   'Connaître et appliquer les différentes méthodes de développement', '3',
   'Utiliser un système de gestion de code source', '4',
   'Réaliser une veille technologique', '2']
-skillTab.push(skillList)
-
-skillList = ['C', '3',
-  'CSS', '3',
-  'HTML', '3',
-  'Java', '4',
-  'JavaScript', '2',
-  'PHP', '2',
-  'Python', '2',
-  'SQL', '2',
-  'Symfony', '2',
-  'Vite', '2',
-  'VueJS', '2']
 skillTab.push(skillList)
 
 function getSkillLevelIcons(skillLvl) {

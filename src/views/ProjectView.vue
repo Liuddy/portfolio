@@ -58,11 +58,12 @@
 <style scoped>
 
   div#projectList {
+    column-gap: 3.5rem;
     display: grid;
-    grid-gap: 2.5rem    ;
     grid-template-columns: 1fr 1fr;
     margin: 2rem 0;
     place-items: center;
+    row-gap: 3rem;
 
     & div.project {
       align-self: center;
