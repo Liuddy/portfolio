@@ -1,15 +1,22 @@
 const skillTab = []
 let skillList = ['C', '2',
+  'C++', '2',
   'CSS', '4',
+  'Docker', '1',
+  'Git', '4',
   'HTML', '4',
   'Java', '4',
   'JavaScript', '4',
+  'MongoDB', '3',
+  'MySQL', '3',
+  'NoSQL', '3',
   'PHP', '3',
   'Python', '3',
   'SQL', '3',
   'Symfony', '2',
+  'TypeScript', '3',
   'Vite', '3',
-  'VueJS', '4']
+  'Vue.js', '4']
 skillTab.push(skillList)
 
 skillList = ['Réaliser une application', '4',

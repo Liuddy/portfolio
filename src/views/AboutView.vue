@@ -55,7 +55,6 @@
 <style scoped>
 
   section {
-    column-gap: ;
     display: grid;
     margin-top: 2rem;
 

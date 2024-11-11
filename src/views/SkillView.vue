@@ -17,7 +17,7 @@
 
     <div>
 
-      <p @click="switchDivClass()">Langages, frameworks et outils</p>
+      <p @click="switchDivClass()">Maîtrise des technologies</p>
 
       <div>
 
