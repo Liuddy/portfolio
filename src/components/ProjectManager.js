@@ -46,7 +46,7 @@ projectObject.content = [
 	des technologies à utiliser aux choix de design et d'ergonomie.`
 ]
 projectObject.links.push(['https://github.com/Liuddy/portfolio', 'Dépôt GitHub'])
-projectObject.mainTech = ['VueJS', 'Vite']
+projectObject.mainTech = ['Vue.js', 'Vite']
 projectObject.allTech = ['HTML', 'CSS', 'JavaScript', 'Vue.js', 'Vite', 'Git']
 projectObject.skills = [0, 1, 5]
 projectObject.team = 'solo'
