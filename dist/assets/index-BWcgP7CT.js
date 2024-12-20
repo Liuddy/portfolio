@@ -33,7 +33,7 @@ var vi=Object.defineProperty;var yi=(e,t,n)=>t in e?vi(e,t,{enumerable:!0,config
 	JavaScript. Ce projet aurait tout aussi bien pu être réalisé en HTML et CSS pur, mais je
 	souhaitais ajouter un peu d'interactivité dans mon site.`,`La réalisation de ce site m'a surtout apporté de l'expérience pour tout ce qui concerne les
 	prises de décision. Ayant été seul acteur du projet, j'ai dû décider de chacun de ses aspects,
-	des technologies à utiliser aux choix de design et d'ergonomie.`];V.links.push(["https://github.com/Liuddy/portfolio","Dépôt GitHub"]);V.mainTech=["VueJS","Vite"];V.allTech=["HTML","CSS","JavaScript","Vue.js","Vite","Git"];V.skills=[0,1,5];V.team="solo";V.environment="personnel";dn.push(V);V=new fn("12cm³");V.type=["Jeu vidéo","Site web"];V.date=[Dt(new Date("2023-10")),Dt(new Date("2024-02"))];V.description=`Jeu vidéo de course réalisé en équipe lors d'un projet
+	des technologies à utiliser aux choix de design et d'ergonomie.`];V.links.push(["https://github.com/Liuddy/portfolio","Dépôt GitHub"]);V.mainTech=["Vue.js","Vite"];V.allTech=["HTML","CSS","JavaScript","Vue.js","Vite","Git"];V.skills=[0,1,5];V.team="solo";V.environment="personnel";dn.push(V);V=new fn("12cm³");V.type=["Jeu vidéo","Site web"];V.date=[Dt(new Date("2023-10")),Dt(new Date("2024-02"))];V.description=`Jeu vidéo de course réalisé en équipe lors d'un projet
 	universitaire. Le moteur de jeu a été fait en Java et un site web en JS et PHP
 	permet de mettre en avant le projet.`;V.illustration="12cm3_illu";V.content=[`Jeu vidéo développé dans le cadre de mes études lors d'un projet en équipe. Le sujet était
 	libre, mais quelques contraintes nous étaient imposées telles que le fait de n'utiliser que des
