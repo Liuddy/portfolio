@@ -4,11 +4,11 @@
 This project is simply a personal portfolio website designed to collect and present my work online.
 
 ## Features
-- An about page to introduce myself.
-- An overview of each of my projects.
+- An overview of all of my projects.
 - A detailed page for each project.
 - The ability to sort and filter projects.
-- A contact form to send me a message.
+- A page presenting my skills and mastery of technologies.
+- An about page to introduce myself.
 
 ## Installation
 Simply click on this [link](https://Liuddy.github.io/portfolio/) to access the online portfolio.
@@ -29,13 +29,17 @@ git clone https://github.com/Liuddy/portfolio
 
 - App.vue: This is the entry point for Vue.js logic, the view that assembles all the other views to create a complete page.
 - HomeView.vue: 
-- AboutView.vue: 
-- ContactView.vue: 
 - ProjectView.vue: 
+- SkillView.vue: 
+- AboutView.vue: 
+- NotFoundView.vue: 
 
 - TheHeader.vue: 
 - TheFooter.vue: 
+- ProjectCard.vue: 
 - ProjectManager.js: 
+- SkillManager.js: 
+- FileManager.js: 
 
 ## Contributing
 Contributions to correct or enhance the project are welcome. Feel free to fork the repository, make changes, and submit pull requests.
@@ -44,4 +48,4 @@ Contributions to correct or enhance the project are welcome. Feel free to fork t
 This project is open-sourced under the MIT License.
 
 ## Contact
-For more information, please send me a message via the website contact form.
+For more information, please send a message to my [email address](mailto:Liuddy@outlook.fr).
