@@ -1,12 +1,10 @@
 const logoPath = []
-import dark1 from '@/assets/logo/dark1.png'
-logoPath.push(dark1)
-import dark2 from '@/assets/logo/dark2.png'
-logoPath.push(dark2)
-import light1 from '@/assets/logo/light1.png'
-logoPath.push(light1)
-import light2 from '@/assets/logo/light2.png'
-logoPath.push(light2)
+import dark from '@/assets/logo/dark.png'
+logoPath.push(dark)
+import light from '@/assets/logo/light.png'
+logoPath.push(light)
+import portfolio from '@/assets/logo/portfolio.png'
+logoPath.push(portfolio)
 
 const imagesPath = []
 import lome_photo from '@/assets/images/lome_photo.jpg'

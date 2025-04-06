@@ -20,9 +20,7 @@
   const { preferredTheme } = storeToRefs(useStore())
 
   function getLogoPath() {
-    return preferredTheme.value === 'dark'
-      ? [getImgPath('logo', 'dark1'), getImgPath('logo', 'dark2')]
-      : [getImgPath('logo', 'light1'), getImgPath('logo', 'light2')]
+    return getImgPath('logo', preferredTheme.value)
   }
 </script>
 
@@ -30,8 +28,8 @@
 <template>
 
   <div id="logoBox">
-    <img :src="getLogoPath()[0]" :alt="`Partie 1 du logo version ${ preferredTheme }`">
-    <img :src="getLogoPath()[1]" :alt="`Partie 2 du logo version ${ preferredTheme }`">
+    <img :src="getLogoPath()" :alt="`Partie Lomé Bordes du logo version ${ preferredTheme }`">
+    <img :src="getImgPath('logo', 'portfolio')" :alt="`Partie portfolio du logo`">
   </div>
 
   <div id="buttonBox">
