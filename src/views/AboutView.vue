@@ -25,13 +25,13 @@
       <a href="mailto:Liuddy@outlook.fr"><img :src="getImgPath('icons', 'mail')" alt="Icône de mail"></a>
     </div>
     <div class="imageContainer">
-      <img :src="getImgPath('images', 'lome')" alt="Photo de Lomé">
+      <img :src="getImgPath('images', 'lome_photo')" alt="Photo de Lomé">
     </div>
   </section>
 
   <section>
     <div class="imageContainer">
-      <img :src="getImgPath('images', 'red_panda')" alt="Image d'icône du Portfolio">
+      <img :src="getImgPath('images', 'red_panda_icon')" alt="Image d'icône du Portfolio">
     </div>
     <div class="textContainer">
       <h2>Quel est ce site ?</h2>

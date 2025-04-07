@@ -19,9 +19,7 @@
 
   const { preferredTheme } = storeToRefs(useStore())
 
-  function getLogoPath() {
-    return getImgPath('logo', preferredTheme.value)
-  }
+  function getLogoPath() { return getImgPath('logo', preferredTheme.value) }
 </script>
 
 

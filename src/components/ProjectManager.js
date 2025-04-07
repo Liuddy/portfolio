@@ -80,7 +80,7 @@ projectObject.content = [
 ]
 projectObject.links.push(['https://12cm3.shawiizz.dev/', 'Site web'],
 	['https://12cm3.shawiizz.dev/gameBinaries/12cm3-ver-1.0.6.exe', 'Télécharger le jeu'],
-	['getImgPath(\'files\', \'12cm3\')', 'Notice d\'utilisation'])
+	['getImgPath(\'files\', \'12cm3_notice\')', 'Notice d\'utilisation'])
 projectObject.mainTech = ['Java', 'SQL', 'PHP']
 projectObject.allTech = ['Java', 'SQL', 'MySQL', 'HTML', 'CSS', 'PHP', 'JavaScript', 'Git']
 projectObject.skills = [0, 1, 2, 3, 4, 5, 6, 7]
