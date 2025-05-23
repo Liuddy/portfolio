@@ -2,11 +2,15 @@
   import { getImgPath } from '@/components/FileManager.js'
   import { skillTab, getSkillLevelIcons } from '@/components/SkillManager.js'
 
-  function switchDivClass() {
-    for (let openSkill of document.getElementsByClassName('extended'))
+  function switchDivClass(divClass) {
+    for (let openSkill of document.getElementsByClassName(divClass))
       if (openSkill !== event.target.parentNode)
-        openSkill.classList.toggle('extended')
-    event.target.parentNode.classList.toggle('extended')
+        openSkill.classList.toggle(divClass)
+    if (divClass === 'extended')
+      for (let openSkill of document.getElementsByClassName('extendedTech'))
+        if (openSkill !== event.target.parentNode)
+          openSkill.classList.toggle('extendedTech')
+    event.target.parentNode.classList.toggle(divClass)
   }
 </script>
 
@@ -17,18 +21,24 @@
 
     <div>
 
-      <p @click="switchDivClass()">Maîtrise des technologies</p>
+      <p @click="switchDivClass('extended')">Maîtrise des technologies</p>
 
-      <div>
+      <div v-for="techList in skillTab[0]">
 
-        <ul>
-          <li v-for="(skill, index) in skillTab[0]">
-            <img v-if="index % 2 === 0" :src="getImgPath('icons', skill)"
-            :alt="`Logo de ${ skill }`">
-            <p v-if="index % 2 === 0"> {{ skill }} </p>
-            <p v-if="index % 2 === 0">{{ getSkillLevelIcons(skillTab[0][index + 1]) }}</p>
-          </li>
-        </ul>
+        <p @click="switchDivClass('extendedTech')">{{ techList[0] }}</p>
+
+        <div>
+
+          <ul>
+            <li v-for="(tech, index) in techList.slice(1)">
+              <img v-if="index % 2 === 0" :src="getImgPath('icons', tech)"
+              :alt="`Logo de ${ tech }`">
+              <p v-if="index % 2 === 0"> {{ tech }} </p>
+              <p v-if="index % 2 === 0">{{ getSkillLevelIcons(techList[index + 2]) }}</p>
+            </li>
+          </ul>
+
+        </div>
 
       </div>
 
@@ -42,7 +52,7 @@
 
       <div v-for="skillList in skillTab.slice(1, skillTab.length / 2 + 1)">
 
-        <p @click="switchDivClass()">
+        <p @click="switchDivClass('extended')">
           {{ skillList[0] }}
           <span>{{ getSkillLevelIcons(skillList[1]) }}</span>
         </p>
@@ -64,7 +74,7 @@
 
       <div v-for="skillList in skillTab.slice(skillTab.length / 2 + 1)">
 
-        <p @click="switchDivClass()">
+        <p @click="switchDivClass('extended')">
           {{ skillList[0] }}
           <span>{{ getSkillLevelIcons(skillList[1]) }}</span>
         </p>
@@ -101,8 +111,8 @@
       overflow: hidden;
       transition:
         background-color 0.5s,
-        max-height 0.6s;
-      transition-delay: 0s, -0.1s;
+        max-height 1.5s;
+      transition-delay: 0s, -1s;
 
       & > p {
         background-color: var(--color-background);
@@ -127,49 +137,90 @@
       }
 
       & > div {
-        display: grid;
-        grid-template-rows: 0fr;
+        border-bottom: 1px solid var(--color-link);
+        border-radius: 26px;
+        display: flex;
+        flex-direction: column;
+        max-height: 3.5rem;
         overflow: hidden;
-        transition: grid-template-rows 0.6s;
-        transition-delay: 0s;
+        transition: max-height 0.35s;
+        transition-delay: -0.1s;
 
-        & ul {
-          font-size: 1.2rem;
-          list-style: none;
-          min-height: 0;
-          overflow: hidden;
-          padding: 1rem;
-          padding-bottom: 0.5rem;
+        & > p {
+          cursor: pointer;
+          font-size: 1.25rem;
+          line-height: normal;
+          margin: -1px;
+          padding: 1rem 1.5rem;
           text-align: center;
 
-          & li {
-            display: inline-block;
-            margin: 0 2rem;
-            padding: 2rem;
+          &:hover { text-decoration: underline; }
 
-            &:nth-child(2n) { display: none; }
+          &:active {
+            color: var(--color-link);
+            transition: none;
+          }
+        }
 
-            & img {
-              display: block;
-              height: 80px;
-              border-radius: 10px;
-              margin: auto;
-              margin-bottom: 1rem;
-              width: 80px;
-            }
+        & > div {
+          display: grid;
+          grid-template-rows: 0fr;
+          overflow: hidden;
+          transition: grid-template-rows 0.6s;
+          transition-delay: 0s;
 
-            & p {
-              font-size: 1.1rem;
-              line-height: normal;
-              text-align: center;
+          & ul {
+            font-size: 1.2rem;
+            list-style: none;
+            min-height: 0;
+            overflow: hidden;
+            padding: 1rem;
+            padding-bottom: 0.5rem;
+            padding-top: 0;
+            text-align: center;
 
-              &:last-child {
-                font-size: 1.25rem;
-                margin-top: 0.2rem;
+            & li {
+              display: inline-block;
+              margin: 0 2rem;
+              padding: 2rem;
+
+              &:nth-child(2n) { display: none; }
+
+              & img {
+                display: block;
+                height: 80px;
+                border-radius: 10px;
+                margin: auto;
+                margin-bottom: 1rem;
+                width: 80px;
+              }
+
+              & p {
+                font-size: 1.1rem;
+                line-height: normal;
+                text-align: center;
+
+                &:last-child {
+                  font-size: 1.25rem;
+                  margin-top: 0.2rem;
+                }
+
               }
 
             }
 
+          }
+
+        }
+
+        &:last-child { border: none; }
+
+        &.extendedTech {
+          max-height: 1000vh;
+
+          & > div {
+            grid-template-rows: 1fr;
+            transition-delay: 0.2s;
           }
 
         }
