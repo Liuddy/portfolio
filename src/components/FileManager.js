@@ -35,12 +35,15 @@ function getImgPath(type, name) {
   else if (type ===  'files')
       folder = filesPath
 
-  if (name.includes('+'))
+  if (name.includes(' ') || name.includes('::')) {
+    name = name.replaceAll(' ', '_')
+    name = name.replaceAll('::', '_')
+  } if (name.includes('+'))
     name = name.replaceAll('+', 'plus')
   if (name.includes('.'))
     name = name.replaceAll('.', 'dot')
   if (name === 'c' || name === 'java' || name === 'sql')
-    name = name + 'og'
+    name += 'og'
 
   for (let src of folder) {
     let path = src.split('/')

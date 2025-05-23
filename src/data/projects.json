@@ -1,45 +1,271 @@
 [
     {
-        "name": "Portfolio",
+        "name": "Ailurus Corp",
         "type": [
             "Site web"
         ],
         "date": [
-            "2024-05",
-            "2024-10"
+            "2018-12",
+            "2019-04"
         ],
-        "description": "Site web me faisant office de portfolio, que vous consultez actuellement. Il répertorie tous mes projets et fournit quelques informations sur moi.",
-        "illustration": "portfolio_illu",
+        "description": "Mon tout premier projet informatique : un site web servant à la fois de wiki et de blog pour y stocker les informations des jeux vidéo auxquels je jouais.",
+        "illustration": "ailurus_corp_illu",
         "content": [
-            "Étant dans le domaine de la programmation et appréciant le développement web, lorsque je me suis lancé dans la réalisation de mon portfolio, je me suis immédiatement tourné vers la conception d'un site web. Cette solution permet, dans un premier temps, de mettre en œuvre et de montrer mes compétences en web, mais aussi et surtout de pouvoir partager facilement et rapidement mon portfolio.",
-            "J'ai décidé de développer ce site à l'aide du framework Vue.js, que j'avais envie de mieux prendre en main. Un portfolio étant grossièrement une vitrine de soi et de ses compétences, je savais déjà que je n'aurais besoin que d'un langage agissant côté client, en l'occurrence JavaScript. Ce projet aurait tout aussi bien pu être réalisé en HTML et CSS pur, mais je souhaitais ajouter un peu d'interactivité dans mon site.",
-            "La réalisation de ce site m'a surtout apporté de l'expérience pour tout ce qui concerne les prises de décision. Ayant été seul acteur du projet, j'ai dû décider de chacun de ses aspects, des technologies à utiliser aux choix de design et d'ergonomie."
+            "Lors de ma dernière année de scolarité au collège, j'ai soudainement eu l'envie de créer un site web. J'ai toujours été familier avec l'informatique, mais je n'avais encore jamais touché à la programmation, si ce n'est avec Scratch. Je me suis donc muni d'un tuto YouTube et j'ai réalisé ce site en seulement 5 jours, travaillant dessus tous les soirs après les cours.",
+            "J'ai toujours eu un penchant pour l'archivage, mon but avec ce site était d'avoir un endroit où pouvoir archiver et partager des informations sur les jeux vidéo auxquels je jouais. N'ayant aucune connaissance de toutes les technologies existantes, j'ai réalisé le site simplement en HTML et CSS pur, sans utiliser Git ou un quelconque autre outil. Je suis tout de même parvenu à héberger mon site quelques temps en utilisant les services gratuits de Hostinger.",
+            "Ce projet est peut-être le moins qualitatif et peaufiné de mes travaux, mais c'est celui qui m'a lancé dans le domaine de la programmation et ce qui me fera poursuivre cette voie plus tard, pour finalement en arriver au portfolio que vous consultez actuellement."
         ],
         "links": [
             [
-                "https://github.com/Liuddy/Portfolio",
+                "https://github.com/Liuddy/AilurusCorp",
                 "Dépôt GitHub"
             ]
         ],
         "mainTech": [
-            "Vue.js",
-            "Vite"
+            "HTML",
+            "CSS"
+        ],
+        "allTech": [
+            "HTML",
+            "CSS"
+        ],
+        "skills": [
+            1,
+            6
+        ],
+        "team": "solo",
+        "environment": "personnel"
+    },
+    {
+        "name": "Modle",
+        "type": [
+            "Site web"
+        ],
+        "date": [
+            "2022-11",
+            "2022-12"
+        ],
+        "description": "Magasin en ligne fictif de baskets et sneakers personnalisables.",
+        "illustration": "modle_illu",
+        "content": [],
+        "links": [
+            [
+                "https://github.com/Liuddy/Modle",
+                "Dépôt GitHub"
+            ]
+        ],
+        "mainTech": [
+            "HTML",
+            "CSS"
         ],
         "allTech": [
             "HTML",
             "CSS",
-            "JavaScript",
-            "Vue.js",
-            "Vite",
             "Git"
         ],
         "skills": [
-            0,
             1,
-            5
+            6,
+            7,
+            8
+        ],
+        "team": "groupe",
+        "environment": "universitaire"
+    },
+    {
+        "name": "Lucane",
+        "type": [
+            "Application"
+        ],
+        "date": [
+            "2022-12",
+            "2023-01"
+        ],
+        "description": "Gestionnaire d'annuaire numérique exécuté uniquement à travers l'invite de commande. Réalisé en équipe.",
+        "illustration": "lucane_illu",
+        "content": [
+            "Application de gestion réalisée en C. Elle permet l'ajout, la modification et la suppression de personnes enregistrées en format CSV. L'utilisation et l'affichage du gestionnaire ne s'effectuent qu'au travers de l'invite de commande du système.",
+            "Ce projet mené en groupe a pu m'apprendre la bonne gestion des entrées et sorties périphériques, notamment grâce à l'usage du langage bas niveau qu'est C.",
+            "Afin de peaufiner l'image de l'application, nous avons aussi pris la liberté d'adopter l'iconographie du lucane, simplement car l'allure de l'insecte nous plaisait particulièrement."
+        ],
+        "links": [
+            [
+                "https://github.com/Liuddy/Lucane",
+                "Dépôt GitHub"
+            ]
+        ],
+        "mainTech": [
+            "C"
+        ],
+        "allTech": [
+            "C",
+            "Git"
+        ],
+        "skills": [
+            1,
+            8
+        ],
+        "team": "groupe",
+        "environment": "universitaire"
+    },
+    {
+        "name": "ACCM",
+        "type": [
+            "Site web"
+        ],
+        "date": [
+            "2022-12",
+            "2023-12"
+        ],
+        "description": "Reprise du concept de l'Ailurus Corp, amélioré au fur et à mesure de mes apprentissages en première année de BUT Informatique.",
+        "illustration": "accm_illu",
+        "content": [
+            "Lorsque j'ai intégré ma première année d'études dans le supérieur, en BUT Informatique, les enseignements perçus ont très vite été portés vers le développement web. Ce domaine m'intéressant particulièrement, j'étais très enthousiaste à l'idée d'apprendre de nouvelles méthodes et langages pour construire des sites web.",
+            "Alors, afin de mieux assimiler les leçons apprises et parce que le projet me trottait toujours dans la tête, j'ai décidé de reprendre le concept que j'avais mis en place sur mon tout premier site web en repartant de zéro. Je pouvais voir à présent toutes les erreurs et les imperfections de mon site réalisé en autodidacte et je voulais tout refaire, en mieux.",
+            "L'Ailurus Corp Collection Museum (ACCM) est donc né, successeur spirituel de l'Ailurus Corp et ayant l'ambition de rassembler des œuvres audiovisuelles et littéraires en plus des jeux vidéo. Il s'agit aussi du premier projet pour lequel j'ai fait usage de Git",
+            "Plusieurs grosses versions du site ont vu le jour, toutes influencées par les cours dispensés à l'IUT. La première version tendait à créer le site en HTML et CSS, en suivant le plus possible les bonnes pratiques et règles apprises. La version 2.0 consista à ajouter l'usage de JS pour optimiser beaucoup de code et rendre le site plus dynamique. La 3.0, quant à elle, a le plus transformé la structure du projet puisqu'elle a ajouté l'utilisation de PHP et la migration de toutes les données dans une base MySQL."
+        ],
+        "links": [
+            [
+                "https://github.com/Liuddy/ACCM",
+                "Dépôt GitHub"
+            ]
+        ],
+        "mainTech": [
+            "PHP",
+            "SQL"
+        ],
+        "allTech": [
+            "SQL",
+            "MySQL",
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "PHP",
+            "Git"
+        ],
+        "skills": [
+            1,
+            2,
+            3,
+            5,
+            6
         ],
         "team": "solo",
         "environment": "personnel"
+    },
+    {
+        "name": "App Dessin",
+        "type": [
+            "Application"
+        ],
+        "date": [
+            "2023-04",
+            "2023-04"
+        ],
+        "description": "Application de dessin type Paint réalisée en Java sur plusieurs cours en TP. Projet surtout orienté sur l'apprentissage de la bibliothèque graphique Swing.",
+        "illustration": "app_dessin_illu",
+        "content": [
+            "En première année de BUT Informatique, nous avons appris à réaliser des applications en Java et à développer des interfaces homme-machine ergonomiques. C'est au travers des cours d'IHM que nous avons dû créer une application de dessin à la manière de Paint.",
+            "Ce petit projet en solo, commencé de zéro, fut mené sur plusieurs séances de TP. L'accent a été mis sur les bonnes pratiques de programmation et la mise en place d'un modèle MVC. C'est pourquoi seules les fonctionnalités primaires de l'application ont été implémentées : le fait de pouvoir dessiner au curseur sur une ardoise, la possibilité de changer de forme de crayon et de couleur, puis celle de pouvoir enregistrer son dessin.",
+            "Aussi petit soit-il, ce projet m'a permis de renforcer ma compréhension des modèles comme MVC et d'intégrer différentes bonnes pratiques pour les travaux en Java ou d'autres langages de code."
+        ],
+        "links": [
+            [
+                "https://github.com/Liuddy/AppDessin",
+                "Dépôt GitHub"
+            ]
+        ],
+        "mainTech": [
+            "Java"
+        ],
+        "allTech": [
+            "Java"
+        ],
+        "skills": [
+            1,
+            2
+        ],
+        "team": "solo",
+        "environment": "universitaire"
+    },
+    {
+        "name": "Aide Décision",
+        "type": [
+            "Application"
+        ],
+        "date": [
+            "2023-05",
+            "2023-06"
+        ],
+        "description": "Application d'aide décisionnelle basée sur des graphes permettant de calculer différents types de chemin.",
+        "illustration": "aide_decision_illu",
+        "content": [
+            "À la fin de ma première année de BUT, j'ai dû appliquer les connaissances acquises au cours de l'an lors d'un projet applicatif en binôme. Celui-ci consistait à développer en Java une application d'aide décisionnelle pour une organisation (fictive) possédant des établissements de soin.",
+            "Cette organisation souhaitant optimiser les déplacements des ambulances entre ses différents établissements, il nous revenait de développer une solution permettant de faciliter la prise de décisions. Nous nous sommes donc appuyés sur une représentation en graphe de la carte, proposant une visualisation compréhensible, facile et rapide.",
+            "À travers l'application, l'utilisateur peut alors choisir différentes analyses selon ses besoins. La structure du graphe permet l'utilisation de divers algorithmes, comme la recherche du plus court chemin, du plus rapide ou encore de celui présentant le moins de danger entre 2 établissements. Il est aussi possible de préciser plusieurs lieux par lesquels le trajet doit passer."
+        ],
+        "links": [
+            [
+                "https://github.com/Liuddy/AppAideDecisionnelle",
+                "Dépôt GitHub"
+            ]
+        ],
+        "mainTech": [
+            "Java"
+        ],
+        "allTech": [
+            "Java",
+            "Git"
+        ],
+        "skills": [
+            1,
+            2,
+            3,
+            7,
+            8
+        ],
+        "team": "groupe",
+        "environment": "universitaire"
+    },
+    {
+        "name": "Weblog42",
+        "type": [
+            "Site web"
+        ],
+        "date": [
+            "2023-09",
+            "2023-10"
+        ],
+        "description": "Site web faisant office de blog ou forum minimaliste.",
+        "illustration": "weblog42_illu",
+        "content": [],
+        "links": [
+            [
+                "https://github.com/Liuddy/Weblog42",
+                "Dépôt GitHub"
+            ]
+        ],
+        "mainTech": [
+            "SQL",
+            "PHP"
+        ],
+        "allTech": [
+            "SQL",
+            "HTML",
+            "CSS",
+            "PHP",
+            "Git"
+        ],
+        "skills": [
+            1,
+            2,
+            5,
+            6,
+            8
+        ],
+        "team": "groupe",
+        "environment": "universitaire"
     },
     {
         "name": "12cm³",
@@ -56,7 +282,7 @@
         "content": [
             "Jeu vidéo développé dans le cadre de mes études lors d'un projet en équipe. Le sujet était libre, mais quelques contraintes nous étaient imposées telles que le fait de n'utiliser que des technologies vues en cours ou encore de faire usage d'une base de données.",
             "12cm³ est un jeu de course arcade et solo en 2D vu de dessus. Il permet au joueur de personnaliser ses propres véhicules selon différents paramètres et de concourir en contre-la-montre sur les circuits officiels ou bien créés par la communauté. Le meilleur score de chaque joueur est alors affiché à travers un leaderboard par circuit.",
-            "Du côté technique, nous avons choisi de construire le moteur de jeu à partir de zéro, ce qui représenta un challenge vraiment stimulant et m'a permit de grandement renforcer mes connaissances en Java. Au final, l'envergure du projet est telle que nous avons développé un moteur de jeu, un jeu, un éditeur de circuits, une base de données, un site web et une API pour lier le tout !",
+            "Du côté technique, nous avons dû construire le moteur de jeu à partir de zéro, ce qui représenta un challenge vraiment stimulant et m'a permis de grandement renforcer mes connaissances en Java. Au final, l'envergure du projet est telle que nous avons développé un moteur de jeu, un jeu, un éditeur de circuits, une base de données, un site web et une API pour lier le tout !",
             "Ce projet fut l'un des plus conséquents que j'ai pu réaliser, autant en termes de taille que de temps, et il ne représente pourtant qu'un prototype de ce que nous avions envisagé. Il m'a apporté énormément d'expérience sur l'ensemble de mes compétences, notamment en ce qui concerne la gestion du travail en équipe et le respect des dates de rendu."
         ],
         "links": [
@@ -88,22 +314,215 @@
             "MySQL",
             "HTML",
             "CSS",
-            "PHP",
             "JavaScript",
+            "PHP",
             "Git"
         ],
         "skills": [
-            0,
             1,
             2,
             3,
             4,
             5,
             6,
-            7
+            7,
+            8
         ],
         "team": "groupe",
         "environment": "universitaire"
+    },
+    {
+        "name": "Nuit Info",
+        "type": [
+            "Site web"
+        ],
+        "date": [
+            "2023-12",
+            "2023-12"
+        ],
+        "description": "Escape game sur le thème de l'écologie réalisé en une nuit.",
+        "illustration": "nuit_info_illu",
+        "content": [],
+        "links": [
+            [
+                "https://github.com/Liuddy/NuitInfo2023",
+                "Dépôt GitHub"
+            ]
+        ],
+        "mainTech": [
+            "PHP",
+            "JavaScript"
+        ],
+        "allTech": [
+            "HTML",
+            "CSS",
+            "PHP",
+            "JavaScript",
+            "Git"
+        ],
+        "skills": [
+            1,
+            6,
+            7,
+            8
+        ],
+        "team": "groupe",
+        "environment": "personnel"
+    },
+    {
+        "name": "Memor'Event",
+        "type": [
+            "Application"
+        ],
+        "date": [
+            "2024-02",
+            "2024-03"
+        ],
+        "description": "Application mobile servant à sauvegarder des événements (concerts, festivals...), avec la possibilité d'y lier des photos et notes pour en garder des souvenirs.",
+        "illustration": "memor_event_illu",
+        "content": [
+            "Il s'agit d'une application réalisée, dans le cadre des cours de développement mobile, à l'aide de l'IDE Android Studio. Le sujet du projet était libre, seules quelques fonctionnalités étaient demandées telles que l'utilisation de l'API Google pour intégrer une carte à l'application.",
+            "Pour mon application, j'ai ainsi choisi de permettre aux utilisateurs une sorte d'archivage de leurs souvenirs. Ils peuvent rechercher le nom d'un événement passé, que cela soit un concert, un festival ou encore un salon, grâce à une API publique qui stocke ce genre de données. Il est aussi possible de créer son propre événement s'il n'est pas trouvable dans la base.",
+            "Ensuite, ils peuvent sauvegarder l'événement, y ajouter des notes, le nom des personnes présentes et même des photos depuis leur galerie. Le principal objectif ici est de pouvoir garder une trace des bons moments passés et de permettre leur consultation facilement à posteriori."
+        ],
+        "links": [
+            [
+                "https://github.com/Liuddy/MemorEvent",
+                "Dépôt GitHub"
+            ]
+        ],
+        "mainTech": [
+            "Java",
+            "Android Studio"
+        ],
+        "allTech": [
+            "Java",
+            "Android Studio"
+        ],
+        "skills": [
+            1,
+            6
+        ],
+        "team": "solo",
+        "environment": "universitaire"
+    },
+    {
+        "name": "ShopiMory",
+        "type": [
+            "Site web"
+        ],
+        "date": [
+            "2024-02",
+            "2024-04"
+        ],
+        "description": "Site de gestion de listes de courses.",
+        "illustration": "shopimory_illu",
+        "content": [],
+        "links": [
+            [
+                "https://github.com/Liuddy/ShopiMory",
+                "Dépôt GitHub"
+            ]
+        ],
+        "mainTech": [
+            "Symfony"
+        ],
+        "allTech": [
+            "HTML",
+            "CSS",
+            "PHP",
+            "Symfony",
+            "Git"
+        ],
+        "skills": [
+            1,
+            2,
+            6,
+            8
+        ],
+        "team": "groupe",
+        "environment": "universitaire"
+    },
+    {
+        "name": "Osu Eco+",
+        "type": [
+            "Jeu vidéo"
+        ],
+        "date": [
+            "2024-03",
+            "2024-04"
+        ],
+        "description": "Prototype de jeu vidéo inspiré par le jeu de rythme « Osu! ». Réalisé en équipe, la priorité était portée sur la qualité du développement.",
+        "illustration": "osu_eco_plus_illu",
+        "content": [
+            "Il s'agit d'une tentative de recréation du jeu vidéo de rythme « Osu! ». Développé en Java, en groupe et dans le cadre des cours de qualité de développement, l'accent a été mis sur celle-ci plus que sur le résultat final.",
+            "Le jeu demeure donc très sommaire. L'utilisateur peut sélectionner un niveau et jouer en cliquant sur les cercles apparaissant à l'écran, en rythme avec la musique, et un nombre de points lui est accordé en fonction du temps mis pour cliquer sur un cercle.",
+            "Ce projet aura surtout renforcé une certaine rigueur sur tout ce qui concerne la qualité de développement, la mise en place correcte et adaptée d'un modèle de développement et la rédaction de tous les commentaires nécessaires dans le code."
+        ],
+        "links": [
+            [
+                "https://github.com/Liuddy/OsuEcoPlus",
+                "Dépôt GitHub"
+            ]
+        ],
+        "mainTech": [
+            "Java"
+        ],
+        "allTech": [
+            "Java",
+            "Git"
+        ],
+        "skills": [
+            1,
+            2,
+            3,
+            6,
+            8
+        ],
+        "team": "groupe",
+        "environment": "universitaire"
+    },
+    {
+        "name": "Portfolio",
+        "type": [
+            "Site web"
+        ],
+        "date": [
+            "2024-05",
+            "2025-03"
+        ],
+        "description": "Site web me faisant office de portfolio, que vous consultez actuellement. Il répertorie tous mes projets et fournit quelques informations sur moi.",
+        "illustration": "portfolio_illu",
+        "content": [
+            "Étant dans le domaine de la programmation et appréciant le développement web, lorsque je me suis lancé dans la réalisation de mon portfolio, je me suis immédiatement tourné vers la conception d'un site web. Cette solution permet, dans un premier temps, de mettre en œuvre et de montrer mes compétences en web, mais aussi et surtout de pouvoir partager facilement et rapidement mon portfolio.",
+            "J'ai décidé de développer ce site à l'aide du framework Vue.js, que j'avais envie de mieux prendre en main. Un portfolio étant grossièrement une vitrine de soi et de ses compétences, je savais déjà que je n'aurais besoin que d'un langage agissant côté client, en l'occurrence JavaScript. Ce projet aurait tout aussi bien pu être réalisé en HTML et CSS pur, mais je souhaitais ajouter un peu d'interactivité dans mon site.",
+            "La réalisation de ce site m'a surtout apporté de l'expérience pour tout ce qui concerne les prises de décision. Ayant été seul acteur du projet, j'ai dû décider de chacun de ses aspects, des technologies à utiliser aux choix de design et d'ergonomie."
+        ],
+        "links": [
+            [
+                "https://github.com/Liuddy/Portfolio",
+                "Dépôt GitHub"
+            ]
+        ],
+        "mainTech": [
+            "Vue.js",
+            "Vite"
+        ],
+        "allTech": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Vue.js",
+            "Vite",
+            "Git"
+        ],
+        "skills": [
+            1,
+            2,
+            6
+        ],
+        "team": "solo",
+        "environment": "personnel"
     },
     {
         "name": "TOMUSS",
@@ -112,14 +531,14 @@
         ],
         "date": [
             "2024-05",
-            "2024-09"
+            "2025-09"
         ],
-        "description": "Application web open source ayant fait l'objet d'un stage puis d'une alternance pour valider ma formation. Elle est utilisée pour le suivi pédagogique des étudiants.",
+        "description": "Application web open source ayant fait l'objet d'un stage, puis d'une alternance pour valider ma formation. Elle est utilisée pour le suivi pédagogique des étudiants.",
         "illustration": "tomuss_illu",
         "content": [
             "Afin de valider ma deuxième année de formation en BUT Informatique, il m'a fallu trouver et effectuer un stage en entreprise dans le milieu de la programmation. J'ai ainsi eu l'opportunité de travailler sur l'application web TOMUSS, au sein même du département informatique de mon université.",
             "Le sigle TOMUSS signifie « The Online Multi-User Simple Spreadsheet ». Il s'agit d'une application web open source développée au sein de l'Université Lyon 1 permettant la consultation et la modification de tableaux de données en simultané par plusieurs utilisateurs. Cette application sert au suivi pédagogique des étudiants sur tout le campus, permettant la gestion de leurs notes ou encore de leurs absences.",
-            "L'application est développée en JavaScript pour le frontend et en Python pour le backend. J'ai majoritairement travaillé dessus du côté frontend afin d'apporter diverses améliorations et corrections pour l'expérience utilisateur. J'ai pu réaliser à travers ce projet ce que représente réellement l'analyse et l'appréhension d'un code existant. Par ailleurs, j'ai aussi acquis une plus grande maîtrise des usages de Git et une meilleure familiarisation avec les systèmes Unix.",
+            "L'application est développée en JavaScript pour le frontend et en Python pour le backend. J'ai majoritairement travaillé dessus du côté frontend afin d'apporter diverses améliorations et corrections pour l'expérience utilisateur. J'ai pu réaliser, à travers ce projet, ce que représente réellement l'analyse et l'appréhension d'un code existant. Par ailleurs, j'ai aussi acquis une plus grande maîtrise des usages de Git et une meilleure familiarisation avec les systèmes Unix.",
             "Ce stage s'étant très bien déroulé et ayant grandement apprécié sa réalisation, j'ai pu poursuivre mon travail sur l'application lors de ma troisième année de BUT, durant laquelle il s'agit cette fois-ci de réaliser l'année en alternance."
         ],
         "links": [
@@ -140,10 +559,98 @@
             "Git"
         ],
         "skills": [
-            0,
             1,
             2,
-            7
+            3,
+            8
+        ],
+        "team": "groupe",
+        "environment": "universitaire"
+    },
+    {
+        "name": "Crazymo",
+        "type": [
+            "Site web"
+        ],
+        "date": [
+            "2024-09",
+            "2024-11"
+        ],
+        "description": "Jeu web reprenant le concept de Tusmo (inspiré de Motus).",
+        "illustration": "crazymo_illu",
+        "content": [],
+        "links": [
+            [
+                "https://github.com/Liuddy/Crazymo",
+                "Dépôt GitHub"
+            ]
+        ],
+        "mainTech": [
+            "Docker",
+            "Java",
+            "Vue.js"
+        ],
+        "allTech": [
+            "Docker",
+            "Java",
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "TypeScript",
+            "Vue.js",
+            "Git"
+        ],
+        "skills": [
+            1,
+            2,
+            3,
+            6,
+            8
+        ],
+        "team": "groupe",
+        "environment": "universitaire"
+    },
+    {
+        "name": "Platine",
+        "type": [
+            "Application web"
+        ],
+        "date": [
+            "2024-09",
+            "2025-02"
+        ],
+        "description": "Progiciel web visant à regrouper toutes les ressources universitaires en une seule application.",
+        "illustration": "platine_illu",
+        "content": [],
+        "links": [
+            [
+                "https://github.com/Liuddy/Platine",
+                "Dépôt GitHub"
+            ]
+        ],
+        "mainTech": [
+            "Docker",
+            "Prisma",
+            "Express.js"
+        ],
+        "allTech": [
+            "Docker",
+            "Prisma",
+            "HTML",
+            "CSS",
+            "TypeScript",
+            "Express.js",
+            "Git"
+        ],
+        "skills": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
         ],
         "team": "groupe",
         "environment": "universitaire"
