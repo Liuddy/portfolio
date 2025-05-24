@@ -28,13 +28,11 @@
       <div class="contentBox">
         <p class="name">{{ project.name }}</p>
 
+        <p class="date">{{ project.date[0] + ' - ' + project.date[1] }}</p>
+
         <div class="type">
           <p v-for="type in project.type">{{ type }}</p>
         </div>
-
-        <img class="team" :src="getImgPath('icons', project.team)"
-        :alt="`Icônographie pour équipe en ${ project.team }`">
-        <p class="date">{{ project.date[0] + ' - ' + project.date[1] }}</p>
 
         <div class="technologies">
           <img v-for="techIcon in project.mainTech"
@@ -42,7 +40,12 @@
           :alt="`Logo de ${ techIcon }`">
         </div>
 
-        <p class="description">{{ project.description }}</p>
+        <div class="statBox">
+          <img :src="getImgPath('icons', project.team)"
+          :alt="`Icônographie pour équipe en ${ project.team }`">
+          <img :src="getImgPath('icons', project.environment)"
+          :alt="`Icônographie pour cadre ${ project.environment }`">
+        </div>
       </div>
 
     </div>
@@ -58,12 +61,12 @@
 <style scoped>
 
   div#projectList {
-    column-gap: 3.5rem;
+    column-gap: 5rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 2rem 0;
     place-items: center;
-    row-gap: 3rem;
+    row-gap: 4rem;
 
     & div.project {
       align-self: center;
@@ -76,18 +79,16 @@
       grid-template-columns: 33.5% 66.5%;
       height: 200px;
       margin: auto;
-      max-width: 600px;
-      min-width: 400px;
+      max-width: 575px;
+      min-width: 575px;
       padding: 0.5rem;
       transition: 0.4s;
-      width: fit-content;
 
       &:hover {
         background-color: var(--color-link);
         transform: scale(1.12);
 
         & div.technologies img { background-color: rgba(255, 255, 255, 0.9); }
-
       }
 
       & > img {
@@ -100,81 +101,78 @@
       & div.contentBox {
         display: grid;
         grid-template-columns: 5;
-        grid-template-rows: 20% 17% 63%;
+        grid-template-rows: 25% 20% 55%;
+        margin-left: 0.2rem;
         place-items: left;
 
         & p.name {
           font-size: 1.5rem;
           font-weight: bold;
+          grid-column: span 5;
+          white-space: nowrap;
+        }
+
+        & p.date {
+          font-size: 0.9rem;
           grid-column: span 2;
+          white-space: nowrap;
         }
 
         & div.type {
           display: inline-flex;
-          grid-column: span 2;
-          margin-top: 0.5rem;
+          grid-column: span 3;
+          place-content: center;
 
           & p {
             background-color: var(--color-background-transparent);
             border: 1px dashed var(--color-border);
             border-radius: 7px;
-            font-size: 0.9rem;
-            height: 1.3rem;
-            line-height: 1.2rem;
-            margin-right: 0.2rem;
+            font-size: 1rem;
+            height: 1.4rem;
+            line-height: normal;
+            margin-right: 0.3rem;
             padding: 0 0.2rem;
             text-align: center;
             transition: background-color 0.5s;
             white-space: nowrap;
+
+            &:last-child { margin-right: 0; }
           }
 
         }
 
-        & img.team {
-          height: 25px;
-          margin-left: auto;
-          margin-right: 3px;
-          margin-top: 0.3rem;
-          transition: filter 0.5s;
-          width: 25px;
-        }
-
-        & p.date {
-          font-size: 0.9rem;
-          font-weight: lighter;
-          grid-column: span 2;
-          white-space: nowrap;
-        }
-
-        & div.technologies {
+        & div.technologies, & div.statBox {
           display: flex;
           flex-direction: row;
           grid-column: span 3;
-          margin-left: auto;
+          margin: 0 auto;
 
           & img {
-            height: 30px;
+            height: 60px;
             border-radius: 5px;
             margin-bottom: auto;
-            margin-left: 3px;
+            margin-right: 0.8rem;
             margin-top: auto;
-            width: 30px;
+            width: 60px;
           }
 
         }
 
-        & p.description {
-          font-size: 1rem;
-          grid-column: span 5;
-          margin-top: 8px;
+        & div.statBox {
+          grid-column: span 2;
+
+          & img { transition: filter 0.5s; }
+
+          & img:last-child { margin-right: 0; }
         }
+
       }
 
     }
 
   }
 
-  html[data-theme="dark"] img.team { filter: invert(1); }
+  html[data-theme="dark"] div.statBox img { filter: invert(1); }
 
   @media (max-width: 1280px) {
 

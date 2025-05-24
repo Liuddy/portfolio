@@ -155,7 +155,7 @@
         "environment": "personnel"
     },
     {
-        "name": "App Dessin",
+        "name": "App. de Dessin",
         "type": [
             "Application"
         ],
@@ -190,7 +190,7 @@
         "environment": "universitaire"
     },
     {
-        "name": "Aide Décision",
+        "name": "App. d'Aide Décisionnelle",
         "type": [
             "Application"
         ],
@@ -332,7 +332,7 @@
         "environment": "universitaire"
     },
     {
-        "name": "Nuit Info",
+        "name": "Nuit de l'Info 2023",
         "type": [
             "Site web"
         ],
