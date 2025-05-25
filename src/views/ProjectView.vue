@@ -79,8 +79,8 @@
       grid-template-columns: 33.5% 66.5%;
       height: 200px;
       margin: auto;
-      max-width: 575px;
-      min-width: 575px;
+      max-width: 600px;
+      min-width: 600px;
       padding: 0.5rem;
       transition: 0.4s;
 
@@ -102,7 +102,6 @@
         display: grid;
         grid-template-columns: 5;
         grid-template-rows: 25% 20% 55%;
-        margin-left: 0.2rem;
         place-items: left;
 
         & p.name {
@@ -113,7 +112,7 @@
         }
 
         & p.date {
-          font-size: 0.9rem;
+          font-size: 1rem;
           grid-column: span 2;
           white-space: nowrap;
         }
@@ -127,9 +126,9 @@
             background-color: var(--color-background-transparent);
             border: 1px dashed var(--color-border);
             border-radius: 7px;
-            font-size: 1rem;
-            height: 1.4rem;
-            line-height: normal;
+            font-size: 1.1rem;
+            height: 1.5rem;
+            line-height: 1.4rem;
             margin-right: 0.3rem;
             padding: 0 0.2rem;
             text-align: center;
@@ -148,12 +147,12 @@
           margin: 0 auto;
 
           & img {
-            height: 60px;
+            height: 65px;
             border-radius: 5px;
             margin-bottom: auto;
             margin-right: 0.8rem;
             margin-top: auto;
-            width: 60px;
+            width: 65px;
           }
 
         }

@@ -43,7 +43,7 @@
     place-items: center;
 
     & nav {
-      font-size: 1rem;
+      font-size: 1.15rem;
       margin-left: 38px;
       text-align: center;
       width: 100%;
