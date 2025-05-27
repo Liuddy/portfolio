@@ -1,26 +1,24 @@
 <script setup>
-  import { RouterView } from 'vue-router'
-  import TheHeader from '@/components/TheHeader.vue'
-  import TheFooter from '@/components/TheFooter.vue'
+import { RouterView } from 'vue-router'
+import TheHeader from '@/components/TheHeader.vue'
+import TheFooter from '@/components/TheFooter.vue'
 </script>
 
 
 <template>
-  <TheHeader/>
+  <TheHeader />
 
   <main>
-    <RouterView/>
+    <RouterView />
   </main>
 
-  <TheFooter/>
+  <TheFooter />
 </template>
 
 
 <style scoped>
-
-  main {
-    flex: 1;
-    min-width: 100%;
-  }
-
+main {
+  flex: 1;
+  min-width: 100%;
+}
 </style>

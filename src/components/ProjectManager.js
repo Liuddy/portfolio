@@ -34,8 +34,6 @@ class Project {
 	formatDate(date) { return new Date(date).toLocaleDateString('en-GB', { month: 'numeric', year: 'numeric' }) }
 }
 
-const projectList = []
+export const projectList = []
 for (let project of projectJsonList)
 	projectList.push(new Project(project))
-
-export { projectList }

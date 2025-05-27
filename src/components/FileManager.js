@@ -1,8 +1,8 @@
 // Iterates through each file path so that the import source can be resolved dinamically.
 async function importFilesAndSavePath(importList, pathList) {
   for (let importFn of Object.values(importList)) {
-    let mod = await importFn()
-    pathList.push(mod.default)
+    let src = await importFn()
+    pathList.push(src.default)
   }
 }
 
@@ -22,26 +22,22 @@ const filesPath = []
 const filesImport = import.meta.glob('@/assets/files/*')
 await importFilesAndSavePath(filesImport, filesPath)
 
-function getImgPath(type, name) {
-  name = name.toLowerCase()
-
+export function getImgPath(type, name) {
   let folder = ''
   if (type === 'logo')
-      folder = logoPath
+    folder = logoPath
   else if (type === 'images')
-      folder = imagesPath
+    folder = imagesPath
   else if (type === 'icons')
-      folder = iconsPath
-  else if (type ===  'files')
-      folder = filesPath
+    folder = iconsPath
+  else if (type === 'files')
+    folder = filesPath
 
-  if (name.includes(' ') || name.includes('::')) {
-    name = name.replaceAll(' ', '_')
-    name = name.replaceAll('::', '_')
-  } if (name.includes('+'))
-    name = name.replaceAll('+', 'plus')
-  if (name.includes('.'))
-    name = name.replaceAll('.', 'dot')
+  name = name.toLowerCase()
+  name = name.replace(/ |::/g, '_')
+  name = name.replaceAll('+', 'plus')
+  name = name.replaceAll('.', 'dot')
+
   if (name === 'c' || name === 'java' || name === 'sql')
     name += 'og'
 
@@ -51,5 +47,3 @@ function getImgPath(type, name) {
       return src
   }
 }
-
-export { getImgPath }

@@ -93,7 +93,9 @@ div#app {
 }
 
 /* Global style for p elements */
-p { text-align: justify; }
+p {
+  text-align: justify;
+}
 
 /* Global style for a elements */
 a {
