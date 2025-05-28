@@ -78,18 +78,16 @@ function getLogoPath() { return getImgPath('logo', preferredTheme.value) }
 #logoBox {
   display: flex;
   flex-direction: column;
-  margin-bottom: 5rem;
+  margin-bottom: 5em;
   place-items: center;
 }
 
 #buttonBox {
   display: flex;
   flex-direction: row;
-  place-items: north;
 }
 
 img {
-  object-fit: contain;
   opacity: 0;
 
   &:first-child {
@@ -140,7 +138,7 @@ a {
   }
 
   p {
-    font-size: 1.1rem;
+    font-size: 1.1em;
     font-weight: bold;
     margin: auto;
     padding: 9px;

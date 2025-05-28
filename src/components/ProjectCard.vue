@@ -91,7 +91,7 @@ html[data-theme="dark"] #details img {
   min-width: 100vw;
   left: 0;
   overflow: hidden;
-  padding: 3rem;
+  padding: 3em;
   position: fixed;
   right: 0;
   top: 0;
@@ -102,62 +102,60 @@ html[data-theme="dark"] #details img {
     border: 2px solid var(--color-link);
     border-radius: 40px;
     box-shadow: 0 18px 30px -10px black;
-    color: var(--color-text);
     cursor: auto;
     display: grid;
     grid-template-columns: 25% 50% 25%;
     grid-template-rows: 7% 63% 30%;
     margin: auto;
-    max-width: 1280px;
-    min-height: 100%;
+    max-width: 75%;
     max-height: 100%;
-    overflow-x: hidden;
+    min-height: 100%;
     overflow-y: auto;
-    padding: 1rem;
+    padding: 1em;
     scrollbar-width: none;
   }
 }
 
 #type {
   display: inline-flex;
-  margin-top: 1rem;
+  margin-top: 1em;
 
   p {
     background-color: var(--color-background-transparent);
     border: 1px dashed var(--color-border);
     border-radius: 8px;
-    font-size: 1.2rem;
-    height: 1.7rem;
-    line-height: 1.5rem;
+    font-size: 1.2em;
+    height: 1.7em;
+    line-height: 1.5;
     margin: 0 auto;
-    padding: 0 0.3rem;
+    padding: 0 0.3em;
     text-align: center;
     white-space: nowrap;
   }
 }
 
 h1 {
-  font-size: 2.2rem;
+  font-size: 2.2em;
   font-weight: bold;
   text-align: center;
 }
 
 #date {
-  font-size: 1.2rem;
-  margin-top: 1rem;
+  font-size: 1.2em;
+  margin-top: 1em;
   text-align: center;
 }
 
 #details {
   display: flex;
   flex-direction: column;
-  margin-left: 1rem;
-  margin-top: 2rem;
+  margin-left: 1em;
+  margin-top: 2em;
 
   div {
     display: inline-flex;
-    margin-left: 1rem;
-    margin-bottom: 1rem;
+    margin-left: 1em;
+    margin-bottom: 1em;
   }
 
   img {
@@ -166,16 +164,16 @@ h1 {
   }
 
   p {
-    font-size: 1.05rem;
-    margin: auto 0 auto 1rem;
+    font-size: 1.05em;
+    margin: auto 0 auto 1em;
   }
 
   ul {
-    font-size: 1.05rem;
-    margin-top: 3rem;
+    font-size: 1.05em;
+    margin-top: 3em;
     line-height: 1.6;
     list-style: none;
-    padding-left: 1rem;
+    padding-left: 1em;
     white-space: nowrap;
   }
 }
@@ -184,14 +182,13 @@ h1 {
   border-radius: 20px;
   height: 470px;
   margin: auto;
-  object-fit: contain;
   width: 470px;
 }
 
 #technologies {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-right: 1rem;
+  margin-right: 1em;
 
   img {
     height: 80px;
@@ -203,23 +200,23 @@ h1 {
 
 #content {
   display: grid;
-  font-size: 1.1rem;
+  font-size: 1.1em;
   grid-column: span 3;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 80% 20%;
   line-height: 1.5;
 
   p {
-    margin: 1rem 1rem 0 1rem;
+    margin: 1rem 1rem 0 1em;
   }
 }
 
 #links {
   display: flex;
-  font-size: 1.1rem;
+  font-size: 1.1em;
   grid-column: span 2;
   line-height: 1.5;
-  padding: 0 2rem;
+  padding: 0 2em;
 
   a {
     margin: auto;

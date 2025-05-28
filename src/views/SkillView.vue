@@ -96,15 +96,15 @@ function switchDivClass(divClass) {
 
 <style scoped>
 .techList {
-  margin-bottom: 3.5rem;
-  margin-top: 2rem;
+  margin-bottom: 3.5em;
+  margin-top: 2em;
 }
 
 .techFlex {
   background-color: var(--color-background-darker);
   border: 2px solid var(--color-link);
   border-radius: 31px;
-  max-height: 3.81rem;
+  max-height: 3.81em;
   overflow: hidden;
   transition:
     background-color 0.5s,
@@ -126,11 +126,10 @@ function switchDivClass(divClass) {
     border: 2px solid var(--color-link);
     border-radius: 40px;
     cursor: pointer;
-    font-size: 1.3rem;
+    font-size: 1.3em;
     font-weight: bold;
-    line-height: normal;
     margin: -2px;
-    padding: 1rem 1.5rem;
+    padding: 1rem 1.5em;
     text-align: center;
     transition: background-color 0.5s;
 
@@ -149,7 +148,7 @@ function switchDivClass(divClass) {
     border-radius: 26px;
     display: flex;
     flex-direction: column;
-    max-height: 3.5rem;
+    max-height: 3.5em;
     overflow: hidden;
     transition: max-height 0.3s;
     transition-delay: -0.1s;
@@ -169,10 +168,9 @@ function switchDivClass(divClass) {
 
     &>p {
       cursor: pointer;
-      font-size: 1.25rem;
-      line-height: normal;
+      font-size: 1.25em;
       margin: -1px;
-      padding: 1rem 1.5rem;
+      padding: 1rem 1.5em;
       text-align: center;
 
       &:hover {
@@ -195,19 +193,18 @@ function switchDivClass(divClass) {
   }
 
   ul {
-    font-size: 1.2rem;
+    font-size: 1.2em;
     list-style: none;
-    min-height: 0;
     overflow: hidden;
-    padding: 1rem;
-    padding-bottom: 0.5rem;
+    padding: 1em;
+    padding-bottom: 0.5em;
     padding-top: 0;
     text-align: center;
 
     li {
       display: inline-block;
-      margin: 0 2rem;
-      padding: 2rem;
+      margin: 0 2em;
+      padding: 2em;
 
       &:nth-child(2n) {
         display: none;
@@ -218,18 +215,17 @@ function switchDivClass(divClass) {
         height: 80px;
         border-radius: 10px;
         margin: auto;
-        margin-bottom: 1rem;
+        margin-bottom: 1em;
         width: 80px;
       }
 
       p {
-        font-size: 1.1rem;
-        line-height: normal;
+        font-size: 1.1em;
         text-align: center;
 
         &:last-child {
-          font-size: 1.25rem;
-          margin-top: 0.2rem;
+          font-size: 1.25em;
+          margin-top: 0.2em;
         }
       }
     }
@@ -237,7 +233,7 @@ function switchDivClass(divClass) {
 }
 
 .skillGrid {
-  column-gap: 4rem;
+  column-gap: 4em;
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 0;
@@ -248,13 +244,13 @@ function switchDivClass(divClass) {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  row-gap: 3.5rem;
+  row-gap: 3.5em;
 
   div {
     background-color: var(--color-background-darker);
     border: 2px solid var(--color-link);
     border-radius: 31px;
-    max-height: 3.95rem;
+    max-height: 3.95em;
     overflow: hidden;
     transition:
       background-color 0.5s,
@@ -272,11 +268,10 @@ function switchDivClass(divClass) {
       border-radius: 40px;
       display: flex;
       cursor: pointer;
-      font-size: 1.3rem;
+      font-size: 1.3em;
       font-weight: bold;
-      line-height: normal;
       margin: -2px;
-      padding: 1rem 1.5rem;
+      padding: 1rem 1.5em;
       transition: background-color 0.5s;
 
       &:hover {
@@ -291,28 +286,27 @@ function switchDivClass(divClass) {
   }
 
   span {
-    font-size: 1.45rem;
+    font-size: 1.45em;
     margin-left: auto;
     pointer-events: none;
   }
 
   ul {
-    font-size: 1.2rem;
+    font-size: 1.2em;
     list-style: none;
-    padding: 2rem;
-    padding-bottom: 0.5rem;
+    padding: 2em;
+    padding-bottom: 0.5em;
 
     p {
       display: flex;
-      font-size: 1.1rem;
-      line-height: normal;
-      margin-bottom: 1.5rem;
+      font-size: 1.1em;
+      margin-bottom: 1.5em;
       text-align: left;
     }
 
     span {
-      padding-left: 1.5rem;
-      font-size: 1.25rem;
+      padding-left: 1.5em;
+      font-size: 1.25em;
     }
   }
 }

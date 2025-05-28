@@ -59,7 +59,7 @@ function getMyAge() {
 <style scoped>
 section {
   display: grid;
-  margin-top: 2rem;
+  margin-top: 2em;
 
   &:first-child {
     grid-template-columns: 74% 26%;
@@ -77,7 +77,7 @@ section {
   img {
     border-radius: 50px;
     height: 300px;
-    transition: 0.4s;
+    transition: transform 0.4s;
     vertical-align: bottom;
 
     &:hover {
@@ -87,21 +87,20 @@ section {
 }
 
 .textContainer {
-  padding: 0.5rem;
+  padding: 0.5em;
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: 1.8em;
   font-weight: bold;
-  line-height: normal;
 }
 
 p {
-  font-size: 1.1rem;
+  font-size: 1.1em;
   line-height: 1.4;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  margin-top: 1rem;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-top: 1em;
 
   .secret {
     cursor: help;
@@ -115,9 +114,8 @@ a {
   img {
     border-radius: 20px;
     height: 80px;
-    margin-right: 2rem;
-    margin-top: 2rem;
-    object-fit: contain;
+    margin-right: 2em;
+    margin-top: 2em;
     width: 80px;
   }
 }

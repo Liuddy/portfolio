@@ -36,13 +36,12 @@ onMounted(() => {
 
 <style scoped>
 nav {
-  display: inline-flex;
-  font-size: 1.15rem;
-  gap: 0.2rem;
-  margin-left: 2rem;
-  place-content: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.1em;
+  gap: 0.2em;
+  line-height: 1.5;
   text-align: center;
-  width: 100%;
 
   a.router-link-exact-active {
     color: var(--color-text);
@@ -52,11 +51,13 @@ nav {
 }
 
 label {
-  display: inline-block;
-  margin-left: auto;
-  min-height: 20px;
-  min-width: 38px;
-  position: relative;
+  left: 50%;
+  line-height: 0.95;
+  margin-top: 0.5em;
+  min-height: 1.1em;
+  min-width: 2em;
+  position: absolute;
+  transform: translate(-50%);
 
   input {
     display: none;
@@ -65,11 +66,11 @@ label {
       background-color: var(--color-elt-orange);
 
       &::before {
-        transform: translateX(18px);
+        transform: translateX(0.88em);
       }
 
       p {
-        transform: translateX(23px);
+        transform: translateX(1.25em);
 
         &.sun {
           visibility: hidden;
@@ -84,10 +85,11 @@ label {
 
   span {
     background-color: var(--color-elt-blue);
-    border-radius: 20px;
+    border-radius: 1em;
     color: black;
     cursor: pointer;
     inset: 0;
+    padding: 0.05em 0;
     position: absolute;
     transition: transform 0.4s;
     user-select: none;
@@ -95,21 +97,18 @@ label {
     &::before {
       background-color: white;
       border-radius: 50%;
-      bottom: 2px;
       content: "";
-      height: 16px;
-      left: 2px;
+      height: 1em;
+      margin: 0 0.06em;
       position: absolute;
       transition: transform 0.4s;
-      width: 16px;
+      width: 1em;
     }
   }
 
   p {
-    bottom: -0.4px;
-    font-size: 14px;
+    font-size: 1.05em;
     font-weight: bold;
-    left: 2.5px;
     position: absolute;
     transition: transform 0.35s;
 
@@ -120,6 +119,25 @@ label {
     &.moon {
       visibility: hidden;
     }
+  }
+}
+
+@media (min-width: 700px) {
+  nav {
+    display: inline-flex;
+    flex-direction: row;
+    place-content: center;
+    width: 100%;
+  }
+
+  label {
+    left: 90%;
+  }
+}
+
+@media (min-width: 1024px) {
+  label {
+    left: 85%;
   }
 }
 </style>

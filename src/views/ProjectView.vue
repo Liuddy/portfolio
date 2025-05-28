@@ -57,12 +57,11 @@ html[data-theme="dark"] div.statBox img {
 }
 
 #projectList {
-  column-gap: 5rem;
+  column-gap: 5em;
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: 2rem 0;
-  place-items: center;
-  row-gap: 4rem;
+  row-gap: 4em;
 }
 
 .project {
@@ -70,16 +69,15 @@ html[data-theme="dark"] div.statBox img {
   border: 2px solid var(--color-link);
   border-radius: 30px;
   box-shadow: 0 12px 20px -10px black;
-  color: var(--color-text);
   cursor: pointer;
   display: grid;
   grid-template-columns: 33.5% 66.5%;
   height: 200px;
   margin: auto;
-  max-width: 600px;
-  min-width: 600px;
-  padding: 0.5rem;
-  transition: 0.4s;
+  padding: 0.5em;
+  transition:
+    background-color 0.4s,
+    transform 0.4s;
 
   &:hover {
     background-color: var(--color-link);
@@ -93,7 +91,6 @@ html[data-theme="dark"] div.statBox img {
   &>img {
     border-radius: 20px;
     height: 180px;
-    object-fit: contain;
     width: 180px;
   }
 }
@@ -102,18 +99,17 @@ html[data-theme="dark"] div.statBox img {
   display: grid;
   grid-template-columns: 5;
   grid-template-rows: 25% 20% 55%;
-  place-items: left;
 }
 
 .name {
-  font-size: 1.5rem;
+  font-size: 1.5em;
   font-weight: bold;
   grid-column: span 5;
   white-space: nowrap;
 }
 
 .date {
-  font-size: 1rem;
+  font-size: 1em;
   grid-column: span 2;
   white-space: nowrap;
 }
@@ -127,11 +123,11 @@ html[data-theme="dark"] div.statBox img {
     background-color: var(--color-background-transparent);
     border: 1px dashed var(--color-border);
     border-radius: 7px;
-    font-size: 1.1rem;
-    height: 1.5rem;
-    line-height: 1.4rem;
-    margin-right: 0.3rem;
-    padding: 0 0.2rem;
+    font-size: 1.1em;
+    height: 1.5em;
+    line-height: 1.4;
+    margin-right: 0.3em;
+    padding: 0 0.2em;
     text-align: center;
     transition: background-color 0.5s;
     white-space: nowrap;
@@ -153,7 +149,7 @@ html[data-theme="dark"] div.statBox img {
     height: 65px;
     border-radius: 5px;
     margin-bottom: auto;
-    margin-right: 0.8rem;
+    margin-right: 0.8em;
     margin-top: auto;
     width: 65px;
   }
