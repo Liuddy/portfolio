@@ -52,7 +52,7 @@ nav {
 
 label {
   left: 50%;
-  line-height: 0.95;
+  line-height: 0.96;
   margin-top: 0.5em;
   min-height: 1.1em;
   min-width: 2em;
@@ -70,7 +70,7 @@ label {
       }
 
       p {
-        transform: translateX(1.25em);
+        transform: translateX(1.16em);
 
         &.sun {
           visibility: hidden;
@@ -109,6 +109,7 @@ label {
   p {
     font-size: 1.05em;
     font-weight: bold;
+    margin: 0 0.07em;
     position: absolute;
     transition: transform 0.35s;
 

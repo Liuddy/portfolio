@@ -49,9 +49,8 @@ body {
   color: var(--color-text);
   background: var(--color-background);
   font-family:
-    Inter,
-    system-ui,
-    sans-serif;
+    Arial,
+    system-ui;
   font-size: 16px;
   font-weight: normal;
   line-height: normal;
