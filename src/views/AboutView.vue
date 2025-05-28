@@ -68,63 +68,57 @@ section {
   &:last-child {
     grid-template-columns: 26% 74%;
   }
+}
 
-  & div.textContainer {
-    padding: 0.5rem;
+.imageContainer {
+  margin: auto;
+  overflow: hidden;
 
-    & h2 {
-      font-size: 1.8rem;
-      font-weight: bold;
-      line-height: normal;
+  img {
+    border-radius: 50px;
+    height: 300px;
+    transition: 0.4s;
+    vertical-align: bottom;
+
+    &:hover {
+      transform: scale(1.5);
     }
-
-    & p {
-      font-size: 1.1rem;
-      line-height: 1.4;
-      margin-left: 1rem;
-      margin-right: 1rem;
-      margin-top: 1rem;
-
-      & span.secret {
-        cursor: help;
-      }
-
-    }
-
-    & a {
-      background: transparent;
-      display: contents;
-
-      & img {
-        border-radius: 20px;
-        height: 80px;
-        margin-right: 2rem;
-        margin-top: 2rem;
-        object-fit: contain;
-        width: 80px;
-      }
-
-    }
-
   }
+}
 
-  & div.imageContainer {
-    margin: auto;
-    overflow: hidden;
+.textContainer {
+  padding: 0.5rem;
+}
 
-    & img {
-      border-radius: 50px;
-      height: 300px;
-      transition: 0.4s;
-      vertical-align: bottom;
+h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: normal;
+}
 
-      &:hover {
-        transform: scale(1.5);
-      }
+p {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
 
-    }
-
+  .secret {
+    cursor: help;
   }
+}
 
+a {
+  background: transparent;
+  display: contents;
+
+  img {
+    border-radius: 20px;
+    height: 80px;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    object-fit: contain;
+    width: 80px;
+  }
 }
 </style>

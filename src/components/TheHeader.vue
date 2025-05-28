@@ -14,6 +14,7 @@ onMounted(() => {
 
 <template>
   <header>
+
     <nav v-if="$route.name !== 'home'">
       <RouterLink :to="{ name: 'home' }">Accueil</RouterLink>
       <RouterLink :to="{ name: 'project' }">Projets</RouterLink>
@@ -28,126 +29,97 @@ onMounted(() => {
         <p class="moon">&#9789;</p>
       </span>
     </label>
+
   </header>
 </template>
 
 
 <style scoped>
-header {
-  display: flex;
-  flex-direction: row;
-  line-height: 1.5;
-  margin-bottom: 2rem;
-  min-width: 100%;
-  place-items: center;
+nav {
+  display: inline-flex;
+  font-size: 1.15rem;
+  gap: 0.2rem;
+  margin-left: 2rem;
+  place-content: center;
+  text-align: center;
+  width: 100%;
 
-  & nav {
-    font-size: 1.15rem;
-    margin-left: 38px;
-    text-align: center;
-    width: 100%;
-
-    & a {
-      display: inline-block;
-      margin-left: 1px;
-      padding: 0 1rem;
-
-      &:first-of-type {
-        margin-left: 0;
-      }
-
-      &.router-link-exact-active {
-        color: var(--color-text);
-
-        &:hover {
-          background-color: transparent;
-        }
-
-      }
-
-    }
-
+  a.router-link-exact-active {
+    color: var(--color-text);
+    background-color: transparent;
+    cursor: auto;
   }
+}
 
-  & label {
-    display: inline-block;
-    margin-left: auto;
-    min-height: 20px;
-    min-width: 38px;
-    position: relative;
+label {
+  display: inline-block;
+  margin-left: auto;
+  min-height: 20px;
+  min-width: 38px;
+  position: relative;
 
-    & input {
-      display: none;
+  input {
+    display: none;
 
-      &:checked+span {
-        background-color: var(--color-elt-orange);
-
-        &::before {
-          transform: translateX(18px);
-        }
-
-        & p {
-          transform: translateX(23px);
-
-          &.sun {
-            visibility: hidden;
-          }
-
-          &.moon {
-            visibility: visible;
-          }
-
-        }
-
-      }
-
-    }
-
-    & span {
-      background-color: var(--color-elt-blue);
-      border-radius: 20px;
-      bottom: 0;
-      color: black;
-      cursor: pointer;
-      left: 0;
-      position: absolute;
-      right: 0;
-      top: 0;
-      transition: 0.4s;
+    &:checked+span {
+      background-color: var(--color-elt-orange);
 
       &::before {
-        background-color: white;
-        border-radius: 50%;
-        bottom: 2px;
-        content: "";
-        height: 16px;
-        left: 2px;
-        position: absolute;
-        transition: 0.4s;
-        width: 16px;
+        transform: translateX(18px);
       }
 
-      & p {
-        bottom: -0.4px;
-        font-size: 14px;
-        font-weight: bold;
-        left: 2.5px;
-        position: absolute;
-        transition: transform 0.35s;
+      p {
+        transform: translateX(23px);
 
         &.sun {
-          visibility: visible;
-        }
-
-        &.moon {
           visibility: hidden;
         }
 
+        &.moon {
+          visibility: visible;
+        }
       }
-
     }
-
   }
 
+  span {
+    background-color: var(--color-elt-blue);
+    border-radius: 20px;
+    color: black;
+    cursor: pointer;
+    inset: 0;
+    position: absolute;
+    transition: transform 0.4s;
+    user-select: none;
+
+    &::before {
+      background-color: white;
+      border-radius: 50%;
+      bottom: 2px;
+      content: "";
+      height: 16px;
+      left: 2px;
+      position: absolute;
+      transition: transform 0.4s;
+      width: 16px;
+    }
+  }
+
+  p {
+    bottom: -0.4px;
+    font-size: 14px;
+    font-weight: bold;
+    left: 2.5px;
+    position: absolute;
+    transition: transform 0.35s;
+
+    &.sun {
+      visibility: visible;
+    }
+
+    &.moon {
+      visibility: hidden;
+    }
+  }
 }
 </style>

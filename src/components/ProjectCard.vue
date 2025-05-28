@@ -30,23 +30,21 @@ function parseLink(link) {
 
       <div id="details">
 
-        <div id="team">
+        <div>
           <img :src="getImgPath('icons', props.project.team)"
             :alt="`Icônographie pour équipe en ${props.project.team}`">
           <p>Projet en {{ props.project.team }}</p>
         </div>
 
-        <div id="environment">
+        <div>
           <img :src="getImgPath('icons', props.project.environment)"
             :alt="`Icônographie pour équipe en ${props.project.environment}`">
           <p>Cadre {{ props.project.environment }}</p>
         </div>
 
-        <div id="skills">
-          <ul>
-            <li v-for="skill in props.project.skills">&#9733; {{ skillTab[skill][0] }}</li>
-          </ul>
-        </div>
+        <ul>
+          <li v-for="skill in props.project.skills">&#9733; {{ skillTab[skill][0] }}</li>
+        </ul>
 
       </div>
 
@@ -80,7 +78,11 @@ function parseLink(link) {
 
 
 <style scoped>
-div#projectDiv {
+html[data-theme="dark"] #details img {
+  filter: invert(1);
+}
+
+#projectDiv {
   backdrop-filter: blur(1px);
   background-color: rgba(10, 10, 10, 0.4);
   bottom: 0;
@@ -113,131 +115,114 @@ div#projectDiv {
     overflow-y: auto;
     padding: 1rem;
     scrollbar-width: none;
-
-    & div#type {
-      display: inline-flex;
-      margin-top: 1rem;
-
-      & p {
-        background-color: var(--color-background-transparent);
-        border: 1px dashed var(--color-border);
-        border-radius: 8px;
-        font-size: 1.2rem;
-        height: 1.7rem;
-        line-height: 1.5rem;
-        margin: 0 auto;
-        padding: 0 0.3rem;
-        text-align: center;
-        white-space: nowrap;
-      }
-
-    }
-
-    & h1 {
-      font-size: 2.2rem;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    & p#date {
-      font-size: 1.2rem;
-      margin-top: 1rem;
-      text-align: center;
-    }
-
-    & div#details {
-      display: flex;
-      flex-direction: column;
-      margin-left: 1rem;
-      margin-top: 2rem;
-
-      & div#team,
-      div#environment {
-        display: inline-flex;
-        margin-left: 1rem;
-        margin-bottom: 1rem;
-
-        & img {
-          height: 70px;
-          width: 70px;
-        }
-
-        & p {
-          font-size: 1.05rem;
-          margin-bottom: auto;
-          margin-left: 1rem;
-          margin-top: auto;
-        }
-
-      }
-
-      & div#skills ul {
-        font-size: 1.05rem;
-        margin-top: 3rem;
-        line-height: 1.6;
-        list-style: none;
-        padding-left: 1rem;
-        white-space: nowrap;
-      }
-
-    }
-
-    & img#illustration {
-      border-radius: 20px;
-      height: 470px;
-      margin: auto;
-      object-fit: contain;
-      width: 470px;
-    }
-
-    & div#technologies {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      margin-right: 1rem;
-
-      & img {
-        height: 80px;
-        border-radius: 10px;
-        margin: auto;
-        width: 80px;
-      }
-
-    }
-
-    & div#content {
-      display: grid;
-      font-size: 1.1rem;
-      grid-column: span 3;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 80% 20%;
-      line-height: 1.5;
-
-      & p {
-        margin: 0 1rem;
-        margin-top: 1rem;
-      }
-
-      & div#links {
-        display: flex;
-        font-size: 1.1rem;
-        grid-column: span 2;
-        line-height: 1.5;
-        padding: 0 2rem;
-
-        & a {
-          margin: auto;
-          padding: 0.4rem 0.7rem;
-        }
-
-      }
-
-    }
-
   }
-
 }
 
-html[data-theme="dark"] div#details div img {
-  filter: invert(1);
+#type {
+  display: inline-flex;
+  margin-top: 1rem;
+
+  p {
+    background-color: var(--color-background-transparent);
+    border: 1px dashed var(--color-border);
+    border-radius: 8px;
+    font-size: 1.2rem;
+    height: 1.7rem;
+    line-height: 1.5rem;
+    margin: 0 auto;
+    padding: 0 0.3rem;
+    text-align: center;
+    white-space: nowrap;
+  }
+}
+
+h1 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+#date {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+#details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  margin-top: 2rem;
+
+  div {
+    display: inline-flex;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  img {
+    height: 70px;
+    width: 70px;
+  }
+
+  p {
+    font-size: 1.05rem;
+    margin: auto 0 auto 1rem;
+  }
+
+  ul {
+    font-size: 1.05rem;
+    margin-top: 3rem;
+    line-height: 1.6;
+    list-style: none;
+    padding-left: 1rem;
+    white-space: nowrap;
+  }
+}
+
+#illustration {
+  border-radius: 20px;
+  height: 470px;
+  margin: auto;
+  object-fit: contain;
+  width: 470px;
+}
+
+#technologies {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-right: 1rem;
+
+  img {
+    height: 80px;
+    border-radius: 10px;
+    margin: auto;
+    width: 80px;
+  }
+}
+
+#content {
+  display: grid;
+  font-size: 1.1rem;
+  grid-column: span 3;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 80% 20%;
+  line-height: 1.5;
+
+  p {
+    margin: 1rem 1rem 0 1rem;
+  }
+}
+
+#links {
+  display: flex;
+  font-size: 1.1rem;
+  grid-column: span 2;
+  line-height: 1.5;
+  padding: 0 2rem;
+
+  a {
+    margin: auto;
+  }
 }
 </style>

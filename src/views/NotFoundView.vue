@@ -16,19 +16,18 @@ div {
   right: 0;
   text-align: center;
   top: 5rem;
+}
 
-  & h1 {
-    font-size: 4rem;
-    font-weight: bold;
-    margin-top: auto;
-  }
+h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-top: auto;
+}
 
-  & p {
-    font-size: 1.6rem;
-    margin-bottom: auto;
-    padding-top: 2rem;
-    text-align: center;
-  }
-
+p {
+  font-size: 1.6rem;
+  margin-bottom: auto;
+  padding-top: 2rem;
+  text-align: center;
 }
 </style>

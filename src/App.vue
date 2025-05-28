@@ -7,18 +7,8 @@ import TheFooter from '@/components/TheFooter.vue'
 
 <template>
   <TheHeader />
-
   <main>
     <RouterView />
   </main>
-
   <TheFooter />
 </template>
-
-
-<style scoped>
-main {
-  flex: 1;
-  min-width: 100%;
-}
-</style>
