@@ -5,16 +5,32 @@ import { storeToRefs } from 'pinia'
 import { useStore } from '@/stores/PreferenceStore.js'
 import { getImgPath } from '@/components/FileManager.js'
 
+function endAnimations() {
+  document.getElementsByTagName('html')[0].removeEventListener('click', endAnimations)
+  document.getElementsByTagName('header')[0].classList.remove('homeFade')
+  document.getElementsByTagName('footer')[0].classList.remove('homeFade')
+  Array.from(document.getElementsByClassName('btnAnim'))
+    .forEach(elt => elt.classList.remove('btnAnim'))
+  Array.from(document.getElementsByClassName('logoAnim'))
+    .forEach(elt => {
+      elt.classList.remove('logoAnim')
+      elt.style.marginTop = 0
+      elt.style.opacity = 1
+    })
+}
+
 onMounted(() => {
   document.getElementsByTagName('body')[0].id = 'home'
   document.getElementsByTagName('header')[0].classList.add('homeFade')
   document.getElementsByTagName('footer')[0].classList.add('homeFade')
+  document.getElementsByTagName('html')[0].addEventListener('click', endAnimations)
 })
 
 onUnmounted(() => {
   document.getElementsByTagName('body')[0].id = ''
   document.getElementsByTagName('header')[0].classList.remove('homeFade')
   document.getElementsByTagName('footer')[0].classList.remove('homeFade')
+  document.getElementsByTagName('html')[0].removeEventListener('click', endAnimations)
 })
 
 const { preferredTheme } = storeToRefs(useStore())
@@ -26,24 +42,30 @@ function getLogoPath() { return getImgPath('logo', preferredTheme.value) }
 <template>
 
   <div id="logoBox">
-    <img :src="getLogoPath()" :alt="`Partie Lomé Bordes du logo version ${preferredTheme}`">
-    <img :src="getImgPath('logo', 'portfolio')" :alt="`Partie portfolio du logo`">
+    <img class="logoAnim" :src="getLogoPath()" :alt="`Partie Lomé Bordes du logo version ${preferredTheme}`">
+    <img class="logoAnim" :src="getImgPath('logo', 'portfolio')" :alt="`Partie portfolio du logo`">
   </div>
 
   <div id="buttonBox">
-    <RouterLink :to="{ name: 'project' }">
+    <RouterLink :to="{ name: 'project' }" class="btnAnim">
       <div>
-        <p>PROJETS</p>
+        <div class="btn">
+          <p>PROJETS</p>
+        </div>
       </div>
     </RouterLink>
-    <RouterLink :to="{ name: 'skill' }">
+    <RouterLink :to="{ name: 'skill' }" class="btnAnim">
       <div>
-        <p>COMPÉTENCES</p>
+        <div class="btn">
+          <p>COMPÉTENCES</p>
+        </div>
       </div>
     </RouterLink>
-    <RouterLink :to="{ name: 'about' }">
+    <RouterLink :to="{ name: 'about' }" class="btnAnim">
       <div>
-        <p>À PROPOS</p>
+        <div class="btn">
+          <p>À PROPOS</p>
+        </div>
       </div>
     </RouterLink>
   </div>
@@ -90,11 +112,11 @@ function getLogoPath() { return getImgPath('logo', preferredTheme.value) }
 img {
   opacity: 0;
 
-  &:first-child {
+  &.logoAnim:first-child {
     animation: fadeUp 2.25s ease-in-out 0.25s both;
   }
 
-  &:nth-child(2) {
+  &.logoAnim:nth-child(2) {
     animation: fadeUp 2.25s ease-in-out 0.75s both;
   }
 }
@@ -108,19 +130,19 @@ a {
   padding: 0;
   width: 150px;
 
-  &:first-child {
+  &:nth-child(2) .btn {
+    background-color: var(--color-elt-orange);
+  }
+
+  &.btnAnim:first-child {
     animation: slideUp 1s ease-in-out 1.75s backwards;
   }
 
-  &:nth-child(2) {
+  &.btnAnim:nth-child(2) {
     animation: slideUp 1s ease-in-out 2.25s backwards;
-
-    div {
-      background-color: var(--color-elt-orange);
-    }
   }
 
-  &:last-child {
+  &.btnAnim:last-child {
     animation: slideUp 1s ease-in-out 2.75s backwards;
   }
 
@@ -128,7 +150,11 @@ a {
     background-color: transparent;
   }
 
-  div {
+  &>div {
+    border-radius: 50%;
+  }
+
+  .btn {
     background-color: var(--color-elt-blue);
     border-radius: 50%;
     box-shadow: inset 0 0 45px rgba(255, 255, 255, 0.1), 0 12px 20px -10px black;
@@ -203,14 +229,13 @@ a {
 }
 
 @media (hover: hover) {
-
-  div#buttonBox div {
+  #buttonBox a>div .btn {
     animation: turnOut 0.6s ease-in-out;
+  }
 
-    &:hover,
-    &:hover p {
-      animation: turnIn 0.6s ease-in-out forwards;
-    }
+  #buttonBox a>div:hover .btn,
+  #buttonBox a>div:hover p {
+    animation: turnIn 0.6s ease-in-out forwards;
   }
 
   /* Button animation on hover in */
