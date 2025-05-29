@@ -41,6 +41,7 @@ nav {
   font-size: 1.1em;
   gap: 0.2em;
   line-height: 1.5;
+  margin-bottom: 0.5em;
   text-align: center;
 
   a.router-link-exact-active {
@@ -53,7 +54,6 @@ nav {
 label {
   left: 50%;
   line-height: 0.96;
-  margin-top: 0.5em;
   min-height: 1.1em;
   min-width: 2em;
   position: absolute;
@@ -107,7 +107,6 @@ label {
   }
 
   p {
-    font-size: 1.05em;
     font-weight: bold;
     margin: 0 0.07em;
     position: absolute;
@@ -127,12 +126,14 @@ label {
   nav {
     display: inline-flex;
     flex-direction: row;
+    margin-bottom: 0;
     place-content: center;
     width: 100%;
   }
 
   label {
     left: 90%;
+    margin-top: 0.5em;
   }
 }
 

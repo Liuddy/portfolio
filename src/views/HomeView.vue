@@ -9,14 +9,10 @@ function endAnimations() {
   document.getElementsByTagName('html')[0].removeEventListener('click', endAnimations)
   document.getElementsByTagName('header')[0].classList.remove('homeFade')
   document.getElementsByTagName('footer')[0].classList.remove('homeFade')
+  Array.from(document.getElementsByClassName('logoAnim'))
+    .forEach(elt => elt.classList.remove('logoAnim'))
   Array.from(document.getElementsByClassName('btnAnim'))
     .forEach(elt => elt.classList.remove('btnAnim'))
-  Array.from(document.getElementsByClassName('logoAnim'))
-    .forEach(elt => {
-      elt.classList.remove('logoAnim')
-      elt.style.marginTop = 0
-      elt.style.opacity = 1
-    })
 }
 
 onMounted(() => {
@@ -78,7 +74,7 @@ function getLogoPath() { return getImgPath('logo', preferredTheme.value) }
   overflow: hidden;
 
   .homeFade {
-    animation: fadeIn 1s 4s both;
+    animation: fadeIn 1s 2.5s both;
     opacity: 0;
   }
 }
@@ -100,24 +96,30 @@ function getLogoPath() { return getImgPath('logo', preferredTheme.value) }
 #logoBox {
   display: flex;
   flex-direction: column;
-  margin-bottom: 5em;
+  margin-bottom: 2vh;
   place-items: center;
 }
 
 #buttonBox {
   display: flex;
-  flex-direction: row;
+  flex: 1;
+  flex-direction: column;
+  gap: 1em;
 }
 
 img {
-  opacity: 0;
+  width: 80%;
 
-  &.logoAnim:first-child {
-    animation: fadeUp 2.25s ease-in-out 0.25s both;
-  }
+  &.logoAnim {
+    opacity: 0;
 
-  &.logoAnim:nth-child(2) {
-    animation: fadeUp 2.25s ease-in-out 0.75s both;
+    &:first-child {
+      animation: fadeUp 1.5s ease-in-out 0.2s both;
+    }
+
+    &:nth-child(2) {
+      animation: fadeUp 1.5s ease-in-out 0.4s both;
+    }
   }
 }
 
@@ -125,25 +127,25 @@ a {
   border-radius: 50%;
   color: var(--color-text);
   display: block;
-  height: 150px;
+  height: 7.5em;
   margin: 0 auto;
   padding: 0;
-  width: 150px;
+  width: 7.5em;
 
   &:nth-child(2) .btn {
     background-color: var(--color-elt-orange);
   }
 
   &.btnAnim:first-child {
-    animation: slideUp 1s ease-in-out 1.75s backwards;
+    animation: slideUp 1s ease-in-out 0.7s backwards;
   }
 
   &.btnAnim:nth-child(2) {
-    animation: slideUp 1s ease-in-out 2.25s backwards;
+    animation: slideUp 1s ease-in-out 1.1s backwards;
   }
 
   &.btnAnim:last-child {
-    animation: slideUp 1s ease-in-out 2.75s backwards;
+    animation: slideUp 1s ease-in-out 1.5s backwards;
   }
 
   &:hover {
@@ -157,17 +159,16 @@ a {
   .btn {
     background-color: var(--color-elt-blue);
     border-radius: 50%;
-    box-shadow: inset 0 0 45px rgba(255, 255, 255, 0.1), 0 12px 20px -10px black;
+    box-shadow: inset 0 0 2em rgba(255, 255, 255, 0.2), 0 1.2em 1.8em -1em black;
     display: flex;
-    height: 150px;
-    width: 150px;
+    height: 7.5em;
+    width: 7.5em;
   }
 
   p {
-    font-size: 1.1em;
+    font-size: 0.9em;
     font-weight: bold;
     margin: auto;
-    padding: 9px;
     text-align: center;
   }
 }
@@ -175,11 +176,11 @@ a {
 /* Title animation */
 @keyframes fadeUp {
   from {
-    margin-top: 40%;
+    margin-top: 100%;
     opacity: 0;
   }
 
-  25% {
+  30% {
     opacity: 0;
   }
 
@@ -225,6 +226,57 @@ a {
   to {
     margin-top: 0%;
     transform: scale(1);
+  }
+}
+
+@media (min-width: 700px) {
+  #logoBox {
+    margin-bottom: 8vh;
+  }
+
+  #buttonBox {
+    flex-direction: row;
+    flex: 0;
+  }
+
+  a,
+  .btn {
+    min-height: 8em;
+    min-width: 8em;
+
+    p {
+      font-size: 1em;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  #logoBox {
+    margin-bottom: 5vh;
+  }
+
+  img {
+    width: 60%;
+  }
+
+  a,
+  .btn {
+    min-height: 9em;
+    min-width: 9em;
+
+    p {
+      font-size: 1.1em;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  #logoBox {
+    margin-bottom: 2vh;
+  }
+
+  img {
+    width: 50%;
   }
 }
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>404 Page not found</h1>
+    <h1>404 Page introuvable :(</h1>
     <p>La page à laquelle vous essayez d'accéder n'existe pas ou n'a pas été trouvée !</p>
   </div>
 </template>
@@ -8,26 +8,48 @@
 
 <style scoped>
 div {
-  bottom: 8em;
   display: flex;
+  flex: 1;
   flex-direction: column;
-  left: 0;
-  position: absolute;
-  right: 0;
   text-align: center;
-  top: 5em;
 }
 
 h1 {
-  font-size: 4em;
-  font-weight: bold;
-  margin-top: auto;
+  margin-top: 15%;
 }
 
 p {
-  font-size: 1.6em;
-  margin-bottom: auto;
   padding-top: 2em;
   text-align: center;
+}
+
+@media (min-width: 700px) {
+  h1 {
+    font-size: 3em;
+  }
+
+  p {
+    font-size: 1.2em;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 3.5em;
+  }
+
+  p {
+    font-size: 1.4em;
+  }
+}
+
+@media (min-width: 1440px) {
+  h1 {
+    font-size: 4em;
+  }
+
+  p {
+    font-size: 1.6em;
+  }
 }
 </style>

@@ -34,9 +34,6 @@ function getMyAge() {
   </section>
 
   <section>
-    <div class="imageContainer">
-      <img :src="getImgPath('images', 'red_panda_icon')" alt="Image d'icône du Portfolio">
-    </div>
     <div class="textContainer">
       <h2>Quel est ce site ?</h2>
       <p>Le site web que vous consultez présentement a été conçu dans le but d'exposer chacun de
@@ -51,6 +48,9 @@ function getMyAge() {
       <p>Sinon, vous pouvez retrouver sur ce site une liste non exhaustive de mes compétences, et
         peut-être même quelques <span class="secret">secrets</span>.</p>
     </div>
+    <div class="imageContainer">
+      <img :src="getImgPath('images', 'red_panda_icon')" alt="Image d'icône du Portfolio">
+    </div>
   </section>
 
 </template>
@@ -58,49 +58,45 @@ function getMyAge() {
 
 <style scoped>
 section {
-  display: grid;
-  margin-top: 2em;
-
-  &:first-child {
-    grid-template-columns: 74% 26%;
-  }
-
-  &:last-child {
-    grid-template-columns: 26% 74%;
-  }
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
 }
 
 .imageContainer {
-  margin: auto;
+  padding: 0.5em;
   overflow: hidden;
+  place-content: center;
 
   img {
-    border-radius: 50px;
-    height: 300px;
+    display: block;
+    border-radius: 2em;
+    margin: auto;
+    max-width: 60%;
     transition: transform 0.4s;
-    vertical-align: bottom;
 
     &:hover {
-      transform: scale(1.5);
+      transform: scale(1.4);
     }
   }
 }
 
 .textContainer {
   padding: 0.5em;
+  place-items: center;
 }
 
 h2 {
-  font-size: 1.8em;
-  font-weight: bold;
+  width: 100%;
 }
 
 p {
-  font-size: 1.1em;
-  line-height: 1.4;
-  margin-left: 1em;
-  margin-right: 1em;
-  margin-top: 1em;
+  line-height: 1.35;
+  margin: 0.5em 1em 0 1em;
+
+  &:last-child {
+    margin-bottom: 1em;
+  }
 
   .secret {
     cursor: help;
@@ -111,12 +107,43 @@ a {
   background: transparent;
   display: contents;
 
+  &:last-child img {
+    margin-right: 0;
+  }
+
   img {
-    border-radius: 20px;
-    height: 80px;
+    border-radius: 1em;
+    height: 4em;
     margin-right: 2em;
-    margin-top: 2em;
-    width: 80px;
+    margin-top: 1.5em;
+  }
+}
+
+@media (min-width: 1024px) {
+  section:first-child {
+    display: grid;
+    grid-template-columns: 74% 26%;
+  }
+
+  section:last-child {
+    display: grid;
+    grid-template-columns: 26% 74%;
+
+    .imageContainer {
+      order: -1;
+    }
+  }
+
+  .imageContainer img {
+    min-width: 100%;
+  }
+
+  .textContainer {
+    place-items: initial;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 </style>
