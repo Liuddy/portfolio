@@ -74,10 +74,6 @@ section {
     margin: auto;
     max-width: 60%;
     transition: transform 0.4s;
-
-    &:hover {
-      transform: scale(1.4);
-    }
   }
 }
 
@@ -144,6 +140,12 @@ a {
     p:last-child {
       margin-bottom: 0;
     }
+  }
+}
+
+@media (hover: hover) {
+  .imageContainer img:hover {
+    transform: scale(1.4);
   }
 }
 </style>

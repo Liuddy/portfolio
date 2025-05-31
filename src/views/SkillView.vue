@@ -19,23 +19,23 @@ function switchDivClass(divClass) {
 
   <div class="techFlex">
 
-  <p @click="switchDivClass('extended')">Maîtrise des technologies</p>
+    <p @click="switchDivClass('extended')">Maîtrise des technologies</p>
 
-  <div v-for="techList in skillTab[0]">
+    <div v-for="techList in skillTab[0]">
 
-    <p @click="switchDivClass('extendedTech')">{{ techList[0] }}</p>
+      <p @click="switchDivClass('extendedTech')">{{ techList[0] }}</p>
 
-    <div>
-      <ul>
-        <li v-for="(tech, index) in techList.slice(1)">
-          <img v-if="index % 2 === 0" :src="getImgPath('icons', tech)" :alt="`Logo de ${tech}`">
-          <p v-if="index % 2 === 0"> {{ tech }} </p>
-          <p v-if="index % 2 === 0">{{ getSkillLevelIcons(techList[index + 2]) }}</p>
-        </li>
-      </ul>
+      <div>
+        <ul>
+          <li v-for="(tech, index) in techList.slice(1)">
+            <img v-if="index % 2 === 0" :src="getImgPath('icons', tech)" :alt="`Logo de ${tech}`">
+            <p v-if="index % 2 === 0"> {{ tech }} </p>
+            <p v-if="index % 2 === 0">{{ getSkillLevelIcons(techList[index + 2]) }}</p>
+          </li>
+        </ul>
+      </div>
+
     </div>
-
-  </div>
 
   </div>
 

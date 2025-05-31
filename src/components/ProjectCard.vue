@@ -1,6 +1,15 @@
 <script setup>
+import { onMounted, onUnmounted } from 'vue'
 import { getImgPath } from '@/components/FileManager.js'
 import { skillTab } from '@/components/SkillManager.js'
+
+onMounted(() => {
+  document.getElementsByTagName('body')[0].id = 'projectCard'
+})
+
+onUnmounted(() => {
+  document.getElementsByTagName('body')[0].id = ''
+})
 
 const props = defineProps(['project'])
 
@@ -77,149 +86,247 @@ function parseLink(link) {
 </template>
 
 
+<style>
+#projectCard {
+  overflow: hidden;
+}
+</style>
+
+
 <style scoped>
-html[data-theme="dark"] #details img {
+[data-theme="dark"] #details img {
   filter: invert(1);
 }
 
 #projectDiv {
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(0.1em);
   background-color: rgba(10, 10, 10, 0.4);
-  bottom: 0;
   cursor: pointer;
-  min-height: 100vh;
-  min-width: 100vw;
-  left: 0;
+  inset: 0;
   overflow: hidden;
-  padding: 3em;
+  padding: 2em;
   position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 1;
+}
 
-  &>div {
-    background: var(--color-background);
-    border: 2px solid var(--color-link);
-    border-radius: 40px;
-    box-shadow: 0 18px 30px -10px black;
-    cursor: auto;
-    display: grid;
-    grid-template-columns: 25% 50% 25%;
-    grid-template-rows: 7% 63% 30%;
-    margin: auto;
-    max-width: 75%;
-    max-height: 100%;
-    min-height: 100%;
-    overflow-y: auto;
-    padding: 1em;
-    scrollbar-width: none;
-  }
+#projectDiv>div {
+  align-items: center;
+  background: var(--color-background);
+  border: 0.2em solid var(--color-link);
+  border-radius: 3em;
+  box-shadow: 0 1.5em 3em -1em black;
+  cursor: auto;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-height: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  overflow-y: auto;
+  padding: 1em;
+  padding-bottom: 0.2em;
+  row-gap: 1em;
+  scrollbar-width: none;
 }
 
 #type {
+  column-gap: 0.3em;
   display: inline-flex;
-  margin-top: 1em;
+  text-align: center;
+}
 
-  p {
-    background-color: var(--color-background-transparent);
-    border: 1px dashed var(--color-border);
-    border-radius: 8px;
-    font-size: 1.2em;
-    height: 1.7em;
-    line-height: 1.5;
-    margin: 0 auto;
-    padding: 0 0.3em;
-    text-align: center;
-    white-space: nowrap;
-  }
+#type p {
+  background-color: var(--color-background-transparent);
+  border: 0.15em dashed var(--color-border);
+  border-radius: 0.5em;
+  font-size: 1.2em;
+  height: 1.5em;
+  line-height: 1.4;
+  margin: 0 auto;
+  padding: 0 0.3em;
+  white-space: nowrap;
 }
 
 h1 {
   font-size: 2.2em;
-  font-weight: bold;
   text-align: center;
+  white-space: nowrap;
 }
 
 #date {
   font-size: 1.2em;
-  margin-top: 1em;
   text-align: center;
+  white-space: nowrap;
 }
 
 #details {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  margin-left: 1em;
-  margin-top: 2em;
+  width: 100%;
 
   div {
     display: inline-flex;
-    margin-left: 1em;
     margin-bottom: 1em;
   }
 
   img {
-    height: 70px;
-    width: 70px;
+    height: 3.5em;
   }
 
   p {
-    font-size: 1.05em;
     margin: auto 0 auto 1em;
   }
 
   ul {
-    font-size: 1.05em;
-    margin-top: 3em;
     line-height: 1.6;
     list-style: none;
-    padding-left: 1em;
     white-space: nowrap;
   }
 }
 
 #illustration {
-  border-radius: 20px;
-  height: 470px;
+  border-radius: 2em;
   margin: auto;
-  width: 470px;
+  max-width: 90%;
 }
 
 #technologies {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-right: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
 
   img {
-    height: 80px;
-    border-radius: 10px;
+    height: 4em;
+    border-radius: 0.5em;
     margin: auto;
-    width: 80px;
   }
 }
 
 #content {
-  display: grid;
-  font-size: 1.1em;
-  grid-column: span 3;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 80% 20%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   line-height: 1.5;
-
-  p {
-    margin: 1em 1em 0 1em;
-  }
+  row-gap: 1em;
 }
 
 #links {
   display: flex;
   font-size: 1.1em;
-  grid-column: span 2;
   line-height: 1.5;
-  padding: 0 2em;
+  flex-wrap: wrap;
+  row-gap: 0.2em;
 
   a {
     margin: auto;
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 720px) {
+  #type p {
+    border: 0.1em dashed var(--color-border);
+  }
+
+  #details {
+    column-gap: 2em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+
+    div {
+      flex-direction: column;
+      margin-bottom: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    ul {
+      grid-row: span 2;
+      order: -1;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  #projectDiv {
+    padding: 3em;
+  }
+
+  #projectDiv>div {
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    grid-template-rows: 5% auto auto;
+    max-width: 90%;
+    min-width: 90%;
+  }
+
+  #details {
+    align-items: initial;
+    column-gap: 0;
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    margin-left: 1em;
+    place-items: initial;
+
+    div {
+      display: inline-flex;
+      flex-direction: row;
+      margin-bottom: 1em;
+    }
+
+    p {
+      margin: auto 0 auto 1em;
+    }
+
+    ul {
+      order: 0;
+    }
+  }
+
+  #technologies {
+    display: grid;
+    gap: 0;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    margin-right: 1em;
+
+    img {
+      margin: auto 0 auto auto;
+    }
+  }
+
+  #content {
+    display: grid;
+    grid-column: span 3;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 1em;
+    row-gap: 0.2em;
+
+    p {
+      margin-left: 0.7em;
+
+      &:first-child {
+        margin-left: 0;
+        margin-right: 0.7em;
+      }
+    }
+  }
+
+  #links {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 1440px) {
+  #projectDiv>div {
+    border: 0.15em solid var(--color-link);
+    max-width: 80%;
+    min-width: 80%;
   }
 }
 </style>
