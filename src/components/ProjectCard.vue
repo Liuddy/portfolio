@@ -207,7 +207,7 @@ h1 {
   line-height: 1.5;
 
   p {
-    margin: 1rem 1rem 0 1em;
+    margin: 1em 1em 0 1em;
   }
 }
 

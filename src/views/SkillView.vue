@@ -17,29 +17,25 @@ function switchDivClass(divClass) {
 
 <template>
 
-  <div class="techList">
+  <div class="techFlex">
 
-    <div class="techFlex">
+  <p @click="switchDivClass('extended')">Maîtrise des technologies</p>
 
-      <p @click="switchDivClass('extended')">Maîtrise des technologies</p>
+  <div v-for="techList in skillTab[0]">
 
-      <div v-for="techList in skillTab[0]">
+    <p @click="switchDivClass('extendedTech')">{{ techList[0] }}</p>
 
-        <p @click="switchDivClass('extendedTech')">{{ techList[0] }}</p>
-
-        <div>
-          <ul>
-            <li v-for="(tech, index) in techList.slice(1)">
-              <img v-if="index % 2 === 0" :src="getImgPath('icons', tech)" :alt="`Logo de ${tech}`">
-              <p v-if="index % 2 === 0"> {{ tech }} </p>
-              <p v-if="index % 2 === 0">{{ getSkillLevelIcons(techList[index + 2]) }}</p>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-
+    <div>
+      <ul>
+        <li v-for="(tech, index) in techList.slice(1)">
+          <img v-if="index % 2 === 0" :src="getImgPath('icons', tech)" :alt="`Logo de ${tech}`">
+          <p v-if="index % 2 === 0"> {{ tech }} </p>
+          <p v-if="index % 2 === 0">{{ getSkillLevelIcons(techList[index + 2]) }}</p>
+        </li>
+      </ul>
     </div>
+
+  </div>
 
   </div>
 
@@ -95,43 +91,26 @@ function switchDivClass(divClass) {
 
 
 <style scoped>
-.techList {
-  margin-bottom: 3.5em;
-  margin-top: 2em;
-}
-
-.techFlex {
+.techFlex,
+.skillFlex div {
   background-color: var(--color-background-darker);
-  border: 2px solid var(--color-link);
-  border-radius: 31px;
-  max-height: 3.81em;
+  border-radius: 1.5em;
+  max-height: 3.1em;
+  outline: 0.15em solid var(--color-link);
+  outline-offset: -0.15em;
   overflow: hidden;
-  transition:
-    background-color 0.5s,
-    max-height 1.5s;
-  transition-delay: 0s, -1s;
-
-  &.extended {
-    max-height: 1000vh;
-    transition-delay: 0s, 0.2s;
-  }
-
-  &.extended>div {
-    grid-template-rows: 1fr;
-    transition-delay: 0.2s;
-  }
 
   &>p {
     background-color: var(--color-background);
-    border: 2px solid var(--color-link);
-    border-radius: 40px;
+    border: 0.1em solid var(--color-link);
+    border-radius: 1.5em;
     cursor: pointer;
-    font-size: 1.3em;
+    font-size: 1.25em;
     font-weight: bold;
-    margin: -2px;
-    padding: 1rem 1.5em;
-    text-align: center;
+    line-height: 1.3;
+    padding: 0.5em 1em;
     transition: background-color 0.5s;
+    white-space: nowrap;
 
     &:hover {
       text-decoration: underline;
@@ -143,22 +122,42 @@ function switchDivClass(divClass) {
     }
   }
 
+  ul {
+    font-size: 1.1em;
+    list-style: none;
+    overflow: hidden;
+  }
+}
+
+.techFlex {
+  margin-bottom: 3.5em;
+  margin-top: 1em;
+  transition:
+    background-color 0.5s,
+    max-height 1s;
+  transition-delay: 0s, -0.5s;
+
+  &.extended {
+    max-height: 500vh;
+    transition-delay: 0s, 0.1s;
+  }
+
   &>div {
-    border-bottom: 1px solid var(--color-link);
-    border-radius: 26px;
+    border-bottom: 0.05em solid var(--color-link);
+    border-radius: 1.5em;
     display: flex;
     flex-direction: column;
-    max-height: 3.5em;
+    max-height: 3.1em;
     overflow: hidden;
-    transition: max-height 0.3s;
-    transition-delay: -0.1s;
+    transition: max-height 0.5s;
 
     &:last-child {
       border: none;
     }
 
     &.extendedTech {
-      max-height: 1000vh;
+      max-height: 500vh;
+      transition-delay: 0.2s;
     }
 
     &.extendedTech div {
@@ -168,10 +167,9 @@ function switchDivClass(divClass) {
 
     &>p {
       cursor: pointer;
-      font-size: 1.25em;
-      margin: -1px;
-      padding: 1rem 1.5em;
-      text-align: center;
+      font-size: 1.2em;
+      line-height: 1.3;
+      padding: 0.5em 1em;
 
       &:hover {
         text-decoration: underline;
@@ -183,7 +181,7 @@ function switchDivClass(divClass) {
       }
     }
 
-    &>div {
+    div {
       display: grid;
       grid-template-rows: 0fr;
       overflow: hidden;
@@ -192,19 +190,21 @@ function switchDivClass(divClass) {
     }
   }
 
-  ul {
-    font-size: 1.2em;
-    list-style: none;
-    overflow: hidden;
-    padding: 1em;
-    padding-bottom: 0.5em;
-    padding-top: 0;
+  p {
     text-align: center;
+    white-space: nowrap;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    place-items: center;
 
     li {
       display: inline-block;
-      margin: 0 2em;
-      padding: 2em;
+      flex: 1 1 0;
+      margin: 0 1em;
+      padding: 1em 2em 1.5em 2em;
 
       &:nth-child(2n) {
         display: none;
@@ -212,32 +212,18 @@ function switchDivClass(divClass) {
 
       img {
         display: block;
-        height: 80px;
-        border-radius: 10px;
+        height: 5em;
+        border-radius: 1em;
         margin: auto;
         margin-bottom: 1em;
-        width: 80px;
       }
 
-      p {
-        font-size: 1.1em;
-        text-align: center;
-
-        &:last-child {
-          font-size: 1.25em;
-          margin-top: 0.2em;
-        }
+      p:last-child {
+        font-size: 1.25em;
+        margin-top: 0.15em;
       }
     }
   }
-}
-
-.skillGrid {
-  column-gap: 4em;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 0;
-  width: 100%;
 }
 
 .skillFlex {
@@ -246,68 +232,83 @@ function switchDivClass(divClass) {
   overflow: hidden;
   row-gap: 3.5em;
 
+  &:first-child {
+    margin-bottom: 3.5em;
+  }
+
   div {
-    background-color: var(--color-background-darker);
-    border: 2px solid var(--color-link);
-    border-radius: 31px;
-    max-height: 3.95em;
-    overflow: hidden;
     transition:
       background-color 0.5s,
       max-height 0.6s;
-    transition-delay: 0s;
+    transition-delay: 0s, -0.2s;
 
     &.extended {
-      max-height: 100%;
-      transition-delay: 0s, 0.2s;
-    }
-
-    &>p {
-      background-color: var(--color-background);
-      border: 2px solid var(--color-link);
-      border-radius: 40px;
-      display: flex;
-      cursor: pointer;
-      font-size: 1.3em;
-      font-weight: bold;
-      margin: -2px;
-      padding: 1rem 1.5em;
-      transition: background-color 0.5s;
-
-      &:hover {
-        text-decoration: underline;
-      }
-
-      &:active {
-        background-color: var(--color-link);
-        transition: none;
-      }
-    }
-  }
-
-  span {
-    font-size: 1.45em;
-    margin-left: auto;
-    pointer-events: none;
-  }
-
-  ul {
-    font-size: 1.2em;
-    list-style: none;
-    padding: 2em;
-    padding-bottom: 0.5em;
-
-    p {
-      display: flex;
-      font-size: 1.1em;
-      margin-bottom: 1.5em;
-      text-align: left;
+      max-height: 200vh;
+      transition-delay: 0s, 0.1s;
     }
 
     span {
-      padding-left: 1.5em;
-      font-size: 1.25em;
+      font-size: 1.2em;
+      line-height: 1;
+      margin-left: auto;
+      pointer-events: none;
     }
+  }
+
+  p {
+    display: flex;
+    text-align: left;
+  }
+
+  ul {
+    padding: 1.1em;
+    padding-bottom: 0;
+
+    p {
+      margin-bottom: 1.2em;
+    }
+
+    span {
+      padding-left: 1em;
+      font-size: 1.2em;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .techFlex {
+    margin-top: 2em;
+  }
+
+  .skillGrid {
+    column-gap: 3em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .skillFlex {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .techFlex,
+  .skillFlex div {
+    max-height: 3.2em;
+    outline: 0.1em solid var(--color-link);
+    outline-offset: -0.1em;
+
+    &>p {
+      font-size: 1.3em;
+    }
+
+    ul {
+      font-size: 1.2em;
+    }
+  }
+
+  .skillGrid {
+    column-gap: 4em;
   }
 }
 </style>

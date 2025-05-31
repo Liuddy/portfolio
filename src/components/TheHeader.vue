@@ -122,7 +122,7 @@ label {
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 720px) {
   nav {
     display: inline-flex;
     flex-direction: row;

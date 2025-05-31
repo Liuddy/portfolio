@@ -60,7 +60,7 @@ html[data-theme="dark"] div.statBox img {
   column-gap: 5em;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 2rem 0;
+  margin: 2em 0;
   row-gap: 4em;
 }
 
