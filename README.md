@@ -11,7 +11,7 @@ This project is simply a personal portfolio website designed to collect and pres
 - An about page to introduce myself.
 
 ## Installation
-Simply click on this [link](https://Liuddy.github.io/Portfolio/) to access the online portfolio.
+Simply click on this [link](https://Liuddy.github.io/portfolio/) to access the online portfolio.
 You can also clone this repository and open it in your browser, but you'll need to have Node.js installed and know how to use Vue.js and Vite.js.
 
 ```
