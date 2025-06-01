@@ -202,9 +202,8 @@ p {
 
 @media (min-width: 1024px) {
   #project-list {
-    column-gap: 4em;
-    row-gap: 4em;
     display: grid;
+    gap: 4em;
     grid-template-columns: 1fr 1fr;
     margin: 2em 0;
   }
