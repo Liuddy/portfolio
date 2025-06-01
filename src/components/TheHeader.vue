@@ -7,7 +7,7 @@ const store = useStore()
 
 onMounted(() => {
   if (window.matchMedia('(prefers-color-scheme: dark)').matches)
-    document.getElementById('switchBtn').click()
+    document.getElementById('switch-btn').click()
 })
 </script>
 
@@ -21,7 +21,7 @@ onMounted(() => {
     </nav>
 
     <label>
-      <input id="switchBtn" type="checkbox" @change="store.$switchTheme()" />
+      <input id="switch-btn" type="checkbox" @change="store.$switchTheme()" />
       <span>
         <p class="sun">&#9788;</p>
         <p class="moon">&#9789;</p>
@@ -39,12 +39,12 @@ nav {
   line-height: 1.5;
   margin-bottom: 0.5em;
   text-align: center;
+}
 
-  a.router-link-exact-active {
-    color: var(--color-text);
-    background-color: transparent;
-    cursor: auto;
-  }
+nav a.router-link-exact-active {
+  color: var(--color-text);
+  background-color: transparent;
+  cursor: auto;
 }
 
 label {
@@ -54,67 +54,67 @@ label {
   min-width: 2em;
   position: absolute;
   transform: translate(-50%);
+}
 
-  input {
-    display: none;
+label span {
+  background-color: var(--color-elt-blue);
+  border-radius: 1em;
+  color: black;
+  cursor: pointer;
+  inset: 0;
+  padding: 0.05em 0;
+  position: absolute;
+  transition: transform 0.4s;
+  user-select: none;
 
-    &:checked + span {
-      background-color: var(--color-elt-orange);
-
-      &::before {
-        transform: translateX(0.88em);
-      }
-
-      p {
-        transform: translateX(1.16em);
-
-        &.sun {
-          visibility: hidden;
-        }
-
-        &.moon {
-          visibility: visible;
-        }
-      }
-    }
-  }
-
-  span {
-    background-color: var(--color-elt-blue);
-    border-radius: 1em;
-    color: black;
-    cursor: pointer;
-    inset: 0;
-    padding: 0.05em 0;
+  &::before {
+    background-color: white;
+    border-radius: 50%;
+    content: '';
+    height: 1em;
+    margin: 0 0.06em;
     position: absolute;
     transition: transform 0.4s;
-    user-select: none;
+    width: 1em;
+  }
+}
 
-    &::before {
-      background-color: white;
-      border-radius: 50%;
-      content: '';
-      height: 1em;
-      margin: 0 0.06em;
-      position: absolute;
-      transition: transform 0.4s;
-      width: 1em;
-    }
+label p {
+  font-weight: bold;
+  margin: 0 0.07em;
+  position: absolute;
+  transition: transform 0.35s;
+
+  &.sun {
+    visibility: visible;
   }
 
-  p {
-    font-weight: bold;
-    margin: 0 0.07em;
-    position: absolute;
-    transition: transform 0.35s;
+  &.moon {
+    visibility: hidden;
+  }
+}
 
-    &.sun {
-      visibility: visible;
-    }
+label input {
+  display: none;
 
-    &.moon {
-      visibility: hidden;
+  &:checked + span {
+    background-color: var(--color-elt-orange);
+
+    &::before {
+      transform: translateX(0.88em);
     }
+  }
+}
+
+label input:checked + span p {
+  transform: translateX(1.16em);
+
+  &.sun {
+    visibility: hidden;
+  }
+
+  &.moon {
+    visibility: visible;
   }
 }
 

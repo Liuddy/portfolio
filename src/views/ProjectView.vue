@@ -18,7 +18,7 @@ function toggleProject() {
 </script>
 
 <template>
-  <div id="projectList">
+  <div id="project-list">
     <div
       class="project"
       v-for="project in projectList"
@@ -30,24 +30,25 @@ function toggleProject() {
         :alt="`Image d'illustration du projet ${project.name}`"
       />
 
-      <div class="contentBox">
+      <div class="content-box">
         <p class="name">{{ project.name }}</p>
 
         <p class="date">{{ project.date[0] + ' - ' + project.date[1] }}</p>
 
         <div class="type">
-          <p v-for="type in project.type">{{ type }}</p>
+          <p v-for="(type, index) in project.type" :key="index">{{ type }}</p>
         </div>
 
         <div class="technologies">
           <img
-            v-for="techIcon in project.mainTech"
+            v-for="(techIcon, index) in project.mainTech"
+            :key="index"
             :src="getImgPath('icons', techIcon)"
             :alt="`Logo de ${techIcon}`"
           />
         </div>
 
-        <div class="statBox">
+        <div class="stat-box">
           <img
             :src="getImgPath('icons', project.team)"
             :alt="`Icônographie pour équipe en ${project.team}`"
@@ -65,11 +66,11 @@ function toggleProject() {
 </template>
 
 <style scoped>
-[data-theme='dark'] .statBox img {
-  filter: invert(1);
+p {
+  white-space: nowrap;
 }
 
-#projectList {
+#project-list {
   display: flex;
   flex-direction: column;
   margin: 1em 0;
@@ -94,18 +95,14 @@ function toggleProject() {
   &:hover {
     background-color: var(--color-link);
     transform: scale(1.12);
-
-    .technologies img {
-      background-color: rgba(255, 255, 255, 0.9);
-    }
-  }
-
-  & > img {
-    display: none;
   }
 }
 
-.contentBox {
+.project > img {
+  display: none;
+}
+
+.content-box {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 25% 15% 60%;
@@ -144,7 +141,7 @@ function toggleProject() {
 }
 
 .technologies,
-.statBox {
+.stat-box {
   display: flex;
   flex-direction: row;
   padding-top: 0.5em;
@@ -162,20 +159,24 @@ function toggleProject() {
   grid-column: span 3;
 }
 
-.statBox {
+.stat-box {
   grid-column: span 2;
+}
 
-  img {
-    transition: filter 0.5s;
+.stat-box img {
+  transition: filter 0.5s;
 
-    &:last-child {
-      margin-right: 0;
-    }
+  &:last-child {
+    margin-right: 0;
   }
 }
 
-p {
-  white-space: nowrap;
+[data-theme='dark'] .stat-box img {
+  filter: invert(1);
+}
+
+.project:hover .technologies img {
+  background-color: rgb(255 255 255 / 90%);
 }
 
 @media (min-width: 720px) {
@@ -183,14 +184,14 @@ p {
     column-gap: 0.5em;
     grid-template-columns: max-content auto;
     height: 12em;
+  }
 
-    & > img {
-      border-radius: 1em;
-      display: block;
-      margin: auto;
-      max-width: min-content;
-      min-height: 100%;
-    }
+  .project > img {
+    border-radius: 1em;
+    display: block;
+    margin: auto;
+    max-width: min-content;
+    min-height: 100%;
   }
 
   .type p {
@@ -200,7 +201,7 @@ p {
 }
 
 @media (min-width: 1024px) {
-  #projectList {
+  #project-list {
     column-gap: 4em;
     row-gap: 4em;
     display: grid;
@@ -212,25 +213,25 @@ p {
     grid-template-columns: 1fr;
     height: 10em;
     width: 100%;
+  }
 
-    & > img {
-      display: none;
-    }
+  .project > img {
+    display: none;
   }
 }
 
 @media (min-width: 1440px) {
-  #projectList {
+  #project-list {
     column-gap: 5em;
   }
 
   .project {
     border: 0.1em solid var(--color-link);
     grid-template-columns: max-content auto;
+  }
 
-    & > img {
-      display: block;
-    }
+  .project > img {
+    display: block;
   }
 
   .date {

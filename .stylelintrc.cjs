@@ -7,5 +7,8 @@ module.exports = {
       files: ['**/*.vue'],
       customSyntax: 'postcss-html'
     }
-  ]
+  ],
+  rules: {
+    'media-feature-range-notation': null
+  }
 }

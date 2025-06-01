@@ -7,27 +7,27 @@ import { getImgPath } from '@/components/FileManager.js'
 
 function endAnimations() {
   document.getElementsByTagName('html')[0].removeEventListener('click', endAnimations)
-  document.getElementsByTagName('header')[0].classList.remove('homeFade')
-  document.getElementsByTagName('footer')[0].classList.remove('homeFade')
-  Array.from(document.getElementsByClassName('logoAnim')).forEach((elt) =>
-    elt.classList.remove('logoAnim')
+  document.getElementsByTagName('header')[0].classList.remove('home-fade')
+  document.getElementsByTagName('footer')[0].classList.remove('home-fade')
+  Array.from(document.getElementsByClassName('logo-anim')).forEach((elt) =>
+    elt.classList.remove('logo-anim')
   )
-  Array.from(document.getElementsByClassName('btnAnim')).forEach((elt) =>
-    elt.classList.remove('btnAnim')
+  Array.from(document.getElementsByClassName('btn-anim')).forEach((elt) =>
+    elt.classList.remove('btn-anim')
   )
 }
 
 onMounted(() => {
   document.getElementsByTagName('body')[0].id = 'home'
-  document.getElementsByTagName('header')[0].classList.add('homeFade')
-  document.getElementsByTagName('footer')[0].classList.add('homeFade')
+  document.getElementsByTagName('header')[0].classList.add('home-fade')
+  document.getElementsByTagName('footer')[0].classList.add('home-fade')
   document.getElementsByTagName('html')[0].addEventListener('click', endAnimations)
 })
 
 onUnmounted(() => {
   document.getElementsByTagName('body')[0].id = ''
-  document.getElementsByTagName('header')[0].classList.remove('homeFade')
-  document.getElementsByTagName('footer')[0].classList.remove('homeFade')
+  document.getElementsByTagName('header')[0].classList.remove('home-fade')
+  document.getElementsByTagName('footer')[0].classList.remove('home-fade')
   document.getElementsByTagName('html')[0].removeEventListener('click', endAnimations)
 })
 
@@ -39,35 +39,35 @@ function getLogoPath() {
 </script>
 
 <template>
-  <div id="logoBox">
+  <div id="logo-box">
     <img
-      class="logoAnim"
+      class="logo-anim"
       :src="getLogoPath()"
       :alt="`Partie Lomé Bordes du logo version ${preferredTheme}`"
     />
     <img
-      class="logoAnim"
+      class="logo-anim"
       :src="getImgPath('logo', 'portfolio')"
       :alt="`Partie portfolio du logo`"
     />
   </div>
 
-  <div id="buttonBox">
-    <RouterLink :to="{ name: 'project' }" class="btnAnim">
+  <div id="button-box">
+    <RouterLink :to="{ name: 'project' }" class="btn-anim">
       <div>
         <div class="btn">
           <p>PROJETS</p>
         </div>
       </div>
     </RouterLink>
-    <RouterLink :to="{ name: 'skill' }" class="btnAnim">
+    <RouterLink :to="{ name: 'skill' }" class="btn-anim">
       <div>
         <div class="btn">
           <p>COMPÉTENCES</p>
         </div>
       </div>
     </RouterLink>
-    <RouterLink :to="{ name: 'about' }" class="btnAnim">
+    <RouterLink :to="{ name: 'about' }" class="btn-anim">
       <div>
         <div class="btn">
           <p>À PROPOS</p>
@@ -80,15 +80,15 @@ function getLogoPath() {
 <style>
 #home {
   overflow: hidden;
+}
 
-  .homeFade {
-    animation: fadeIn 1s 2.5s both;
-    opacity: 0;
-  }
+#home .home-fade {
+  animation: fade-in 1s 2.5s both;
+  opacity: 0;
 }
 
 /* Header and Footer animation */
-@keyframes fadeIn {
+@keyframes fade-in {
   from {
     opacity: 0;
   }
@@ -100,14 +100,14 @@ function getLogoPath() {
 </style>
 
 <style scoped>
-#logoBox {
+#logo-box {
   display: flex;
   flex-direction: column;
   margin-bottom: 2vh;
   place-items: center;
 }
 
-#buttonBox {
+#button-box {
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -117,17 +117,28 @@ function getLogoPath() {
 img {
   width: 80%;
 
-  &.logoAnim {
+  &.logo-anim {
     opacity: 0;
 
     &:first-child {
-      animation: fadeUp 1.5s ease-in-out 0.2s both;
+      animation: fade-up 1.5s ease-in-out 0.2s both;
     }
 
     &:nth-child(2) {
-      animation: fadeUp 1.5s ease-in-out 0.4s both;
+      animation: fade-up 1.5s ease-in-out 0.4s both;
     }
   }
+}
+
+a .btn {
+  background-color: var(--color-elt-blue);
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 2em rgb(255 255 255 / 20%),
+    0 1.2em 1.8em -1em black;
+  display: flex;
+  height: 7.5em;
+  width: 7.5em;
 }
 
 a {
@@ -143,48 +154,37 @@ a {
     background-color: var(--color-elt-orange);
   }
 
-  &.btnAnim:first-child {
-    animation: slideUp 1s ease-in-out 0.7s backwards;
+  &.btn-anim:first-child {
+    animation: slide-up 1s ease-in-out 0.7s backwards;
   }
 
-  &.btnAnim:nth-child(2) {
-    animation: slideUp 1s ease-in-out 1.1s backwards;
+  &.btn-anim:nth-child(2) {
+    animation: slide-up 1s ease-in-out 1.1s backwards;
   }
 
-  &.btnAnim:last-child {
-    animation: slideUp 1s ease-in-out 1.5s backwards;
+  &.btn-anim:last-child {
+    animation: slide-up 1s ease-in-out 1.5s backwards;
   }
 
   &:hover {
     background-color: transparent;
   }
+}
 
-  & > div {
-    border-radius: 50%;
-  }
+a p {
+  font-size: 0.9em;
+  font-weight: bold;
+  margin: auto;
+  text-align: center;
+}
 
-  .btn {
-    background-color: var(--color-elt-blue);
-    border-radius: 50%;
-    box-shadow:
-      inset 0 0 2em rgba(255, 255, 255, 0.2),
-      0 1.2em 1.8em -1em black;
-    display: flex;
-    height: 7.5em;
-    width: 7.5em;
-  }
-
-  p {
-    font-size: 0.9em;
-    font-weight: bold;
-    margin: auto;
-    text-align: center;
-  }
+a > div {
+  border-radius: 50%;
 }
 
 /* Title animation */
-@keyframes fadeUp {
-  from {
+@keyframes fade-up {
+  0% {
     margin-top: 100%;
     opacity: 0;
   }
@@ -201,15 +201,15 @@ a {
     opacity: 1;
   }
 
-  to {
+  100% {
     margin-top: 0;
     opacity: 1;
   }
 }
 
 /* Buttons animation */
-@keyframes slideUp {
-  from {
+@keyframes slide-up {
+  0% {
     margin-top: 100%;
   }
 
@@ -232,18 +232,18 @@ a {
     transform: scale(0.95, 1.05);
   }
 
-  to {
+  100% {
     margin-top: 0%;
     transform: scale(1);
   }
 }
 
 @media (min-width: 720px) {
-  #logoBox {
+  #logo-box {
     margin-bottom: 8vh;
   }
 
-  #buttonBox {
+  #button-box {
     flex-direction: row;
     flex: 0;
   }
@@ -260,7 +260,7 @@ a {
 }
 
 @media (min-width: 1024px) {
-  #logoBox {
+  #logo-box {
     margin-bottom: 5vh;
   }
 
@@ -280,7 +280,7 @@ a {
 }
 
 @media (min-width: 1440px) {
-  #logoBox {
+  #logo-box {
     margin-bottom: 2vh;
   }
 
@@ -290,17 +290,17 @@ a {
 }
 
 @media (hover: hover) {
-  #buttonBox a > div .btn {
-    animation: turnOut 0.6s ease-in-out;
+  #button-box a > div .btn {
+    animation: turn-out 0.6s ease-in-out;
   }
 
-  #buttonBox a > div:hover .btn,
-  #buttonBox a > div:hover p {
-    animation: turnIn 0.6s ease-in-out forwards;
+  #button-box a > div:hover .btn,
+  #button-box a > div:hover p {
+    animation: turn-in 0.6s ease-in-out forwards;
   }
 
   /* Button animation on hover in */
-  @keyframes turnIn {
+  @keyframes turn-in {
     from {
       transform: rotateY(0);
     }
@@ -311,7 +311,7 @@ a {
   }
 
   /* Button animation on hover out */
-  @keyframes turnOut {
+  @keyframes turn-out {
     from {
       transform: rotateY(0);
     }

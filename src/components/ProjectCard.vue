@@ -4,7 +4,7 @@ import { getImgPath } from '@/components/FileManager.js'
 import { skillTab } from '@/components/SkillManager.js'
 
 onMounted(() => {
-  document.getElementsByTagName('body')[0].id = 'projectCard'
+  document.getElementsByTagName('body')[0].id = 'project-card'
 })
 
 onUnmounted(() => {
@@ -23,10 +23,10 @@ function parseLink(link) {
 </script>
 
 <template>
-  <div id="projectDiv" @click.self="$emit('hideProjectDiv')">
+  <div id="project-div" @click.self="$emit('hideProjectDiv')">
     <div>
       <div id="type">
-        <p v-for="type in props.project.type">{{ type }}</p>
+        <p v-for="(type, index) in props.project.type" :key="index">{{ type }}</p>
       </div>
 
       <h1>{{ props.project.name }}</h1>
@@ -51,7 +51,9 @@ function parseLink(link) {
         </div>
 
         <ul>
-          <li v-for="skill in props.project.skills">&#9733; {{ skillTab[skill][0] }}</li>
+          <li v-for="(skill, index) in props.project.skills" :key="index">
+            &#9733; {{ skillTab[skill][0] }}
+          </li>
         </ul>
       </div>
 
@@ -63,19 +65,25 @@ function parseLink(link) {
 
       <div id="technologies">
         <img
-          v-for="techIcon in props.project.allTech"
+          v-for="(techIcon, index) in props.project.allTech"
+          :key="index"
           :src="getImgPath('icons', techIcon)"
           :alt="`Logo de ${techIcon}`"
         />
       </div>
 
       <div id="content">
-        <p v-for="paragraph in props.project.content">
+        <p v-for="(paragraph, index) in props.project.content" :key="index">
           {{ paragraph }}
         </p>
 
         <div id="links">
-          <a v-for="link in props.project.links" :href="parseLink(link[0])" target="_blank">
+          <a
+            v-for="(link, index) in props.project.links"
+            :key="index"
+            :href="parseLink(link[0])"
+            target="_blank"
+          >
             {{ link[1] }}
           </a>
         </div>
@@ -85,19 +93,15 @@ function parseLink(link) {
 </template>
 
 <style>
-#projectCard {
+#project-card {
   overflow: hidden;
 }
 </style>
 
 <style scoped>
-[data-theme='dark'] #details img {
-  filter: invert(1);
-}
-
-#projectDiv {
+#project-div {
   backdrop-filter: blur(0.1em);
-  background-color: rgba(10, 10, 10, 0.4);
+  background-color: rgb(10 10 10 / 40%);
   cursor: pointer;
   inset: 0;
   overflow: hidden;
@@ -105,7 +109,7 @@ function parseLink(link) {
   position: fixed;
 }
 
-#projectDiv > div {
+#project-div > div {
   align-items: center;
   background: var(--color-background);
   border: 0.2em solid var(--color-link);
@@ -161,25 +165,25 @@ h1 {
   display: flex;
   flex-direction: column;
   width: 100%;
+}
 
-  div {
-    display: inline-flex;
-    margin-bottom: 1em;
-  }
+#details div {
+  display: inline-flex;
+  margin-bottom: 1em;
+}
 
-  img {
-    height: 3.5em;
-  }
+#details img {
+  height: 3.5em;
+}
 
-  p {
-    margin: auto 0 auto 1em;
-  }
+#details p {
+  margin: auto 0 auto 1em;
+}
 
-  ul {
-    line-height: 1.6;
-    list-style: none;
-    white-space: nowrap;
-  }
+#details ul {
+  line-height: 1.6;
+  list-style: none;
+  white-space: nowrap;
 }
 
 #illustration {
@@ -192,12 +196,12 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 1em;
+}
 
-  img {
-    height: 4em;
-    border-radius: 0.5em;
-    margin: auto;
-  }
+#technologies img {
+  height: 4em;
+  border-radius: 0.5em;
+  margin: auto;
 }
 
 #content {
@@ -214,11 +218,15 @@ h1 {
   line-height: 1.5;
   flex-wrap: wrap;
   row-gap: 0.2em;
+}
 
-  a {
-    margin: auto;
-    white-space: nowrap;
-  }
+#links a {
+  margin: auto;
+  white-space: nowrap;
+}
+
+[data-theme='dark'] #details img {
+  filter: invert(1);
 }
 
 @media (min-width: 720px) {
@@ -231,29 +239,29 @@ h1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     place-items: center;
+  }
 
-    div {
-      flex-direction: column;
-      margin-bottom: 0;
-    }
+  #details div {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
 
-    p {
-      margin: 0;
-    }
+  #details p {
+    margin: 0;
+  }
 
-    ul {
-      grid-row: span 2;
-      order: -1;
-    }
+  #details ul {
+    grid-row: span 2;
+    order: -1;
   }
 }
 
 @media (min-width: 1024px) {
-  #projectDiv {
+  #project-div {
     padding: 3em;
   }
 
-  #projectDiv > div {
+  #project-div > div {
     display: grid;
     grid-template-columns: 30% 40% 30%;
     grid-template-rows: 5% auto auto;
@@ -269,20 +277,20 @@ h1 {
     grid-template-columns: 1fr;
     margin-left: 1em;
     place-items: initial;
+  }
 
-    div {
-      display: inline-flex;
-      flex-direction: row;
-      margin-bottom: 1em;
-    }
+  #details div {
+    display: inline-flex;
+    flex-direction: row;
+    margin-bottom: 1em;
+  }
 
-    p {
-      margin: auto 0 auto 1em;
-    }
+  #details p {
+    margin: auto 0 auto 1em;
+  }
 
-    ul {
-      order: 0;
-    }
+  #details ul {
+    order: 0;
   }
 
   #technologies {
@@ -291,10 +299,10 @@ h1 {
     grid-template-columns: 1fr 1fr;
     height: 100%;
     margin-right: 1em;
+  }
 
-    img {
-      margin: auto 0 auto auto;
-    }
+  #technologies img {
+    margin: auto 0 auto auto;
   }
 
   #content {
@@ -303,14 +311,14 @@ h1 {
     grid-template-columns: 1fr 1fr;
     padding: 0 1em;
     row-gap: 0.2em;
+  }
 
-    p {
-      margin-left: 0.7em;
+  #content p {
+    margin-left: 0.7em;
 
-      &:first-child {
-        margin-left: 0;
-        margin-right: 0.7em;
-      }
+    &:first-child {
+      margin-left: 0;
+      margin-right: 0.7em;
     }
   }
 
@@ -320,7 +328,7 @@ h1 {
 }
 
 @media (min-width: 1440px) {
-  #projectDiv > div {
+  #project-div > div {
     border: 0.15em solid var(--color-link);
     max-width: 80%;
     min-width: 80%;

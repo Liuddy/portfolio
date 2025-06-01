@@ -6,22 +6,18 @@
   --c-background-dark-darker: #0c1330;
   --c-background-light-transparent: #faefe699;
   --c-background-dark-transparent: #0c133099;
-
   --c-elt-orange: #f57d1f;
   --c-elt-blue: #69bcc4;
   --c-elt-grey-transparent: #d8d8d799;
-
-  --c-text-black: #000000;
-  --c-text-white: #ffffff;
+  --c-text-black: #000;
+  --c-text-white: #fff;
 
   /* Website colors based on user preferences (light) */
   --color-background: var(--c-background-light);
   --color-background-darker: var(--c-background-light-darker);
   --color-background-transparent: var(--c-background-light-transparent);
-
   --color-text: var(--c-text-black);
   --color-link: var(--c-elt-blue);
-
   --color-elt-orange: var(--c-elt-orange);
   --color-elt-blue: var(--c-elt-blue);
   --color-border: var(--c-elt-grey-transparent);
@@ -32,7 +28,6 @@
   --color-background: var(--c-background-dark);
   --color-background-darker: var(--c-background-dark-darker);
   --color-background-transparent: var(--c-background-dark-transparent);
-
   --color-text: var(--c-text-white);
   --color-link: var(--c-elt-orange);
 }
@@ -58,7 +53,7 @@ body {
   overflow-x: hidden;
   place-items: center;
   scroll-behavior: smooth;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizelegibility;
   transition:
     color 0.5s,
     background-color 0.5s;
@@ -146,7 +141,7 @@ a {
 
   #app {
     max-width: 1024px;
-    padding: 2em 2em 1em 2em;
+    padding: 2em 2em 1em;
   }
 }
 
