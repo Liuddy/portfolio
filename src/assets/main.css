@@ -28,7 +28,7 @@
 }
 
 /* Website colors based on user preferences (dark) */
-[data-theme="dark"] {
+[data-theme='dark'] {
   --color-background: var(--c-background-dark);
   --color-background-darker: var(--c-background-dark-darker);
   --color-background-transparent: var(--c-background-dark-transparent);
@@ -48,9 +48,7 @@
 body {
   color: var(--color-text);
   background: var(--color-background);
-  font-family:
-    Arial,
-    system-ui;
+  font-family: Arial, system-ui;
   font-size: 16px;
   font-weight: normal;
   line-height: normal;

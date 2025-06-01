@@ -4,47 +4,36 @@ import { skillTab, getSkillLevelIcons } from '@/components/SkillManager.js'
 
 function switchDivClass(divClass) {
   for (let openSkill of document.getElementsByClassName(divClass))
-    if (openSkill !== event.target.parentNode)
-      openSkill.classList.toggle(divClass)
+    if (openSkill !== event.target.parentNode) openSkill.classList.toggle(divClass)
   if (divClass === 'extended')
     for (let openSkill of document.getElementsByClassName('extendedTech'))
-      if (openSkill !== event.target.parentNode)
-        openSkill.classList.toggle('extendedTech')
+      if (openSkill !== event.target.parentNode) openSkill.classList.toggle('extendedTech')
   event.target.parentNode.classList.toggle(divClass)
 }
 </script>
 
-
 <template>
-
   <div class="techFlex">
-
     <p @click="switchDivClass('extended')">Maîtrise des technologies</p>
 
     <div v-for="techList in skillTab[0]">
-
       <p @click="switchDivClass('extendedTech')">{{ techList[0] }}</p>
 
       <div>
         <ul>
           <li v-for="(tech, index) in techList.slice(1)">
-            <img v-if="index % 2 === 0" :src="getImgPath('icons', tech)" :alt="`Logo de ${tech}`">
-            <p v-if="index % 2 === 0"> {{ tech }} </p>
+            <img v-if="index % 2 === 0" :src="getImgPath('icons', tech)" :alt="`Logo de ${tech}`" />
+            <p v-if="index % 2 === 0">{{ tech }}</p>
             <p v-if="index % 2 === 0">{{ getSkillLevelIcons(techList[index + 2]) }}</p>
           </li>
         </ul>
       </div>
-
     </div>
-
   </div>
 
   <div class="skillGrid">
-
     <div class="skillFlex">
-
       <div v-for="skillList in skillTab.slice(1, skillTab.length / 2 + 1)">
-
         <p @click="switchDivClass('extended')">
           {{ skillList[0] }}
           <span>{{ getSkillLevelIcons(skillList[1]) }}</span>
@@ -58,15 +47,11 @@ function switchDivClass(divClass) {
             </p>
           </li>
         </ul>
-
       </div>
-
     </div>
 
     <div class="skillFlex">
-
       <div v-for="skillList in skillTab.slice(skillTab.length / 2 + 1)">
-
         <p @click="switchDivClass('extended')">
           {{ skillList[0] }}
           <span>{{ getSkillLevelIcons(skillList[1]) }}</span>
@@ -80,15 +65,10 @@ function switchDivClass(divClass) {
             </p>
           </li>
         </ul>
-
       </div>
-
     </div>
-
   </div>
-
 </template>
-
 
 <style scoped>
 .techFlex,
@@ -100,7 +80,7 @@ function switchDivClass(divClass) {
   outline-offset: -0.15em;
   overflow: hidden;
 
-  &>p {
+  & > p {
     background-color: var(--color-background);
     border: 0.1em solid var(--color-link);
     border-radius: 1.5em;
@@ -135,14 +115,16 @@ function switchDivClass(divClass) {
   transition:
     background-color 0.5s,
     max-height 1s;
-  transition-delay: 0s, -0.5s;
+  transition-delay:
+    0s,
+    -0.5s;
 
   &.extended {
     max-height: 500vh;
     transition-delay: 0s, 0.1s;
   }
 
-  &>div {
+  & > div {
     border-bottom: 0.05em solid var(--color-link);
     border-radius: 1.5em;
     display: flex;
@@ -165,7 +147,7 @@ function switchDivClass(divClass) {
       transition-delay: 0.2s;
     }
 
-    &>p {
+    & > p {
       cursor: pointer;
       font-size: 1.2em;
       line-height: 1.3;
@@ -240,7 +222,9 @@ function switchDivClass(divClass) {
     transition:
       background-color 0.5s,
       max-height 0.6s;
-    transition-delay: 0s, -0.2s;
+    transition-delay:
+      0s,
+      -0.2s;
 
     &.extended {
       max-height: 200vh;
@@ -298,7 +282,7 @@ function switchDivClass(divClass) {
     outline: 0.1em solid var(--color-link);
     outline-offset: -0.1em;
 
-    &>p {
+    & > p {
       font-size: 1.3em;
     }
 

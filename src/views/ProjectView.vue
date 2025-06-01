@@ -12,16 +12,23 @@ function showProjectDiv(projectId) {
   openProject.value = true
 }
 
-function toggleProject() { openProject.value = false }
+function toggleProject() {
+  openProject.value = false
+}
 </script>
 
-
 <template>
-
   <div id="projectList">
-
-    <div class="project" v-for="project in projectList" :key="project.id" @click="showProjectDiv(project.id)">
-      <img :src="getImgPath('images', project.illustration)" :alt="`Image d'illustration du projet ${project.name}`">
+    <div
+      class="project"
+      v-for="project in projectList"
+      :key="project.id"
+      @click="showProjectDiv(project.id)"
+    >
+      <img
+        :src="getImgPath('images', project.illustration)"
+        :alt="`Image d'illustration du projet ${project.name}`"
+      />
 
       <div class="contentBox">
         <p class="name">{{ project.name }}</p>
@@ -33,26 +40,32 @@ function toggleProject() { openProject.value = false }
         </div>
 
         <div class="technologies">
-          <img v-for="techIcon in project.mainTech" :src="getImgPath('icons', techIcon)" :alt="`Logo de ${techIcon}`">
+          <img
+            v-for="techIcon in project.mainTech"
+            :src="getImgPath('icons', techIcon)"
+            :alt="`Logo de ${techIcon}`"
+          />
         </div>
 
         <div class="statBox">
-          <img :src="getImgPath('icons', project.team)" :alt="`Icônographie pour équipe en ${project.team}`">
-          <img :src="getImgPath('icons', project.environment)" :alt="`Icônographie pour cadre ${project.environment}`">
+          <img
+            :src="getImgPath('icons', project.team)"
+            :alt="`Icônographie pour équipe en ${project.team}`"
+          />
+          <img
+            :src="getImgPath('icons', project.environment)"
+            :alt="`Icônographie pour cadre ${project.environment}`"
+          />
         </div>
       </div>
-
     </div>
-
   </div>
 
   <ProjectCard v-if="openProject" :project="clickedProject" @hideProjectDiv="toggleProject()" />
-
 </template>
 
-
 <style scoped>
-[data-theme="dark"] .statBox img {
+[data-theme='dark'] .statBox img {
   filter: invert(1);
 }
 
@@ -87,7 +100,7 @@ function toggleProject() { openProject.value = false }
     }
   }
 
-  &>img {
+  & > img {
     display: none;
   }
 }
@@ -171,7 +184,7 @@ p {
     grid-template-columns: max-content auto;
     height: 12em;
 
-    &>img {
+    & > img {
       border-radius: 1em;
       display: block;
       margin: auto;
@@ -200,7 +213,7 @@ p {
     height: 10em;
     width: 100%;
 
-    &>img {
+    & > img {
       display: none;
     }
   }
@@ -215,7 +228,7 @@ p {
     border: 0.1em solid var(--color-link);
     grid-template-columns: max-content auto;
 
-    &>img {
+    & > img {
       display: block;
     }
   }

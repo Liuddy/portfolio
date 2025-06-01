@@ -11,10 +11,8 @@ onMounted(() => {
 })
 </script>
 
-
 <template>
   <header>
-
     <nav v-if="$route.name !== 'home'">
       <RouterLink :to="{ name: 'home' }">Accueil</RouterLink>
       <RouterLink :to="{ name: 'project' }">Projets</RouterLink>
@@ -23,16 +21,14 @@ onMounted(() => {
     </nav>
 
     <label>
-      <input id="switchBtn" type="checkbox" @change="store.$switchTheme()">
+      <input id="switchBtn" type="checkbox" @change="store.$switchTheme()" />
       <span>
         <p class="sun">&#9788;</p>
         <p class="moon">&#9789;</p>
       </span>
     </label>
-
   </header>
 </template>
-
 
 <style scoped>
 nav {
@@ -62,7 +58,7 @@ label {
   input {
     display: none;
 
-    &:checked+span {
+    &:checked + span {
       background-color: var(--color-elt-orange);
 
       &::before {
@@ -97,7 +93,7 @@ label {
     &::before {
       background-color: white;
       border-radius: 50%;
-      content: "";
+      content: '';
       height: 1em;
       margin: 0 0.06em;
       position: absolute;

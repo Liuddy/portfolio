@@ -24,26 +24,20 @@ await importFilesAndSavePath(filesImport, filesPath)
 
 export function getImgPath(type, name) {
   let folder = ''
-  if (type === 'logo')
-    folder = logoPath
-  else if (type === 'images')
-    folder = imagesPath
-  else if (type === 'icons')
-    folder = iconsPath
-  else if (type === 'files')
-    folder = filesPath
+  if (type === 'logo') folder = logoPath
+  else if (type === 'images') folder = imagesPath
+  else if (type === 'icons') folder = iconsPath
+  else if (type === 'files') folder = filesPath
 
   name = name.toLowerCase()
   name = name.replace(/ |::/g, '_')
   name = name.replaceAll('+', 'plus')
   name = name.replaceAll('.', 'dot')
 
-  if (name === 'c' || name === 'java' || name === 'sql')
-    name += 'og'
+  if (name === 'c' || name === 'java' || name === 'sql') name += 'og'
 
   for (let src of folder) {
     let path = src.split('/')
-    if (path[path.length - 1].split('.')[0].includes(name))
-      return src
+    if (path[path.length - 1].split('.')[0].includes(name)) return src
   }
 }

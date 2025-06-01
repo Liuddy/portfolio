@@ -9,10 +9,12 @@ function endAnimations() {
   document.getElementsByTagName('html')[0].removeEventListener('click', endAnimations)
   document.getElementsByTagName('header')[0].classList.remove('homeFade')
   document.getElementsByTagName('footer')[0].classList.remove('homeFade')
-  Array.from(document.getElementsByClassName('logoAnim'))
-    .forEach(elt => elt.classList.remove('logoAnim'))
-  Array.from(document.getElementsByClassName('btnAnim'))
-    .forEach(elt => elt.classList.remove('btnAnim'))
+  Array.from(document.getElementsByClassName('logoAnim')).forEach((elt) =>
+    elt.classList.remove('logoAnim')
+  )
+  Array.from(document.getElementsByClassName('btnAnim')).forEach((elt) =>
+    elt.classList.remove('btnAnim')
+  )
 }
 
 onMounted(() => {
@@ -31,15 +33,23 @@ onUnmounted(() => {
 
 const { preferredTheme } = storeToRefs(useStore())
 
-function getLogoPath() { return getImgPath('logo', preferredTheme.value) }
+function getLogoPath() {
+  return getImgPath('logo', preferredTheme.value)
+}
 </script>
 
-
 <template>
-
   <div id="logoBox">
-    <img class="logoAnim" :src="getLogoPath()" :alt="`Partie Lomé Bordes du logo version ${preferredTheme}`">
-    <img class="logoAnim" :src="getImgPath('logo', 'portfolio')" :alt="`Partie portfolio du logo`">
+    <img
+      class="logoAnim"
+      :src="getLogoPath()"
+      :alt="`Partie Lomé Bordes du logo version ${preferredTheme}`"
+    />
+    <img
+      class="logoAnim"
+      :src="getImgPath('logo', 'portfolio')"
+      :alt="`Partie portfolio du logo`"
+    />
   </div>
 
   <div id="buttonBox">
@@ -65,9 +75,7 @@ function getLogoPath() { return getImgPath('logo', preferredTheme.value) }
       </div>
     </RouterLink>
   </div>
-
 </template>
-
 
 <style>
 #home {
@@ -90,7 +98,6 @@ function getLogoPath() { return getImgPath('logo', preferredTheme.value) }
   }
 }
 </style>
-
 
 <style scoped>
 #logoBox {
@@ -152,14 +159,16 @@ a {
     background-color: transparent;
   }
 
-  &>div {
+  & > div {
     border-radius: 50%;
   }
 
   .btn {
     background-color: var(--color-elt-blue);
     border-radius: 50%;
-    box-shadow: inset 0 0 2em rgba(255, 255, 255, 0.2), 0 1.2em 1.8em -1em black;
+    box-shadow:
+      inset 0 0 2em rgba(255, 255, 255, 0.2),
+      0 1.2em 1.8em -1em black;
     display: flex;
     height: 7.5em;
     width: 7.5em;
@@ -281,12 +290,12 @@ a {
 }
 
 @media (hover: hover) {
-  #buttonBox a>div .btn {
+  #buttonBox a > div .btn {
     animation: turnOut 0.6s ease-in-out;
   }
 
-  #buttonBox a>div:hover .btn,
-  #buttonBox a>div:hover p {
+  #buttonBox a > div:hover .btn,
+  #buttonBox a > div:hover p {
     animation: turnIn 0.6s ease-in-out forwards;
   }
 

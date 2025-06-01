@@ -22,13 +22,9 @@ function parseLink(link) {
 }
 </script>
 
-
 <template>
-
   <div id="projectDiv" @click.self="$emit('hideProjectDiv')">
-
     <div>
-
       <div id="type">
         <p v-for="type in props.project.type">{{ type }}</p>
       </div>
@@ -38,35 +34,42 @@ function parseLink(link) {
       <p id="date">{{ props.project.date[0] + ' - ' + props.project.date[1] }}</p>
 
       <div id="details">
-
         <div>
-          <img :src="getImgPath('icons', props.project.team)"
-            :alt="`Icônographie pour équipe en ${props.project.team}`">
+          <img
+            :src="getImgPath('icons', props.project.team)"
+            :alt="`Icônographie pour équipe en ${props.project.team}`"
+          />
           <p>Projet en {{ props.project.team }}</p>
         </div>
 
         <div>
-          <img :src="getImgPath('icons', props.project.environment)"
-            :alt="`Icônographie pour équipe en ${props.project.environment}`">
+          <img
+            :src="getImgPath('icons', props.project.environment)"
+            :alt="`Icônographie pour équipe en ${props.project.environment}`"
+          />
           <p>Cadre {{ props.project.environment }}</p>
         </div>
 
         <ul>
           <li v-for="skill in props.project.skills">&#9733; {{ skillTab[skill][0] }}</li>
         </ul>
-
       </div>
 
-      <img id="illustration" :src="getImgPath('images', props.project.illustration)"
-        :alt="`Image d'illustration du projet ${props.project.name}`">
+      <img
+        id="illustration"
+        :src="getImgPath('images', props.project.illustration)"
+        :alt="`Image d'illustration du projet ${props.project.name}`"
+      />
 
       <div id="technologies">
-        <img v-for="techIcon in props.project.allTech" :src="getImgPath('icons', techIcon)"
-          :alt="`Logo de ${techIcon}`">
+        <img
+          v-for="techIcon in props.project.allTech"
+          :src="getImgPath('icons', techIcon)"
+          :alt="`Logo de ${techIcon}`"
+        />
       </div>
 
       <div id="content">
-
         <p v-for="paragraph in props.project.content">
           {{ paragraph }}
         </p>
@@ -76,15 +79,10 @@ function parseLink(link) {
             {{ link[1] }}
           </a>
         </div>
-
       </div>
-
     </div>
-
   </div>
-
 </template>
-
 
 <style>
 #projectCard {
@@ -92,9 +90,8 @@ function parseLink(link) {
 }
 </style>
 
-
 <style scoped>
-[data-theme="dark"] #details img {
+[data-theme='dark'] #details img {
   filter: invert(1);
 }
 
@@ -108,7 +105,7 @@ function parseLink(link) {
   position: fixed;
 }
 
-#projectDiv>div {
+#projectDiv > div {
   align-items: center;
   background: var(--color-background);
   border: 0.2em solid var(--color-link);
@@ -256,7 +253,7 @@ h1 {
     padding: 3em;
   }
 
-  #projectDiv>div {
+  #projectDiv > div {
     display: grid;
     grid-template-columns: 30% 40% 30%;
     grid-template-rows: 5% auto auto;
@@ -323,7 +320,7 @@ h1 {
 }
 
 @media (min-width: 1440px) {
-  #projectDiv>div {
+  #projectDiv > div {
     border: 0.15em solid var(--color-link);
     max-width: 80%;
     min-width: 80%;
