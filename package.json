@@ -9,10 +9,9 @@
     "preview": "vite build && vite preview",
     "deploy": "git subtree push --prefix dist origin gh-pages",
     "format": "prettier --write src/",
-    "lint": "npm run lintbase && npm run linthtml && npm run lintcss",
-    "lintbase": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "linthtml": "htmlhint *.html",
-    "lintcss": "stylelint src/**/*.{css,scss,vue} --fix"  
+    "lintcss": "stylelint src/**/*.{css,scss,vue} --fix"
   },
   "dependencies": {
     "pinia": "^2.1.7",
@@ -26,6 +25,7 @@
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.23.0",
     "htmlhint": "^1.3.0",
+    "postcss-html": "^1.8.0",
     "prettier": "^3.2.5",
     "stylelint": "^16.20.0",
     "stylelint-config-standard": "^38.0.0",
