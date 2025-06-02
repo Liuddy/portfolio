@@ -111,11 +111,6 @@ function switchDivClass(divClass) {
   transition: max-height 0.5s;
 }
 
-.tech-flex .extended-tech div {
-  grid-template-rows: 1fr;
-  transition-delay: 0.2s;
-}
-
 .tech-flex,
 .skill-flex div {
   background-color: var(--color-background-darker);
@@ -132,6 +127,11 @@ function switchDivClass(divClass) {
   overflow: hidden;
   transition: grid-template-rows 0.6s;
   transition-delay: 0s;
+}
+
+.tech-flex .extended-tech div {
+  grid-template-rows: 1fr;
+  transition-delay: 0.2s;
 }
 
 .tech-flex > div:last-child {
@@ -276,6 +276,7 @@ function switchDivClass(divClass) {
   }
 
   .skill-grid {
+    /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
     column-gap: 3em;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -303,6 +304,7 @@ function switchDivClass(divClass) {
   }
 
   .skill-grid {
+    /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
     column-gap: 4em;
   }
 }

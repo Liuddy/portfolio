@@ -115,7 +115,12 @@ function getLogoPath() {
 }
 
 img {
+  max-height: 30vh;
   width: 80%;
+
+  &:nth-child(2) {
+    max-height: 15vh;
+  }
 
   &.logo-anim {
     opacity: 0;

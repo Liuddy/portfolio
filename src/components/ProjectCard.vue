@@ -127,10 +127,12 @@ function parseLink(link) {
   padding: 1em;
   padding-bottom: 0.2em;
   row-gap: 1em;
+  /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
   scrollbar-width: none;
 }
 
 #type {
+  /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
   column-gap: 0.3em;
   display: inline-flex;
   text-align: center;
@@ -235,6 +237,7 @@ h1 {
   }
 
   #details {
+    /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
     column-gap: 2em;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -270,7 +273,7 @@ h1 {
   }
 
   #details {
-    align-items: initial;
+    /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
     column-gap: 0;
     display: flex;
     flex-direction: column;

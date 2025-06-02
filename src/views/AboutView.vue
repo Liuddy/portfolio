@@ -94,9 +94,10 @@ section {
 }
 
 .image-container {
-  padding: 0.5em;
+  height: auto;
   overflow: hidden;
-  place-content: center;
+  padding: 0.5em;
+  place-self: center;
 }
 
 .image-container img {
@@ -114,6 +115,7 @@ section {
 
 a {
   background: transparent;
+  /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
   display: contents;
 
   &:last-child img {

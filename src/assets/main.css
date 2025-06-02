@@ -85,7 +85,7 @@ header {
 
 footer {
   font-size: 0.9em;
-  margin-top: 2em;
+  margin: 2em 0;
 }
 
 img {
@@ -131,6 +131,10 @@ a {
 
   #app {
     max-width: 720px;
+  }
+
+  footer {
+    margin-bottom: 0;
   }
 }
 

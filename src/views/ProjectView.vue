@@ -104,28 +104,27 @@ p {
 
 .content-box {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 25% 15% 60%;
 }
 
 .name {
   font-size: 1.5em;
   font-weight: bold;
-  grid-column: span 5;
+  grid-column: span 3;
+  text-align: center;
 }
 
 .date {
-  align-self: center;
-  font-size: 1.1em;
-  grid-column: span 2;
+  display: none;
 }
 
 .type {
-  align-self: center;
+  /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
   column-gap: 0.3em;
   display: inline-flex;
   grid-column: span 3;
-  place-content: center;
+  place-self: center;
 }
 
 .type p {
@@ -142,25 +141,25 @@ p {
 
 .technologies,
 .stat-box {
-  display: flex;
-  flex-direction: row;
   padding-top: 0.5em;
 
   img {
     border-radius: 0.5em;
     flex: 1 1 0;
     height: 3.5em;
-    max-width: min-content;
+    max-width: 3.5em;
     margin: auto;
   }
 }
 
 .technologies {
+  display: flex;
+  flex-direction: row;
   grid-column: span 3;
 }
 
 .stat-box {
-  grid-column: span 2;
+  display: none;
 }
 
 .stat-box img {
@@ -181,22 +180,42 @@ p {
 
 @media (min-width: 720px) {
   .project {
-    column-gap: 0.5em;
-    grid-template-columns: max-content auto;
+    grid-template-columns: auto auto;
     height: 12em;
   }
 
   .project > img {
     border-radius: 1em;
-    display: block;
-    margin: auto;
-    max-width: min-content;
+    display: initial;
+    max-width: 11em;
     min-height: 100%;
+  }
+
+  .content-box {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .name {
+    grid-column: span 5;
+    text-align: initial;
+  }
+
+  .date {
+    align-self: center;
+    display: initial;
+    font-size: 1.1em;
+    grid-column: span 2;
   }
 
   .type p {
     border: 0.1em dashed var(--color-border);
     height: 1.5em;
+  }
+
+  .stat-box {
+    display: flex;
+    flex-direction: row;
+    grid-column: span 2;
   }
 }
 
@@ -221,16 +240,18 @@ p {
 
 @media (min-width: 1440px) {
   #project-list {
+    /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
     column-gap: 5em;
   }
 
   .project {
     border: 0.1em solid var(--color-link);
-    grid-template-columns: max-content auto;
+    grid-template-columns: auto auto;
   }
 
   .project > img {
-    display: block;
+    display: initial;
+    max-width: 9em;
   }
 
   .date {
