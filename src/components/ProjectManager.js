@@ -5,9 +5,8 @@ class Project {
   name = ''
   type = []
   date = []
-  description = ''
   illustration = ''
-  content = []
+  description = []
   links = []
   mainTech = []
   allTech = []
@@ -20,9 +19,8 @@ class Project {
     this.name = project.name
     this.type = project.type
     project.date.forEach((date) => this.date.push(this.formatDate(date)))
-    this.description = project.description
     this.illustration = project.illustration
-    this.content = project.content
+    this.description = project.description
     this.links = project.links
     this.mainTech = project.mainTech
     this.allTech = project.allTech

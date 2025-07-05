@@ -72,8 +72,8 @@ function parseLink(link) {
         />
       </div>
 
-      <div id="content">
-        <p v-for="(paragraph, index) in props.project.content" :key="index">
+      <div id="description">
+        <p v-for="(paragraph, index) in props.project.description" :key="index">
           {{ paragraph }}
         </p>
 
@@ -206,7 +206,7 @@ h1 {
   margin: auto;
 }
 
-#content {
+#description {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -308,7 +308,7 @@ h1 {
     margin: auto 0 auto auto;
   }
 
-  #content {
+  #description {
     display: grid;
     grid-column: span 3;
     grid-template-columns: 1fr 1fr;
@@ -316,7 +316,7 @@ h1 {
     row-gap: 0.2em;
   }
 
-  #content p {
+  #description p {
     margin-left: 0.7em;
 
     &:first-child {
