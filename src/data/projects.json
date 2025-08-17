@@ -3,7 +3,7 @@
     "name": "Ailurus Corp",
     "type": ["Site web"],
     "date": ["2018-12", "2019-04"],
-    "illustration": "ailurus_corp_illu",
+    "illustration": ["ailurus_corp_illu1", "ailurus_corp_illu2", "ailurus_corp_illu3", "ailurus_corp_illu4"],
     "description": [
         "Site web dont le but était de pouvoir archiver et partager des informations sur les jeux vidéo auxquels je jouais, un peu à la manière d'un blog. N'ayant à l'époque aucune connaissance de toutes les technologies existantes, j'ai réalisé ce site simplement en HTML et CSS pur, et je suis tout de même parvenu à l'héberger en ligne quelques temps.",
         "Ce projet fut mené lors de ma dernière année de scolarité au collège. J'ai toujours été familier avec l'informatique, mais je n'avais encore jamais touché à la programmation, si ce n'est avec Scratch. Je me suis donc muni d'un tuto YouTube et j'ai réalisé ce site en seulement 5 jours, travaillant dessus tous les soirs après les cours."
@@ -19,7 +19,7 @@
     "name": "MODLE",
     "type": ["Site web"],
     "date": ["2022-11", "2022-12"],
-    "illustration": "modle_illu",
+    "illustration": ["modle_illu1", "modle_illu2", "modle_illu3", "modle_illu4"],
     "description": [
         "Boutique en ligne factice de chaussures personnalisables. Le site permet aux utilisateurs de commander une paire de baskets, de tennis ou de sneakers personnalisée via un éditeur en ligne. Il est aussi proposée une paire à personnaliser chez soi, avec du matériel de dessin.",
         "L'utilisateur peut choisir à travers l'éditeur la couleur des différents éléments de la chaussure (lacets, semelle, etc.), leurs matériaux, ou encore leur style. Le but ici était surtout d'appliquer les bonnes pratiques HTML et CSS dans un site vitrine."
@@ -35,7 +35,7 @@
     "name": "Lucane",
     "type": ["Application"],
     "date": ["2022-12", "2023-01"],
-    "illustration": "lucane_illu",
+    "illustration": ["lucane_illu1", "lucane_illu2", "lucane_illu3"],
     "description": [
         "Application de gestion d'annuaire numérique réalisée exclusivement en C. Elle permet l'ajout, la modification et la suppression de personnes enregistrées au format CSV, le tout uniquement à travers une interface en ligne de commande.",
         "Ce projet mené en groupe a pu m'apprendre la bonne gestion des entrées et sorties périphériques, notamment grâce à l'usage du langage bas niveau qu'est C. Afin de peaufiner l'image de l'application, nous avons pris la liberté d'adopter l'iconographie du lucane, car l'allure de l'insecte nous plaisait particulièrement."
@@ -51,7 +51,7 @@
     "name": "ACCM",
     "type": ["Site web"],
     "date": ["2022-12", "2023-12"],
-    "illustration": "accm_illu",
+    "illustration": ["accm_illu1", "accm_illu2", "accm_illu3", "accm_illu4"],
     "description": [
         "L'Ailurus Corp Collection Museum (ACCM) est né comme un successeur spirituel de l'Ailurus Corp, mon tout premier site web, en ayant l'ambition de rassembler des œuvres audiovisuelles et littéraires en plus des jeux vidéo. Le projet visait aussi à permettre l'édition des données à la manière d'un wiki, mais cela n'a finalement pas été terminé.",
         "C'est suite aux leçons apprises lors de ma 1ère année d'études que j'ai pu constater toutes les erreurs et les imperfections que contenait l'Ailurus Corp. J'ai donc décidé de tout refaire en mieux, avec par exemple le respect des bonnes pratiques HTML et CSS, l'optimisation du code avec JS et PHP, ou encore la migration des données dans une base de données."
@@ -67,7 +67,7 @@
     "name": "App. de Dessin",
     "type": ["Application"],
     "date": ["2023-04", "2023-04"],
-    "illustration": "app_dessin_illu",
+    "illustration": ["app_dessin_illu1", "app_dessin_illu2", "app_dessin_illu3"],
     "description": [
         "Application de dessin à la manière de Paint. Réalisée en Java au cours des leçons d'Interface Homme-Machine, l'application permet de dessiner avec un embout carré ou rond de la taille et de la couleur souhaitées et d'enregistrer son dessin.",
         "Ce petit TP en solo mettait l'accent sur les bonnes pratiques de programmation et la mise en place d'un modèle MVC, en plus, évidemment, de la conception d'une interface ergonomique avec Java Swing."
@@ -83,7 +83,7 @@
     "name": "App. d'Aide Décisionnelle",
     "type": ["Application"],
     "date": ["2023-05", "2023-06"],
-    "illustration": "aide_decision_illu",
+    "illustration": ["app_aide_decisionnelle_illu1", "app_aide_decisionnelle_illu2", "app_aide_decisionnelle_illu3"],
     "description": [
         "Application d'aide décisionnelle pour une organisation (fictive) possédant plusieurs établissements de soin. Le but est de faciliter les prises de décision en proposant des trajets optimisés pour les déplacements des ambulances entre les différents établissements, le tout en s'appuyant sur une représentation en graphe de la carte.",
         "L'utilisateur peut choisir différentes analyses selon ses besoins. La structure du graphe permet l'utilisation de divers algorithmes, comme la recherche du plus court chemin, du plus rapide ou encore de celui présentant le moins de danger entre 2 établissements. Il est aussi possible de préciser plusieurs lieux par lesquels le trajet doit passer."
@@ -99,7 +99,7 @@
     "name": "Weblog42",
     "type": ["Site web"],
     "date": ["2023-09", "2023-10"],
-    "illustration": "weblog42_illu",
+    "illustration": ["weblog42_illu1", "weblog42_illu2", "weblog42_illu3", "weblog42_illu4"],
     "description": [
         "Site web proposant une plateforme de blog minimaliste. Un utilisateur inscrit peut créer et poster un article, dont le contenu est uniquement du texte, puis les autres utilisateurs peuvent alors le consulter et y laisser des commentaires.",
         "Ce projet, réalisé dans le cadre de ma formation, avait pour objectifs la découverte et la prise en main du langage PHP, ainsi que la mise en place d'un système d'authentification utilisateur."
@@ -115,7 +115,7 @@
     "name": "12cm³",
     "type": ["Jeu vidéo", "Site web"],
     "date": ["2023-10", "2024-02"],
-    "illustration": "12cm3_illu",
+    "illustration": ["12cm3_illu1", "12cm3_illu2", "12cm3_illu3", "12cm3_illu4", "12cm3_illu5", "12cm3_illu6", "12cm3_illu7"],
     "description": [
         "Jeu vidéo de course arcade en solo et en 2D vu de dessus. Il permet au joueur de personnaliser ses propres véhicules selon différents paramètres et de concourir en contre-la-montre sur les circuits officiels ou bien créés par la communauté. Le meilleur score de chaque joueur est alors affiché à travers un leaderboard par circuit.",
         "Réalisé en équipe dans le cadre de mes études, nous avons construit le moteur de jeu à partir de zéro en Java. Au final, l'envergure du projet est telle que nous avons développé un moteur de jeu, un jeu, un éditeur de circuits, une base de données, un site web et une API pour lier le tout !"
@@ -136,7 +136,7 @@
     "name": "Nuit de l'Info 2023",
     "type": ["Site web"],
     "date": ["2023-12", "2023-12"],
-    "illustration": "nuit_info_illu",
+    "illustration": ["nuit_info_2023_illu1", "nuit_info_2023_illu2", "nuit_info_2023_illu3"],
     "description": [
         "Escape game en ligne sous forme de questions à choix multiples centré sur les problématiques écologiques. Il s'agit d'un simple jeu où chaque étape correspond à un problème environnemental pour lequel il faut trouver la bonne solution, et ainsi pouvoir passer à l'étape suivante. Le site contient aussi plusieurs petits secrets.",
         "Ce projet est né de ma participation à l'événement de La Nuit de l'Info 2023, durant lequel chaque équipe a une nuit (de 19h à 7h) pour développer un projet répondant au sujet imposé. Il y a également plusieurs missions optionnelles proposées par des entreprises permettant de remporter un prix pour les meilleures réalisations."
@@ -152,7 +152,7 @@
     "name": "Memor'Event",
     "type": ["App. mobile"],
     "date": ["2024-02", "2024-03"],
-    "illustration": "memor_event_illu",
+    "illustration": ["memor_event_illu1"],
     "description": [
         "Application mobile permettant l'archivage d'événements passés et de souvenirs. Il est possible d'y rechercher le nom d'un événement (concert, festival, salon, etc.) grâce à une API publique intégrée à l'application, ou encore de créer son propre événement s'il n'est pas trouvable dans la base.",
         "Ensuite, on peut sauvegarder l'événement, y ajouter des notes écrites, le nom des personnes présentes et même des photos depuis sa galerie. Le principal objectif ici est de pouvoir garder une trace des bons moments passés et de permettre leur consultation facilement à posteriori."
@@ -168,7 +168,7 @@
     "name": "ShopiMory",
     "type": ["Site web"],
     "date": ["2024-02", "2024-04"],
-    "illustration": "shopimory_illu",
+    "illustration": ["shopimory_illu1"],
     "description": [
         "Site web de gestion partagée de listes de courses. Un utilisateur peut créer et enregistrer plusieurs listes de courses, y ajouter des articles et ajouter d'autres utilisateurs qui pourront à leur tour modifier la liste.",
         "Des statistiques sur les courses ou encore les types d'articles achetés sont aussi disponibles sur le profil utilisateur. Ce projet avait, encore une fois, une visée pédagogique par rapport à l'utilisation du framework Symfony."
@@ -184,7 +184,7 @@
     "name": "Osu Eco+",
     "type": ["Jeu vidéo"],
     "date": ["2024-03", "2024-04"],
-    "illustration": "osu_eco_plus_illu",
+    "illustration": ["osu_eco_plus_illu1", "osu_eco_plus_illu2"],
     "description": [
         "Recréation du jeu vidéo de rythme « Osu! ». Développé en Java, en groupe et dans le cadre des cours de qualité de développement, l'accent a été mis sur cette dernière plus que sur le résultat final. Le jeu demeure alors très sommaire.",
         "L'utilisateur peut sélectionner un niveau et jouer en cliquant sur les cercles apparaissant à l'écran, en rythme avec la musique, et un nombre de points lui est accordé en fonction de son temps de réaction pour cliquer sur un cercle."
@@ -200,7 +200,7 @@
     "name": "Portfolio",
     "type": ["Site web"],
     "date": ["2024-05", "2025-03"],
-    "illustration": "portfolio_illu",
+    "illustration": ["portfolio_illu1"],
     "description": [
         "Lorsque je me suis lancé dans la réalisation de mon portfolio, je me suis immédiatement tourné vers la conception d'un site web. Cette solution permet, dans un premier temps, de mettre en œuvre et de montrer mes compétences en web, mais aussi et surtout de pouvoir partager facilement et rapidement mes projets et compétences.",
         "La réalisation de ce site m'a surtout apporté de l'expérience pour tout ce qui concerne les prises de décision. Ayant été seul acteur du projet, j'ai dû décider de chacun de ses aspects, des technologies à utiliser aux choix de design et d'ergonomie. Il a également été question de quelques choix d'optimisations."
@@ -216,7 +216,7 @@
     "name": "TOMUSS",
     "type": ["App. web"],
     "date": ["2024-05", "2025-09"],
-    "illustration": "tomuss_illu",
+    "illustration": ["tomuss_illu1"],
     "description": [
         "TOMUSS est une application web open source développée au sein de l'Université Lyon 1 permettant la consultation et la modification de tableaux de données par plusieurs utilisateurs en simultané. Elle sert au suivi pédagogique des étudiants sur la majorité du campus (un peu plus de 1 400 professeurs et 20 000 étudiants), permettant la gestion de leurs notes ou de leurs absences.",
         "Il m'a été donné de travailler sur cette application lors d'un stage de 10 semaines puis lors d'une année en alternance. J'ai eu pour mission de résoudre divers bugs ou de répondre aux besoins du corps enseignant par des améliorations applicatives. Cette expérience m'a été extrêmement bénéfique, autant d'un point de vue technique que professionnel."
@@ -237,7 +237,7 @@
     "name": "Crazymo",
     "type": ["App. web", "Jeu vidéo"],
     "date": ["2024-09", "2024-11"],
-    "illustration": "crazymo_illu",
+    "illustration": ["crazymo_illu1"],
     "description": [
         "Recréation du jeu sur navigateur TUSMO, lui-même inspiré du jeu télévisé Motus, consistant à deviner un mot en un nombre de tentatives limitées. Les lettres du mot saisi se colorent alors en fonction de leur présence dans le mot : bien placée, mal placée ou inexistante.",
         "Nous avons réalisé ce projet dans le cadre de leçons se concentrant sur la qualité de développement, la bonne gestion d'un projet en équipe et l'usage de conteneurs. Le jeu est entièrement jouable sans compte utilisateur."
@@ -253,7 +253,7 @@
     "name": "Platine",
     "type": ["App. web"],
     "date": ["2024-09", "2025-02"],
-    "illustration": "platine_illu",
+    "illustration": ["platine_illu1"],
     "description": [
         "Application conteneurisée visant à rassembler les différents services de scolarité en un même endroit. Il est question de pouvoir gérer, entre autres : les inscriptions, les emplois du temps, les présences, les notes, les mails universitaires, les professeurs et les ressources d'enseignement.",
         "Ce projet fût l'objet principal de ma dernière année de formation. Il devait être mené en autonomie et en classe entière, c'est-à-dire en un groupe de 20 environ. Le travail a été divisé en modules pour pouvoir faire de plus petites équipes et répondre au cahier des charges efficacement."

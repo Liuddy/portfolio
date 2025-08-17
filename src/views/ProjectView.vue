@@ -26,7 +26,7 @@ function toggleProject() {
       @click="showProjectDiv(project.id)"
     >
       <img
-        :src="getImgPath('images', project.illustration)"
+        :src="getImgPath('images', project.illustration[0])"
         :alt="`Image d'illustration du projet ${project.name}`"
       />
 

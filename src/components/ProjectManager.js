@@ -5,7 +5,7 @@ class Project {
   name = ''
   type = []
   date = []
-  illustration = ''
+  illustration = []
   description = []
   links = []
   mainTech = []

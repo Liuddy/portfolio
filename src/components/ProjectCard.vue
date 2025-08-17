@@ -59,7 +59,7 @@ function parseLink(link) {
 
       <img
         id="illustration"
-        :src="getImgPath('images', props.project.illustration)"
+        :src="getImgPath('images', props.project.illustration[0])"
         :alt="`Image d'illustration du projet ${props.project.name}`"
       />
 
@@ -192,6 +192,7 @@ h1 {
   border-radius: 2em;
   margin: auto;
   max-width: 90%;
+  min-width: 90%;
 }
 
 #technologies {
