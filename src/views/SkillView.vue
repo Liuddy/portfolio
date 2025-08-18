@@ -1,6 +1,14 @@
 <script setup>
+import { onMounted } from 'vue'
+import { RouterLink } from 'vue-router'
 import { getImgPath } from '@/components/FileManager.js'
 import { skillTab, getSkillLevelIcons } from '@/components/SkillManager.js'
+
+onMounted(() => {
+  let url_hash = window.location.hash.slice(1)
+  if (url_hash)
+    document.getElementById(url_hash).classList.add('extended')
+})
 
 function switchDivClass(divClass) {
   for (let openSkill of document.getElementsByClassName(divClass))
@@ -33,9 +41,10 @@ function switchDivClass(divClass) {
 
   <div class="skill-grid">
     <div class="skill-flex">
-      <div v-for="(skillList, index) in skillTab.slice(1, skillTab.length / 2 + 1)" :key="index">
+      <div v-for="(skillList, index) in skillTab.slice(1, skillTab.length / 2 + 1)" :key="index" :id="index + 1">
         <p @click="switchDivClass('extended')">
-          {{ skillList[0] }}
+          <RouterLink :to="{ name: 'project', query: {skill: index + 1} }">&#8598;</RouterLink>
+          <span class="text">{{ skillList[0] }}</span>
           <span>{{ getSkillLevelIcons(skillList[1]) }}</span>
         </p>
 
@@ -51,9 +60,10 @@ function switchDivClass(divClass) {
     </div>
 
     <div class="skill-flex">
-      <div v-for="(skillList, index) in skillTab.slice(skillTab.length / 2 + 1)" :key="index">
+      <div v-for="(skillList, index) in skillTab.slice(skillTab.length / 2 + 1)" :key="index" :id="index + Math.floor(skillTab.length / 2) + 1">
         <p @click="switchDivClass('extended')">
-          {{ skillList[0] }}
+          <RouterLink :to="{ name: 'project', query: {skill: index + Math.floor(skillTab.length / 2) + 1} }">&#8598;</RouterLink>
+          <span class="text">{{ skillList[0] }}</span>
           <span>{{ getSkillLevelIcons(skillList[1]) }}</span>
         </p>
 
@@ -196,7 +206,7 @@ function switchDivClass(divClass) {
   transition: none;
 }
 
-.skill-flex div > p:hover {
+.skill-flex div > p:hover :not(a) {
   text-decoration: underline;
 }
 
@@ -247,10 +257,31 @@ function switchDivClass(divClass) {
 }
 
 .skill-flex div span {
+  pointer-events: none;
+}
+
+.skill-flex div span:not(.text) {
   font-size: 1.2em;
   line-height: 1;
   margin-left: auto;
-  pointer-events: none;
+}
+
+.skill-flex div a {
+  color: var(--color-text);
+  font-size: 1.2em;
+  line-height: 1;
+  margin-right: 0.5em;
+  padding: 0;
+  transition: none;
+
+  &:hover {
+    background-color: transparent;
+    color: var(--color-link);
+  }
+}
+
+.skill-flex div a:hover ~ span {
+  text-decoration: none;
 }
 
 .skill-flex ul {

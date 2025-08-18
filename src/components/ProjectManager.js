@@ -34,5 +34,23 @@ class Project {
   }
 }
 
-export const projectList = []
-for (let project of projectJsonList) projectList.push(new Project(project))
+class ProjectManager {
+  projectList = []
+
+  constructor() {
+    for (let project of projectJsonList) this.projectList.push(new Project(project))
+  }
+
+  getFilteredProjects(params) {
+    let filteredList = []
+    for (let project of this.projectList)
+      if (params.get('skill')) {
+        let skill = params.get('skill')
+        if (project.skills.includes(parseInt(skill)))
+          filteredList.push(project)
+      }
+    return filteredList
+  }
+}
+
+export const projectManager = new ProjectManager()

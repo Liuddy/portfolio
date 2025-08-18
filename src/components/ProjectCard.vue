@@ -1,5 +1,6 @@
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
+import { RouterLink } from 'vue-router'
 import { getImgPath } from '@/components/FileManager.js'
 import { skillTab } from '@/components/SkillManager.js'
 
@@ -52,7 +53,9 @@ function parseLink(link) {
 
         <ul>
           <li v-for="(skill, index) in props.project.skills" :key="index">
-            &#9733; {{ skillTab[skill][0] }}
+            <RouterLink :to="{ name: 'skill', hash: '#' + skill }">
+              &#9733; {{ skillTab[skill][0] }}
+            </RouterLink>
           </li>
         </ul>
       </div>
@@ -186,6 +189,21 @@ h1 {
   line-height: 1.6;
   list-style: none;
   white-space: nowrap;
+}
+
+#details ul a {
+  color: var(--color-text);
+  padding: 0.1em;
+
+  &:hover {
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+  &:active {
+    background-color: var(--color-link);
+    transition: none;
+  }
 }
 
 #illustration {

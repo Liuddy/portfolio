@@ -1,11 +1,19 @@
 <script setup>
-import { ref } from 'vue'
+import { onBeforeMount, ref } from 'vue'
 import { getImgPath } from '@/components/FileManager.js'
-import { projectList } from '@/components/ProjectManager.js'
+import { projectManager } from '@/components/ProjectManager.js'
 import ProjectCard from '@/components/ProjectCard.vue'
+
+onBeforeMount(() => {
+  if (window.location.search) {
+    let url_params = new URLSearchParams(window.location.search)
+    projectList = projectManager.getFilteredProjects(url_params)
+  }
+})
 
 const openProject = ref(false)
 let clickedProject = undefined
+var projectList = projectManager.projectList
 
 function showProjectDiv(projectId) {
   clickedProject = projectList[projectId]
@@ -21,9 +29,9 @@ function toggleProject() {
   <div id="project-list">
     <div
       class="project"
-      v-for="project in projectList"
-      :key="project.id"
-      @click="showProjectDiv(project.id)"
+      v-for="(project, index) in projectList"
+      :key="index"
+      @click="showProjectDiv(index)"
     >
       <img
         :src="getImgPath('images', project.illustration[0])"
