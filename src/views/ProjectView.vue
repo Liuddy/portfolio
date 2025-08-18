@@ -13,7 +13,7 @@ onBeforeMount(() => {
 
 const openProject = ref(false)
 let clickedProject = undefined
-var projectList = projectManager.projectList
+let projectList = projectManager.projectList
 
 function showProjectDiv(projectId) {
   clickedProject = projectList[projectId]

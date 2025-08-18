@@ -216,7 +216,7 @@
     "name": "TOMUSS",
     "type": ["App. web"],
     "date": ["2024-05", "2025-09"],
-    "illustration": ["tomuss_illu1"],
+    "illustration": ["tomuss_illu1", "tomuss_illu2", "tomuss_illu3", "tomuss_illu4"],
     "description": [
         "TOMUSS est une application web open source développée au sein de l'Université Lyon 1 permettant la consultation et la modification de tableaux de données par plusieurs utilisateurs en simultané. Elle sert au suivi pédagogique des étudiants sur la majorité du campus (un peu plus de 1 400 professeurs et 20 000 étudiants), permettant la gestion de leurs notes ou de leurs absences.",
         "Il m'a été donné de travailler sur cette application lors d'un stage de 10 semaines puis lors d'une année en alternance. J'ai eu pour mission de résoudre divers bugs ou de répondre aux besoins du corps enseignant par des améliorations applicatives. Cette expérience m'a été extrêmement bénéfique, autant d'un point de vue technique que professionnel."

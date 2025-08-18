@@ -13,6 +13,7 @@ onUnmounted(() => {
 })
 
 const props = defineProps(['project'])
+let imgIndex = 0
 
 function parseLink(link) {
   if (link.includes('getImgPath')) {
@@ -20,6 +21,15 @@ function parseLink(link) {
     link = getImgPath(link[1], link[2])
   }
   return link
+}
+
+function slideImage(direction) {
+  imgIndex += direction
+  if (imgIndex < 0)
+    imgIndex = props.project.illustration.length - 1
+  else if (imgIndex == props.project.illustration.length)
+    imgIndex = 0
+  document.getElementById('illustrationImg').src = getImgPath('images', props.project.illustration[imgIndex])
 }
 </script>
 
@@ -60,11 +70,19 @@ function parseLink(link) {
         </ul>
       </div>
 
-      <img
-        id="illustration"
-        :src="getImgPath('images', props.project.illustration[0])"
-        :alt="`Image d'illustration du projet ${props.project.name}`"
-      />
+      <div id="illustration">
+        <div v-if="props.project.illustration.length > 1" class="imgLeft" @click="slideImage(-1)">
+          <p>&larr;</p>
+        </div>
+        <div v-if="props.project.illustration.length > 1" class="imgRight" @click="slideImage(1)">
+          <p>&rarr;</p>
+        </div>
+        <img
+          id="illustrationImg"
+          :src="getImgPath('images', props.project.illustration[imgIndex])"
+          :alt="`Image d'illustration du projet ${props.project.name}`"
+        />
+      </div>
 
       <div id="technologies">
         <img
@@ -207,10 +225,55 @@ h1 {
 }
 
 #illustration {
-  border-radius: 2em;
   margin: auto;
   max-width: 90%;
   min-width: 90%;
+  position: relative;
+}
+
+#illustration .imgLeft, #illustration .imgRight {
+  cursor: pointer;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  width: 50%;
+
+  &:hover p {
+    opacity: 1;
+  }
+
+  &:active p {
+    color: var(--color-link);
+  }
+}
+
+#illustration .imgLeft {
+  border-radius: 2em 0 0 2em;
+  left: 0;
+}
+
+#illustration .imgRight {
+  border-radius: 0 2em 2em 0;
+  right: 0;
+}
+
+#illustration .imgLeft p, #illustration .imgRight p {
+  background-color: var(--color-background-transparent);
+  bottom: 0;
+  font-size: 3.6em;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  text-align: center;
+  transition: opacity 0.4s;
+  width: 100%;
+}
+
+#illustrationImg {
+  border-radius: 2em;
+  display: block;
+  margin: auto;
+  width: 100%;
 }
 
 #technologies {
