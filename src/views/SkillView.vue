@@ -11,12 +11,15 @@ onMounted(() => {
 })
 
 function switchDivClass(divClass) {
-  for (let openSkill of document.getElementsByClassName(divClass))
-    if (openSkill !== event.target.parentNode) openSkill.classList.toggle(divClass)
+  let parentElt = event.target.parentNode
+  for (let extendedSkill of document.getElementsByClassName(divClass))
+    if (extendedSkill !== parentElt) extendedSkill.classList.toggle(divClass)
   if (divClass === 'extended')
-    for (let openSkill of document.getElementsByClassName('extended-tech'))
-      if (openSkill !== event.target.parentNode) openSkill.classList.toggle('extended-tech')
-  event.target.parentNode.classList.toggle(divClass)
+    for (let extendedSkill of document.getElementsByClassName('extended-tech'))
+      if (extendedSkill !== parentElt) extendedSkill.classList.toggle('extended-tech')
+  parentElt.classList.toggle(divClass)
+  if (parentElt.classList.contains(divClass))
+    setTimeout(() => { parentElt.scrollIntoView() }, 400)
 }
 </script>
 
