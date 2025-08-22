@@ -3,35 +3,43 @@ import { onBeforeMount, ref } from 'vue'
 import { getImgPath } from '@/components/FileManager.js'
 import { projectManager } from '@/components/ProjectManager.js'
 import ProjectCard from '@/components/ProjectCard.vue'
+import ProjectFilters from '@/components/ProjectFilters.vue'
 
 onBeforeMount(() => {
   if (window.location.search) {
     let url_params = new URLSearchParams(window.location.search)
-    projectList = projectManager.getFilteredProjects(url_params)
+    projectList.value = projectManager.getProjectsBySkill(url_params)
   }
 })
 
 const openProject = ref(false)
+const projectList = ref(projectManager.projectList)
 let clickedProject = undefined
-let projectList = projectManager.projectList
 
-function showProjectDiv(projectId) {
-  clickedProject = projectList[projectId]
-  openProject.value = true
+function toggleProject(projectId) {
+  if (projectId >= 0) {
+    clickedProject = projectList.value[projectId]
+    openProject.value = true
+  } else {
+    clickedProject = undefined
+    openProject.value = false
+  }
 }
 
-function toggleProject() {
-  openProject.value = false
+function filterProjects(filters) {
+  projectList.value = projectManager.getFilteredProjects(filters)
 }
 </script>
 
 <template>
+  <ProjectFilters @refreshProjectList="filterProjects" />
+
   <div id="project-list">
     <div
       class="project"
       v-for="(project, index) in projectList"
       :key="index"
-      @click="showProjectDiv(index)"
+      @click="toggleProject(index)"
     >
       <img
         :src="getImgPath('images', project.illustration[0])"
@@ -96,13 +104,16 @@ p {
   overflow: hidden;
   padding: 0.5em;
   transition:
-    background-color 0.4s,
+    background-color 0.5s,
     transform 0.4s;
   width: 90%;
 
   &:hover {
     background-color: var(--color-link);
     transform: scale(1.12);
+    transition:
+      background-color 0.4s,
+      transform 0.4s;
   }
 }
 

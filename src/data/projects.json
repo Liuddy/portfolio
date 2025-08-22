@@ -231,7 +231,7 @@
     "allTech": ["HTML", "CSS", "JavaScript", "Python", "Git", "Visual Studio Code"],
     "skills": [1, 2, 3, 8],
     "team": "groupe",
-    "environment": "universitaire"
+    "environment": "professionnel"
   },
   {
     "name": "Crazymo",

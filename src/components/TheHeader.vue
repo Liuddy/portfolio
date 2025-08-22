@@ -50,6 +50,7 @@ nav a.router-link-exact-active {
 label {
   left: 50%;
   line-height: 0.96;
+  margin-left: 0.3em;
   min-height: 1.1em;
   min-width: 2em;
   position: absolute;
@@ -129,6 +130,7 @@ label input:checked + span p {
 
   label {
     left: 90%;
+    margin-left: 0;
     margin-top: 0.5em;
   }
 }

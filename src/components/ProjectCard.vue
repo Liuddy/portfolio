@@ -29,7 +29,7 @@ function slideImage(direction) {
     imgIndex = props.project.illustration.length - 1
   else if (imgIndex == props.project.illustration.length)
     imgIndex = 0
-  document.getElementById('illustrationImg').src = getImgPath('images', props.project.illustration[imgIndex])
+  document.getElementById('illustration-img').src = getImgPath('images', props.project.illustration[imgIndex])
 }
 </script>
 
@@ -71,14 +71,14 @@ function slideImage(direction) {
       </div>
 
       <div id="illustration">
-        <div v-if="props.project.illustration.length > 1" class="imgLeft" @click="slideImage(-1)">
+        <div v-if="props.project.illustration.length > 1" class="img-left" @click="slideImage(-1)">
           <p>&larr;</p>
         </div>
-        <div v-if="props.project.illustration.length > 1" class="imgRight" @click="slideImage(1)">
+        <div v-if="props.project.illustration.length > 1" class="img-right" @click="slideImage(1)">
           <p>&rarr;</p>
         </div>
         <img
-          id="illustrationImg"
+          id="illustration-img"
           :src="getImgPath('images', props.project.illustration[imgIndex])"
           :alt="`Image d'illustration du projet ${props.project.name}`"
         />
@@ -231,7 +231,7 @@ h1 {
   position: relative;
 }
 
-#illustration .imgLeft, #illustration .imgRight {
+#illustration .img-left, #illustration .img-right {
   cursor: pointer;
   height: 100%;
   overflow: hidden;
@@ -247,18 +247,19 @@ h1 {
   }
 }
 
-#illustration .imgLeft {
+#illustration .img-left {
   border-radius: 2em 0 0 2em;
   left: 0;
 }
 
-#illustration .imgRight {
+#illustration .img-right {
   border-radius: 0 2em 2em 0;
   right: 0;
 }
 
-#illustration .imgLeft p, #illustration .imgRight p {
-  background-color: var(--color-background-transparent);
+#illustration .img-left p, #illustration .img-right p {
+  backdrop-filter: blur(0.02em);
+  background-color: rgb(10 10 10 / 40%);
   bottom: 0;
   font-size: 3.6em;
   opacity: 0;
@@ -266,10 +267,11 @@ h1 {
   position: absolute;
   text-align: center;
   transition: opacity 0.4s;
+  user-select: none;
   width: 100%;
 }
 
-#illustrationImg {
+#illustration-img {
   border-radius: 2em;
   display: block;
   margin: auto;
